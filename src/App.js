@@ -1,25 +1,54 @@
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
+import "./App.css";
+import React, { useState } from 'react';
+// import Landingpage from "./components/landingpage";
+import Header from './components/Header';
+import About from "./components/About";
+import Contact from "./components/Contact";
+import LandingPage from "./components/LandingPage";
+import Dashboard from "./components/Dashboard";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
+
+  const [currentTab, setCurrentTab] = useState("landing-page");
+
+  const renderTab = () => {
+    switch (currentTab) {
+      case "dashboard":
+        return <Dashboard />;
+
+      case "about-us":
+        return <About Us />;
+
+      case "contact":
+        return <Contact />;
+
+          case "landing-page":
+            return <LandingPage />;
+
+      default:
+        return null;
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    
+    <div>
+    <div>
+      
+				<Header currentTab={currentTab} setCurrentTab={setCurrentTab}></Header>
+        
+			</div>
+
+  
+  
+      <div>
+      <main>{renderTab()}</main>
     </div>
+   
+  </div>
+
   );
 }
-
 export default App;
