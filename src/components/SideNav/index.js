@@ -6,7 +6,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import logo from '../../assets/images/logo.png';
 // import Card from 'react-bootstrap/Card';
-import { FaUser, FaGithub, FaLinkedin, FaYoutube, FaBuffer, FaAt } from 'react-icons/fa';
+import { FaUser, FaBuffer, FaAt } from 'react-icons/fa';
 import { SocialIcon } from 'react-social-icons';
 
 // import NavDropdown from 'react-bootstrap/NavDropdown';
@@ -20,7 +20,7 @@ function SideNav(props) {
       {[false].map((expand) => (
         <Navbar key={expand} expand={expand} className="bg-body-tertiary mb-3">
           <Container fluid>
-            <Navbar.Brand href="#">NM
+            <Navbar.Brand href="/">
             <img src={logo} width="90px" height="40px" alt="logo" />
             </Navbar.Brand>
             
@@ -32,6 +32,8 @@ function SideNav(props) {
             >
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title className="side-neb" id={`offcanvasNavbarLabel-expand-${expand}`}>
+                <img src={logo} width="90px" height="40px" alt="logo" />
+                <br/>
                   Neb Media
                 </Offcanvas.Title>
               </Offcanvas.Header>

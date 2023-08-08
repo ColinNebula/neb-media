@@ -1,7 +1,8 @@
 import React from 'react';
-import { Card, NavDropdown } from 'react-bootstrap';
+import { Card, NavDropdown, Button } from 'react-bootstrap';
 import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa';
 import { SocialIcon } from 'react-social-icons';
+import logo from '../../assets/images/logo.png';
 
 function Dashboard() {
 
@@ -27,9 +28,30 @@ function Dashboard() {
 
       <FaQuoteLeft className="left-q" /> 
       
-      <h2 className="dash-h2">Video Editing with a passion!</h2>
+      <h2 className="dash-h2">Video Editing and compositing with a passion!</h2>
       <p className="dash-p"> From concept to completion</p>
       <FaQuoteRight className="right-q" />
+
+      <Card className="text-center overflow bg-dark text-white shadow-lg">
+      <Card.Header>Get in touch</Card.Header>
+      <Card.Body>
+      <img src={logo} width="90px" height="40px" alt="logo" />
+        <Card.Title>Contact Neb Media</Card.Title>
+        <Card.Text>
+        
+          Please contact us and find out how we can help with your videos. 
+          <address>
+          55 Main Street <br />
+          Some Town, Ca <br />
+          123445 <br />
+          Phone: <a href="tel:416.856.5764"> (416.856.5764)</a><br />
+          Email: <a href="mailto://info@nebmedia.io">info@nebmedia.io</a>
+        </address>
+        </Card.Text>
+        
+      </Card.Body>
+      <Card.Footer className="text-muted">2 days ago</Card.Footer>
+    </Card>
 </div>
 
 
