@@ -1,18 +1,54 @@
-import React from 'react';
-import { Card, NavDropdown, Button } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Card, NavDropdown, Button, Container, Modal } from 'react-bootstrap';
+import hero from '../../assets/images/hero.png';
 import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa';
 import { SocialIcon } from 'react-social-icons';
 import logo from '../../assets/images/logo.png';
 
 function Dashboard() {
+  const [lgShow, setLgShow] = useState(false);
 
     return(
-        
+    <Container fluid>
+    <>
+      <Modal
+        size="lg"
+        show={lgShow}
+        onHide={() => setLgShow(false)}
+        aria-labelledby="example-modal-sizes-title-lg"
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="example-modal-sizes-title-lg">
+            Byte Size Soccer Videos
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <p>
+          Nebula Media teamed up with legend brit star goalie, Tony Waiters.
+          Uv, Textured in Maya 3d software. 
+          Sculpted in Zbrush and painted in photoshop. 
+          Post effects were done using fusion.
+
+          </p>
+          <div className="iframe">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/1wI6aDte_1Q" 
+          title="YouTube video player" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          allowfullscreen>
+          </iframe>
+          </div>
+          
+        </Modal.Body>
+      </Modal>
+    </>
+
 <div>
-        <h2 className="dash-h2">Keep Going! </h2>
-        <p className="dash-p"> This is the dashboard!</p>
-        <Card className="bg-dark text-white">
-        <Card.Img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.ikFEwkag0PM-l-XDlXbp_wHaEK%26pid%3DApi&f=1&ipt=b204ca3e2b6be786df00ec1848f572109d16193e30cd3613e6f092176d6e893a&ipo=images/100px270" alt="Card image" />
+        <h2 className="dash-h2">Nebula Media </h2>
+        <p className="dash-p"> Big things come from humble beginnings.</p>
+
+        <Card className="bg-dark text-white shadow-lg d-block w-100 h-100">
+        <Card.Img src={hero} alt="Card image" />
         <Card.ImgOverlay>
           <Card.Title>Card title</Card.Title>
           <Card.Text>
@@ -28,32 +64,45 @@ function Dashboard() {
 
       <FaQuoteLeft className="left-q" /> 
       
-      <h2 className="dash-h2">Video Editing and compositing with a passion!</h2>
+
+      <h2 className="dash-h2">Video editing and compositing with a passion!</h2>
       <p className="dash-p"> From concept to completion</p>
       <FaQuoteRight className="right-q" />
 
-      <Card className="text-center overflow bg-dark text-white shadow-lg">
+      <Card>
+      <Card.Header>Featured Projects</Card.Header>
+      <Card.Body>
+        <Card.Title>Byte Size Soccer Videos</Card.Title>
+        <Card.Text>
+          Nebula Media and Tony Waiters brings you Byte Size Soccer videos.
+          A series of videos edited by Nebula Media teaching kids all about soccer.
+        </Card.Text>
+        <Button variant="outline-primary " onClick={() => setLgShow(true)}>See Video</Button>
+      </Card.Body>
+    </Card>
+      <br/>
+      <Card className="text-center overflow bg-dark text-white shadow-lg rounded">
       <Card.Header>Get in touch</Card.Header>
       <Card.Body>
       <img src={logo} width="90px" height="40px" alt="logo" />
-        <Card.Title>Contact Neb Media</Card.Title>
+        <Card.Title>Contact Nebula Media</Card.Title>
         <Card.Text>
         
-          Please contact us and find out how we can help with your videos. 
+          Please contact us and find out how we can help create lasting memories with your videos. 
           <address>
           55 Main Street <br />
-          Some Town, Ca <br />
-          123445 <br />
+          Vaughan, On <br />
+          L4L-8Y9 <br />
           Phone: <a href="tel:416.856.5764"> (416.856.5764)</a><br />
           Email: <a href="mailto://info@nebmedia.io">info@nebmedia.io</a>
         </address>
         </Card.Text>
         
       </Card.Body>
-      <Card.Footer className="text-muted">2 days ago</Card.Footer>
+      <Card.Footer className="text-muted">Neb Media</Card.Footer>
     </Card>
 </div>
-
+</Container>  
 
 
     )

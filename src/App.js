@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 // import Landingpage from "./components/landingpage";
 import Header from './components/Header';
 import About from "./components/About";
+import Faq from "./components/Faq";
 import Contact from "./components/Contact";
 import LandingPage from "./components/LandingPage";
 import Dashboard from "./components/Dashboard";
@@ -23,6 +24,9 @@ function App() {
 
       case "contact":
         return <Contact />;
+
+        case "faq":
+          return <Faq />;
 
           case "landing-page":
             return <LandingPage />;

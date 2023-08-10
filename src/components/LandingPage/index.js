@@ -18,7 +18,9 @@ function LandingPage() {
                 <p className="landing-p">Animation, Visual effects, Video editing & Compositing</p>
             </div>
 
-            <div className="home-btn">Enter</div>
+            <div className="home-btn">Enter
+            
+            </div>
         </div>
     )
 }

@@ -117,7 +117,7 @@ main {
   animation-name: fade;
   animation-duration: 6s;
   color:rgb(51, 98, 180);
-  align-items: center;
+  align-items: auto;
   font-size: 3em;
   margin: 40px;
 }
@@ -159,10 +159,83 @@ main {
   align-items: center;
 }
 
-* Card */
+#d-dash {
+  justify-self: flex-end;
+  font-size: 1em;
+  animation-name: fade;
+  animation-duration: 6s;
+  color:rgb(51, 98, 180);
+  align-items: center;
+}
+
+.faq-h2x {
+  justify-self: flex-end;
+  font-size: 2em;
+  animation-name: fade;
+  animation-duration: 6s;
+  color:rgb(51, 98, 180);
+  align-items: center;
+  font-size: 3em;
+}
+
+.contact-p {
+  justify-self: flex-end;
+  font-size: 2em;
+  animation-name: fade;
+  animation-duration: 6s;
+  align-items: center;
+  font-size: 1em;
+}
+
+.contact-h2 {
+  justify-self: flex-end;
+  font-size: 2em;
+  animation-name: fade;
+  animation-duration: 6s;
+  color:rgb(51, 98, 180);
+  align-items: center;
+  font-size: 3em;
+  animation-duration: 6s;
+}
+
+.faq-h2 {
+  justify-self: flex-end;
+  font-size: 2em;
+  animation-name: fade;
+  animation-duration: 6s;
+  color:rgb(51, 98, 180);
+  align-items: center;
+  font-size: 3em;
+  
+}
+.faq-h2g {
+  justify-self: flex-end;
+  font-size: 2em;
+  animation-name: fade;
+  animation-duration: 6s;
+  color:rgb(51, 98, 180);
+  align-items: center;
+  font-size: 3em;
+}
+
+
+.faq-h2:hover {
+	cursor: pointer;
+}
+
+  
+.faq-p {
+  text-decoration-line: underline;
+}
+
+.faq-p:hover {
+	cursor: pointer;
+}
+
+/* Card */
   .card {
 	flex: 40%;
-	width: 50%;
+	width: 100%;
 	margin: 15px;
 	display: flex;
 	justify-content: center;
@@ -185,6 +258,14 @@ main {
 
 .rounded:hover {
 	transform:scale(1.1);
+}
+
+/* iframe elements*/
+.iframe {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: 0.5s;
 }
 
 

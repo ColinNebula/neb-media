@@ -6,7 +6,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import logo from '../../assets/images/logo.png';
 // import Card from 'react-bootstrap/Card';
-import { FaUser, FaBuffer, FaAt } from 'react-icons/fa';
+import { FaUser, FaBuffer, FaAt, FaQuestionCircle } from 'react-icons/fa';
 import { SocialIcon } from 'react-social-icons';
 
 // import NavDropdown from 'react-bootstrap/NavDropdown';
@@ -34,7 +34,7 @@ function SideNav(props) {
                 <Offcanvas.Title className="side-neb" id={`offcanvasNavbarLabel-expand-${expand}`}>
                 <img src={logo} width="90px" height="40px" alt="logo" />
                 <br/>
-                  Neb Media
+                  Nebula Media
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
@@ -42,11 +42,17 @@ function SideNav(props) {
                   <Nav.Link id="b-dash" className={currentTab === "/" ? "mx-2 navActive" : "mx-2"} href="#dashboard"> <FaBuffer /> 
                   <span onClick={() => setCurrentTab("dashboard")}> Dashboard</span>
                   </Nav.Link>
+
                   <Nav.Link id="a-dash" className={currentTab === "about-us" ? "mx-2 navActive" : "mx-2"}
                   href="#about-us"><FaUser /> <span onClick={() => setCurrentTab("about-us")}> About Us</span>
                   </Nav.Link>
+
                   <Nav.Link id="c-dash" className={currentTab === "contact" ? "mx-2 navActive" : "mx-2"}
                   href="#about-us"><FaAt /> <span onClick={() => setCurrentTab("contact")}> Contact</span>
+                  </Nav.Link>
+
+                  <Nav.Link id="d-dash" className={currentTab === "faq" ? "mx-2 navActive" : "mx-2"}
+                  href="#faq"><FaQuestionCircle /> <span onClick={() => setCurrentTab("faq")}> FAQs</span>
                   </Nav.Link>
 
                 </Nav>
