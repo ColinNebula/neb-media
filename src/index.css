@@ -206,7 +206,16 @@ main {
   color:rgb(51, 98, 180);
   align-items: center;
   font-size: 3em;
-  
+}
+
+.about-h2 {
+  justify-self: flex-end;
+  font-size: 2em;
+  animation-name: fade;
+  animation-duration: 6s;
+  color:rgb(51, 98, 180);
+  align-items: center;
+  font-size: 3em;
 }
 .faq-h2g {
   justify-self: flex-end;
@@ -362,3 +371,10 @@ main {
 }
 
 
+/* ------------------------- Dark Theme elements -------------------------- */
+
+.dark {
+  background-color: grey;
+  color: white;
+
+}

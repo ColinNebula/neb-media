@@ -45,7 +45,7 @@ function Dashboard() {
 
 <div>
         <h2 className="dash-h2">Nebula Media </h2>
-        <p className="dash-p"> Big things come from humble beginnings.</p>
+        <p className="dash-p"> Big things from humble beginnings.</p>
 
         <Card className="bg-dark text-white shadow-lg d-block w-100 h-100">
         <Card.Img src={hero} alt="Card image" />

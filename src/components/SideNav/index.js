@@ -1,29 +1,42 @@
-import Button from 'react-bootstrap/Button';
+
 import React, { useState }  from 'react';
-import Container from 'react-bootstrap/Container';
+import { Container, Button } from 'react-bootstrap/';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import logo from '../../assets/images/logo.png';
+import Toggle from "react-toggle";
 // import Card from 'react-bootstrap/Card';
 import { FaUser, FaBuffer, FaAt, FaQuestionCircle } from 'react-icons/fa';
 import { SocialIcon } from 'react-social-icons';
 
 // import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import { useMediaQuery } from "react-responsive";
 
 function SideNav(props) {
   const {currentTab, setCurrentTab } = props;
   const [isExpended, setExpendState] = useState(false);
+  const [isDark, setIsDark] = useState(true);
+  const systemPrefersDark = useMediaQuery(
+    {
+      query: "(prefers-color-scheme: dark)",
+    },
+    undefined,
+    (isSystemDark) => setIsDark(isSystemDark)
+  );
   return (
+    
     <>
+    
       {[false].map((expand) => (
         <Navbar key={expand} expand={expand} className="bg-body-tertiary mb-3">
           <Container fluid>
             <Navbar.Brand href="/">
             <img src={logo} width="90px" height="40px" alt="logo" />
             </Navbar.Brand>
-            
+
+          
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
