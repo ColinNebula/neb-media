@@ -8,9 +8,12 @@ function About() {
       <Container fluid>
 <div>
         <h2>About Us </h2>
-        <p> We are Nebula Media. We saw a need for video editing and we Nebula Media has been around since 2015</p>
+        <p> Since its inception, Nebula Media has been delivering high 
+        quality videos customized to the high specificity of our client. Our 
+        highly focused and dedicated team works tirelessly to complete projects 
+        within required deadlines. </p>
 
-        <Card>
+        <Card className="text-left">
         <div>
             <h2 className="about-h2"> What We Do</h2>
             <br/>
@@ -22,7 +25,7 @@ function About() {
 
             <a href="#modeling">3D Modeling</a><br/>
             
-           <a href="#integration">3D integration onto raw footage</a><br/>
+           <a href="#integration">3D integration</a><br/>
 
            <a href="#art">2D Art Integration</a><br/>
 
@@ -38,25 +41,27 @@ function About() {
   <h2 className="faq-h2">What We Do</h2>
   <br/>
   <h2 id="edit">Video Editing and Compositing</h2>
-  <p>We are located in Vaughan Ontario Canada. Please checkout out contact information for more info.</p>
+  <p> This is our bread and butter. Sorting through the footage, 
+  creating the narrative, composing and rendering<br/> the video are the
+  mainstay of our business. Customizations and 3D integration can be added. 
+  </p>
 
   <h2 id="animation">Animation</h2>
-  <p>This depends on the length of the video, and the work being done on it.
-  3D integration will take longer because 
-  <br/>we have to create those objects before from different softwares.
+  <p>We can add in  any animation the client desires and each piece is priced individually 
+  based on complexity.
   </p>
   
   <h2 id="modeling">3D Modeling</h2>
-  <p>Object digitization. we will take pictures of your objects and mke them 3D. and the work being done on it.</p>
+  <p>Object digitization: we can model unique or personalized objects for a fee, including integration.</p>
   
-  <h2 id="#integration">3D Integration onto raw footage</h2>
-  <p>This depends on the length of the video, and the work being done on it.</p>
+  <h2 id="#integration">3D Integration</h2>
+  <p>Video manipulation to include 3D features customized for clients.</p>
   
   <h2 id="green-s">2D Art and Integration</h2>
-  <p>This depends on the length of the video, and the work being done on it.</p>
+  <p>Video manipulation to include 2D features customized for clients. </p>
 
   <h2 id="art">Green Screen Removal</h2>
-  <p>We do green screen removal of videos or raw footages.</p>
+  <p>We do green screen removal.</p>
 
   <br/>
   

@@ -10,7 +10,10 @@
 }
 
 main {
-	background: transparent;
+	background: linear-gradient(45deg,
+		transparent,
+		#b5b5b8);
+	padding-bottom: 24px;
 }
 /* Icons */
 
@@ -84,7 +87,7 @@ main {
   font-style: italic;
   animation-name: fade;
   animation-duration: 6s;
-  color:rgb(51, 98, 180);
+  color:rgb(37, 44, 55);
   text-align: center;
   font-size: 3em;
   text-transform: italic;
@@ -92,20 +95,41 @@ main {
 
 .dash-p {
   justify-self: flex-end;
-  font-size: 2em;
+  font-size: 1.15em;
   animation-name: fade;
   animation-duration: 6s;
-  color:rgb(51, 98, 180);
+  color:rgb(37, 44, 55);
   text-align: center;
   font-style: italic;
 }
+
+.humble-title {
+  justify-self: flex-end;
+  font-size: 2.15em;
+  animation-name: fade;
+  animation-duration: 6s;
+  color:rgb(37, 44, 55);
+  text-align: center;
+  font-style: italic;
+}
+
+.from-title {
+  justify-self: flex-end;
+  font-size: 1.15em;
+  animation-name: fade;
+  animation-duration: 6s;
+  color:rgb(37, 44, 55);
+  text-align: center;
+  font-style: italic;
+}
+
 
 .left-q {
   justify-self: flex-end;
   font-size: 2em;
   animation-name: fade;
   animation-duration: 6s;
-  color:rgb(51, 98, 180);
+  color:rgb(37, 44, 55);
   text-align: center;
   font-size: 3em;
   margin: 40px;
@@ -116,7 +140,7 @@ main {
   font-size: 2em;
   animation-name: fade;
   animation-duration: 6s;
-  color:rgb(51, 98, 180);
+  color:rgb(37, 44, 55);
   align-items: auto;
   font-size: 3em;
   margin: 40px;
@@ -127,7 +151,7 @@ main {
   font-size: 2em;
   animation-name: fade;
   animation-duration: 6s;
-  color:rgb(51, 98, 180);
+  color:rgb(37, 44, 55);
   align-items: center;
   font-size: 3em;
 }
@@ -137,7 +161,7 @@ main {
   font-size: 1em;
   animation-name: fade;
   animation-duration: 6s;
-  color:rgb(51, 98, 180);
+  color:rgb(37, 44, 55);
   align-items: center;
 }
 
@@ -146,7 +170,7 @@ main {
   font-size: 1em;
   animation-name: fade;
   animation-duration: 6s;
-  color:rgb(51, 98, 180);
+  color:rgb(37, 44, 55);
   align-items: center;
 }
 
@@ -155,7 +179,7 @@ main {
   font-size: 1em;
   animation-name: fade;
   animation-duration: 6s;
-  color:rgb(51, 98, 180);
+  color:rgb(37, 44, 55);
   align-items: center;
 }
 
@@ -164,7 +188,7 @@ main {
   font-size: 1em;
   animation-name: fade;
   animation-duration: 6s;
-  color:rgb(51, 98, 180);
+  color:rgb(37, 44, 55);
   align-items: center;
 }
 
@@ -173,7 +197,7 @@ main {
   font-size: 2em;
   animation-name: fade;
   animation-duration: 6s;
-  color:rgb(51, 98, 180);
+  color:rgb(37, 44, 55);
   align-items: center;
   font-size: 3em;
 }
@@ -192,7 +216,7 @@ main {
   font-size: 2em;
   animation-name: fade;
   animation-duration: 6s;
-  color:rgb(51, 98, 180);
+  color:rgb(37, 44, 55);
   align-items: center;
   font-size: 3em;
   animation-duration: 6s;
@@ -203,7 +227,17 @@ main {
   font-size: 2em;
   animation-name: fade;
   animation-duration: 6s;
-  color:rgb(51, 98, 180);
+  color:rgb(245, 247, 250);
+  align-items: center;
+  font-size: 3em;
+}
+
+.faq-h2x {
+  justify-self: flex-end;
+  font-size: 2em;
+  animation-name: fade;
+  animation-duration: 6s;
+  color:rgb(37, 44, 55);
   align-items: center;
   font-size: 3em;
 }
@@ -213,7 +247,7 @@ main {
   font-size: 2em;
   animation-name: fade;
   animation-duration: 6s;
-  color:rgb(51, 98, 180);
+  color:rgb(37, 44, 55);
   align-items: center;
   font-size: 3em;
 }
@@ -222,7 +256,7 @@ main {
   font-size: 2em;
   animation-name: fade;
   animation-duration: 6s;
-  color:rgb(51, 98, 180);
+  color:rgb(231, 235, 240);
   align-items: center;
   font-size: 3em;
 }

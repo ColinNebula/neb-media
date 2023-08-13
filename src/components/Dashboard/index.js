@@ -45,17 +45,16 @@ function Dashboard() {
 
 <div>
         <h2 className="dash-h2">Nebula Media </h2>
-        <p className="dash-p"> Big things from humble beginnings.</p>
+        <p className="dash-p">From simple to surreal</p>
 
         <Card className="bg-dark text-white shadow-lg d-block w-100 h-100">
         <Card.Img src={hero} alt="Card image" />
         <Card.ImgOverlay>
-          <Card.Title>Card title</Card.Title>
-          <Card.Text>
-            This is a wider card with supporting text below as a natural lead-in
-            to additional content. This content is a little bit longer.
+          <Card.Title className="humble-title">Humble beginnings</Card.Title>
+          <Card.Text className="from-title">
+            From NYC to TO, delivering a world of experience
           </Card.Text>
-          <Card.Text>Last updated 3 mins ago</Card.Text>
+          
         </Card.ImgOverlay>
       </Card>
       <br/>
@@ -69,7 +68,7 @@ function Dashboard() {
       <p className="dash-p"> From concept to completion</p>
       <FaQuoteRight className="right-q" />
 
-      <Card>
+      <Card className="text-center  bg-dark text-white shadow-lg">
       <Card.Header>Featured Projects</Card.Header>
       <Card.Body>
         <Card.Title>Byte Size Soccer Videos</Card.Title>

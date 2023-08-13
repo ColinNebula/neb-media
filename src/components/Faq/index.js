@@ -8,21 +8,21 @@ function Faq() {
 <Container fluid>
 <div>
         <h2 className="faq-h2x">Frequently Asked Questions </h2>
-        <p> Some questions, we have the answers to make your life easier.</p>
+        <p className="faq-px"> Got questions? We have the answers to make your life easier</p>
 <div>
 
 <br/>
 </div>
-<Card>
+<Card className="bg-dark text-white">
 <div>
 <h2 className="faq-h2">Featured Topics</h2>
 <ul>
 
-    <a href="#location" className="faq-p">Where are we located?</a>
+    <a href="#location" className="faq-p">Where is Nebula Media located?</a>
     <br/>
     <a href="#how-long" className="faq-p">How long does it take to complete my video?</a>
     <br/>
-    <a href="#how-do" className="faq-p">How do I upload my videos to Nebula Media?</a>
+    <a href="#how-do" className="faq-p">How do I send my videos to Nebula Media?</a>
     <br/>
     <a href="#how-do1" className="faq-p">How do I download my completed video?</a>
     <br/>
@@ -33,57 +33,51 @@ function Faq() {
     </ul>
 </div>
 </Card>
-<Card>
+<Card className="bg-dark text-white">
 <div>
 <ul>
 <h2 className="faq-h2">General Inquiries</h2>
-    <a href="#what-is" className="faq-p">What is Nebula Media?, and what do you do?</a>
+    
+    <a href="#sponsorship" className="faq-p">Sponsorship or media requests</a>
     <br/>
-    <a href="#more-info" className="faq-p">more information here</a>
-    <br/>
-    <a href="#how-can" className="faq-p">How can I get in touch with Nebula Media?</a>
-    <br/>
+    
     <a href="#are-you" className="faq-p">Are you hiring right now?</a>   
     </ul>
 </div>
 </Card>
 <br/>
-<Card>
+<Card className="bg-dark text-white">
   <h2 className="faq-h2">Featured Topics</h2>
-  <h2>Where is Nebula Media Located?</h2>
-  <p id="location">We are located in Vaughan Ontario Canada. Please checkout out contact information for more info.</p>
+  <h2>Where is Nebula Media located?</h2>
+  <p id="location">Presently, we are located in Vaughan, Ontario, Canada. 
+  Please check the contact information.</p>
 
   <h2 id="how-long">How long does it take to complete my video?</h2>
-  <p>This depends on the length of the video, and the work being done on it.
-  3D intergration will take longer because 
-  <br/>we have to create those objects before from different softwares.
-  One of our representatives will be be in touch and also discus time frame for your project.</p>
+  <p>
+  <br/>One of our representatives will be be in touch to discuss the time frame 
+  for your project.</p>
   
-  <h2 id="how-do">How do I upload my videos to Nebula Media?</h2>
-  <p>This depends on the length of the video, and the work being done on it.</p>
+  <h2 id="how-do">How do I send my videos to Nebula Media?</h2>
+  <p>Please mail them directly or use the dropbox NebulaMedia@dropbox.com</p>
   
   <h2 id="how-do1">How do I download my completed video from Nebula Media?</h2>
-  <p>This depends on the length of the video, and the work being done on it.</p>
+  <p>We use dropbox for this primarily. Our team will advise you directly.</p>
   
   <h2 id="how-pay">How much does Nebula Media charge for video editing?</h2>
-  <p>This depends on the length of the video, and the work being done on it.</p>
+  <p>This depends on the length of the video and the work being done on it.</p>
   
-  <h2 id="how-pay">How do I pay for video editing?</h2>
-  <p>This depends on the length of the video, and the work being done on it.</p>
+  <h2 id="how-pay">How do I pay?</h2>
+  <p>We take electronic money transfers and Paypal payments.</p>
   <br/>
   
   <h2 className="faq-h2g">General Inquiries</h2>
-  <h2 id="what-is">what is Nebula Media?, and what do we do?</h2>
-  <p>This depends on the length of the video, and the work being done on it.</p>
+  <h2 id="sponsorship">Sponsorship or media requests</h2>
+  <p>We are proud community supporters. Please contact us directly.</p>
 
-  <h2 id="more-info">How do I pay for video editing?</h2>
-  <p>This depends on the length of the video, and the work being done on it.</p>
-
-  <h2 id="how-can">How can I get in touch with Nebula media?</h2>
-  <p>This depends on the length of the video, and the work being done on it.</p>
-
+  
   <h2 id="are-you">Are you hiring right now?</h2>
-  <p>This depends on the length of the video, and the work being done on it.</p>
+  <p>At this moment, our team is bursting at the seams with talent. 
+  Check back in the future.</p>
   <br/>
   </Card>
 <br/>

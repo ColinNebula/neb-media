@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 
 function DayAndNight() {
-    const [theme, setTheme] = useState(false);
+    const [theme,setTheme] = useState(false);
     const handleClick=() => {
         setTheme(!theme)
     }
     useEffect(()=> { 
-        if(theme==true){
+        if(theme===true){
             document.body.classList.add("dark");
         }else{
             document.body.classList.remove("dark");
