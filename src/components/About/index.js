@@ -7,15 +7,15 @@ function About() {
     return(
       <Container fluid>
 <div>
-        <h2>About Us </h2>
-        <p> Since its inception, Nebula Media has been delivering high 
+        <h2 className="about-h2">About Us </h2>
+        <p className="about-p"> Since its inception, Nebula Media has been delivering high 
         quality videos customized to the high specificity of our client. Our 
         highly focused and dedicated team works tirelessly to complete projects 
         within required deadlines. </p>
 
-        <Card className="text-left">
+        <Card className="bg-dark text-white shadow-lg" style={{ color: "#000", width: 'auto' }}>
         <div>
-            <h2 className="about-h2"> What We Do</h2>
+            <h2 className="about-h2 text-white" > What We Do</h2>
             <br/>
 
             <uL>
@@ -37,7 +37,7 @@ function About() {
         </Card>
 
 <br/>
-<Card>
+<Card className="bg-dark text-white shadow-lg" style={{ color: "#000", width: 'auto' }}>
   <h2 className="faq-h2">What We Do</h2>
   <br/>
   <h2 id="edit">Video Editing and Compositing</h2>
@@ -68,7 +68,7 @@ function About() {
   </Card>
 <br/>
 
-        <Card className="text-center overflow bg-dark text-white shadow-lg rounded">
+        <Card className="text-center overflow bg-dark text-white shadow-lg rounded" style={{ color: "#000", width: 'auto' }}>
       <Card.Header>Get in touch</Card.Header>
       <Card.Body>
       <img src={logo} width="90px" height="40px" alt="logo" />

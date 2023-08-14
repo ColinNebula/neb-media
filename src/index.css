@@ -31,7 +31,7 @@ main {
   font-size: 2em;
   animation-name: fade;
   animation-duration: 6s;
-  color:rgb(51, 98, 180);
+  color:rgb(37, 44, 55);
   text-align: center;
 }
 
@@ -71,7 +71,7 @@ main {
   font-size: 7em;
   animation-name: fade;
   animation-duration: 4s;
-  text-shadow: #55717e;
+  text-shadow: #242627;
   color: white;
 }
 
@@ -82,6 +82,7 @@ main {
   animation-duration: 6s;
   color: white;
 }
+
 .dash-h2 {
   justify-self: flex-end;
   font-style: italic;
@@ -102,6 +103,7 @@ main {
   text-align: center;
   font-style: italic;
 }
+
 
 .humble-title {
   justify-self: flex-end;
@@ -130,10 +132,14 @@ main {
   animation-name: fade;
   animation-duration: 6s;
   color:rgb(37, 44, 55);
-  text-align: center;
   font-size: 3em;
-  margin: 40px;
+  margin: 30px;
+  
 }
+img {
+	max-width: 100%;
+  }
+  
 
 .right-q {
   justify-self: flex-end;
@@ -141,9 +147,9 @@ main {
   animation-name: fade;
   animation-duration: 6s;
   color:rgb(37, 44, 55);
-  align-items: auto;
+  vertical-align: right;
   font-size: 3em;
-  margin: 40px;
+  margin: 30px;
 }
 
 .side-neb {
@@ -209,6 +215,7 @@ main {
   animation-duration: 6s;
   align-items: center;
   font-size: 1em;
+  text-align: start;
 }
 
 .contact-h2 {
@@ -220,6 +227,8 @@ main {
   align-items: center;
   font-size: 3em;
   animation-duration: 6s;
+  padding: 20px;
+  margin: 0px;
 }
 
 .faq-h2 {
@@ -248,8 +257,20 @@ main {
   animation-name: fade;
   animation-duration: 6s;
   color:rgb(37, 44, 55);
-  align-items: center;
+  padding: 20px;
+  margin: 0px;
   font-size: 3em;
+}
+
+.about-p {
+  justify-self: flex-end;
+  font-size: 2em;
+  animation-name: fade;
+  animation-duration: 6s;
+  align-items: auto;
+  font-size: 1em;
+  text-align: center;
+  margin: 0px;
 }
 .faq-h2g {
   justify-self: flex-end;

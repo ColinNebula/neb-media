@@ -10,10 +10,10 @@ function Contact() {
 <h2 className="contact-h2">Contact us </h2>
 <p className="contact-p"> Let us edit and composite your videos for you.</p>
 <br/>
-<Card className="text-center overflow bg-dark text-white">
+<Card className="bg-dark text-white shadow-lg" style={{ color: "#000", width: 'auto' }}>
 
 <div>
-<h2 className="contact-h2">Contact Information</h2>
+<h2 className="contact-h2 text-white">Contact Information</h2>
     
     <p> Please contact us and find out how we can help create lasting memories with your videos. 
     </p>
@@ -30,7 +30,7 @@ function Contact() {
 
 </Card>
 <br/>
-<Card className="text-center overflow bg-dark text-white shadow-lg rounded">
+<Card className="text-center overflow bg-dark text-white shadow-lg rounded" style={{ color: "#000", width: 'auto' }}>
       <Card.Header>Get in touch</Card.Header>
       <Card.Body>
       <img src={logo} width="90px" height="40px" alt="logo" />
