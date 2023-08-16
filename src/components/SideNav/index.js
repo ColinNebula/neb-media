@@ -30,7 +30,7 @@ function SideNav(props) {
     <>
     
       {[false].map((expand) => (
-        <Navbar bg="dark" data-bs-theme="dark" key={expand} expand={expand} className="bg-body-tertiary mb-3">
+        <Navbar data-bs-theme="dark" key={expand} expand={expand} className="bg-body-tertiary mb-3">
           <Container fluid>
             <Navbar.Brand href="/">
             <img src={logo} width="90px" height="40px" alt="logo" />

@@ -15,7 +15,8 @@ main {
 		#b5b5b8);
 	padding-bottom: 24px;
 }
-/* Icons */
+
+/* ------------------------- Social Icons elements -------------------------- */
 
 .social-icons {
   width: 30px;
@@ -66,7 +67,7 @@ main {
   color: rgb(106, 10, 10);
 }
 
-
+/* ------------------------- LandingPage elements -------------------------- */
 .landing-h1 {
   font-size: 7em;
   animation-name: fade;
@@ -82,28 +83,6 @@ main {
   animation-duration: 6s;
   color: white;
 }
-
-.dash-h2 {
-  justify-self: flex-end;
-  font-style: italic;
-  animation-name: fade;
-  animation-duration: 6s;
-  color:rgb(37, 44, 55);
-  text-align: center;
-  font-size: 3em;
-  text-transform: italic;
-}
-
-.dash-p {
-  justify-self: flex-end;
-  font-size: 1.15em;
-  animation-name: fade;
-  animation-duration: 6s;
-  color:rgb(37, 44, 55);
-  text-align: center;
-  font-style: italic;
-}
-
 
 .humble-title {
   justify-self: flex-end;
@@ -134,12 +113,12 @@ main {
   color:rgb(37, 44, 55);
   font-size: 3em;
   margin: 30px;
-  
 }
+
+/* ------------------------- image elements -------------------------- */
 img {
 	max-width: 100%;
-  }
-  
+}
 
 .right-q {
   justify-self: flex-end;
@@ -161,6 +140,8 @@ img {
   align-items: center;
   font-size: 3em;
 }
+
+/* ------------------------- Dashboard elements -------------------------- */
 
 #b-dash {
   justify-self: flex-end;
@@ -198,6 +179,27 @@ img {
   align-items: center;
 }
 
+.dash-h2 {
+  justify-self: flex-end;
+  font-style: italic;
+  animation-name: fade;
+  animation-duration: 6s;
+  color:rgb(37, 44, 55);
+  text-align: center;
+  font-size: 3em;
+  text-transform: italic;
+}
+
+.dash-p {
+  justify-self: flex-end;
+  font-size: 1.15em;
+  animation-name: fade;
+  animation-duration: 6s;
+  color:rgb(37, 44, 55);
+  text-align: center;
+  font-style: italic;
+}
+
 .faq-h2x {
   justify-self: flex-end;
   font-size: 2em;
@@ -207,6 +209,8 @@ img {
   align-items: center;
   font-size: 3em;
 }
+
+/* ------------------------- Contact elements -------------------------- */
 
 .contact-p {
   justify-self: flex-end;
@@ -231,26 +235,8 @@ img {
   margin: 0px;
 }
 
-.faq-h2 {
-  justify-self: flex-end;
-  font-size: 2em;
-  animation-name: fade;
-  animation-duration: 6s;
-  color:rgb(245, 247, 250);
-  align-items: center;
-  font-size: 3em;
-}
 
-.faq-h2x {
-  justify-self: flex-end;
-  font-size: 2em;
-  animation-name: fade;
-  animation-duration: 6s;
-  color:rgb(37, 44, 55);
-  align-items: center;
-  font-size: 3em;
-}
-
+/* ------------------------- About elements -------------------------- */
 .about-h2 {
   justify-self: flex-end;
   font-size: 2em;
@@ -272,12 +258,34 @@ img {
   text-align: center;
   margin: 0px;
 }
+
+/* ------------------------- FAQ elements -------------------------- */
 .faq-h2g {
   justify-self: flex-end;
   font-size: 2em;
   animation-name: fade;
   animation-duration: 6s;
   color:rgb(231, 235, 240);
+  align-items: center;
+  font-size: 3em;
+}
+
+.faq-h2 {
+  justify-self: flex-end;
+  font-size: 2em;
+  animation-name: fade;
+  animation-duration: 6s;
+  color:rgb(245, 247, 250);
+  align-items: center;
+  font-size: 3em;
+}
+
+.faq-h2x {
+  justify-self: flex-end;
+  font-size: 2em;
+  animation-name: fade;
+  animation-duration: 6s;
+  color:rgb(37, 44, 55);
   align-items: center;
   font-size: 3em;
 }
@@ -296,7 +304,7 @@ img {
 	cursor: pointer;
 }
 
-/* Card */
+/* ------------------------- Card elements -------------------------- */
   .card {
 	flex: 40%;
 	width: 100%;
@@ -311,6 +319,8 @@ img {
 	box-shadow: 5px 10px 20px 1px rgba(0,0,0,0.253)!important;
 }
 
+/* ------------------------- rounded class elements -------------------------- */
+
 .rounded {
 	transform: scale(1);
 	transition:transform 0.6s ease;
@@ -324,7 +334,7 @@ img {
 	transform:scale(1.1);
 }
 
-/* iframe elements*/
+/* ------------------------- Iframe elements -------------------------- */
 .iframe {
 	display: flex;
 	justify-content: center;
