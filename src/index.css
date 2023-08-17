@@ -319,9 +319,6 @@ img {
 	box-shadow: 5px 10px 20px 1px rgba(0,0,0,0.253)!important;
 }
 
-/* ------------------------- r
-ounded class elements -------------------------- */
-
 .rounded {
 	transform: scale(1);
 	transition:transform 0.6s ease;
