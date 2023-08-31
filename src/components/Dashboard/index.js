@@ -89,88 +89,67 @@ function Dashboard() {
           <br />
           <NavDropdown.Divider />
 
-          <FaQuoteLeft
-            className="left-q"
-            style={{ position: "relative", right: "-300px" }}
-          />
+      <FaQuoteLeft className="left-q" style={{position: "relative", right:'-300px'}} /> 
+      
 
-          <h2 className="dash-h2">
-            Selling your vision through a customized narrative
-          </h2>
-          <p className="dash-p">
-            {" "}
-            Set our team in your sight for your next project
-          </p>
-          <FaQuoteRight
-            className="right-q"
-            style={{ position: "relative", right: "-1000px" }}
-          />
+      <h2 className="dash-h2">Selling your vision through a customized narrative</h2>
+      <p className="dash-p"> Set our team in your sight for your next project</p>
+      <FaQuoteRight className="right-q" style={{position: "relative", right:'-1000px'}}/>
 
-          <br />
+  
+    <br/>
+    
+    <Card className="bg-dark text-white shadow-lg" style={{ color: "#000", width: 'auto' }}>
+    <Card.Img  src={byte} style={{height: '25rem', width: '100rem'}} alt="Card image" />
+    <Card.ImgOverlay>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        
+          <Card.Title className="humble-title text-white">Byte Size Soccer Videos</Card.Title>
+          <Card.Text className="from-title text-white">
+          Nebula Media and Tony Waiters brings you Byte Size Soccer videos. A series of videos edited by Nebula Media teaching kids all about soccer.
+          </Card.Text>
+          <Button variant="primary " onClick={() => setLgShow(true)}>See Video</Button>
+          
+        </Card.ImgOverlay>
+    
+  </Card>
+      <br/>
+      <Card className="text-center overflow bg-dark text-white shadow-lg rounded">
+      <Card.Header>Get in touch</Card.Header>
+      <Card.Body>
+      <img src={logo} width="90px" height="40px" alt="logo" />
+        <Card.Title>Contact Nebula Media</Card.Title>
+        <Card.Text>
+        
+          Please contact us and find out how we can help create lasting memories with your videos. 
+          <address>
+          55 Main Street <br />
+          Vaughan, On <br />
+          L4L-8Y9 <br />
+          Phone: <a href="tel:416.856.5764"> (416.856.5764)</a><br />
+          Email: <a href="mailto://info@nebmedia.io">info@nebmedia.io</a>
+        </address>
+        </Card.Text>
+        
+      </Card.Body>
+      <Card.Footer className="text-muted">Neb Media</Card.Footer>
+    </Card>
+</div>
+</Row>
+</Container>  
 
-          <Card
-            className="bg-dark text-white shadow-lg"
-            style={{ color: "#000", width: "auto" }}
-          >
-            <Card.Img
-              src={byte}
-              style={{ height: "25rem", width: "100rem" }}
-              alt="Card image"
-            />
-            <Card.ImgOverlay>
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
 
-              <Card.Title className="humble-title text-white">
-                Byte Size Soccer Videos
-              </Card.Title>
-              <Card.Text className="from-title text-white">
-                Nebula Media and Tony Waiters brings you Byte Size Soccer
-                videos. A series of videos edited by Nebula Media teaching kids
-                all about soccer.
-              </Card.Text>
-              <Button variant="primary " onClick={() => setLgShow(true)}>
-                See Video
-              </Button>
-            </Card.ImgOverlay>
-          </Card>
-          <br />
-          <Card
-            className="text-center overflow bg-dark text-white shadow-lg rounded"
-            style={{ color: "#000", width: "auto" }}
-          >
-            <Card.Header>Get in touch</Card.Header>
-            <Card.Body>
-              <img src={logo} width="90px" height="40px" alt="logo" />
-              <Card.Title>Contact Nebula Media</Card.Title>
-              <Card.Text>
-                Please contact us and find out how we can help create lasting
-                memories with your videos.
-                <address>
-                  55 Main Street <br />
-                  Vaughan, On <br />
-                  L4L-8Y9 <br />
-                  Phone: <a href="tel:416.856.5764"> (416.856.5764)</a>
-                  <br />
-                  Email:{" "}
-                  <a href="mailto://info@nebmedia.io">info@nebmedia.io</a>
-                </address>
-              </Card.Text>
-            </Card.Body>
-            <Card.Footer className="text-muted">Neb Media</Card.Footer>
-          </Card>
-        </div>
-      </Row>
-    </Container>
-  );
-}
+    )
+
+};
 
 export default Dashboard;
