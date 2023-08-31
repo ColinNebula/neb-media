@@ -13,7 +13,7 @@ function Faq() {
 
 <br/>
 </div>
-<Card className="bg-dark text-white shadow-lg" style={{ color: "#000", width: 'auto' }}>
+<Card className="text-right bg-dark text-white shadow-lg" style={{ color: "#000", width: 'auto' }}>
 <div>
 <h2 className="faq-h2">Featured Topics</h2>
 <ul>
@@ -33,7 +33,7 @@ function Faq() {
     </ul>
 </div>
 </Card>
-<Card className="bg-dark text-white shadow-lg" style={{ color: "#000", width: 'auto' }}>
+<Card className="text-right bg-dark text-white shadow-lg" style={{ color: "#000", width: 'auto' }}>
 <div>
 <ul>
 <h2 className="faq-h2">General Inquiries</h2>
@@ -46,7 +46,7 @@ function Faq() {
 </div>
 </Card>
 <br/>
-<Card className="bg-dark text-white shadow-lg" style={{ color: "#000", width: 'auto' }}>
+<Card className="text-center bg-dark text-white shadow-lg" style={{ color: "#000", width: 'auto' }}>
   <h2 className="faq-h2">Featured Topics</h2>
   <h2>Where is Nebula Media located?</h2>
   <p id="location">Presently, we are located in Vaughan, Ontario, Canada. 

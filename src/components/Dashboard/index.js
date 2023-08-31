@@ -75,12 +75,12 @@ function Dashboard() {
       <br/>
       <NavDropdown.Divider />
 
-      <FaQuoteLeft className="left-q" style={{position: "relative", right:'-300px'}} /> 
+      <FaQuoteLeft className="left-q" style={{position: "relative", right:'10px'}} /> 
       
 
       <h2 className="dash-h2">Selling your vision through a customized narrative</h2>
       <p className="dash-p"> Set our team in your sight for your next project</p>
-      <FaQuoteRight className="right-q" style={{position: "relative", right:'-1000px'}}/>
+      <FaQuoteRight className="right-q" style={{position: "relative", left:'400px'}}/>
 
   
     <br/>

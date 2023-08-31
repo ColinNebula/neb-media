@@ -13,7 +13,7 @@ function About() {
         highly focused and dedicated team works tirelessly to complete projects 
         within required deadlines. </p>
 
-        <Card className="bg-dark text-white shadow-lg" style={{ color: "#000", width: 'auto' }}>
+        <Card className="text-right bg-dark text-white shadow-lg" style={{ color: "#000", width: 'auto' }}>
         <div>
             <h2 className="about-h2 text-white" > What We Do</h2>
             <br/>
@@ -37,7 +37,7 @@ function About() {
         </Card>
 
 <br/>
-<Card className="bg-dark text-white shadow-lg" style={{ color: "#000", width: 'auto' }}>
+<Card className="text-center bg-dark text-white shadow-lg" style={{ color: "#000", width: 'auto' }}>
   <h2 className="faq-h2">What We Do</h2>
   <br/>
   <h2 id="edit">Video Editing and Compositing</h2>

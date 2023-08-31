@@ -127,14 +127,15 @@ main {
 
 
 .left-q {
+  display: flex;
   justify-self: flex-end;
   font-size: 2em;
   animation-name: fade;
   animation-duration: 6s;
   color:rgb(37, 44, 55);
   font-size: 3em;
-  margin: 30px;
-  
+  margin: 20px;
+  align-items: center;
 }
 img {
 	max-width: 100%;
@@ -142,14 +143,19 @@ img {
   
 
 .right-q {
+  display: flex;
   justify-self: flex-end;
   font-size: 2em;
   animation-name: fade;
   animation-duration: 6s;
   color:rgb(37, 44, 55);
-  vertical-align: right;
   font-size: 3em;
-  margin: 30px;
+  margin: 20px;
+  align-items: right;
+}
+
+.flex-container {
+  display: flex;
 }
 
 .side-neb {
