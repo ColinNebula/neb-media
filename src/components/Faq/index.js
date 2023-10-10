@@ -45,7 +45,7 @@ function Faq() {
     </ul>
 </div>
 </Card>
-<br/>
+
 <Card className="text-center bg-dark text-white shadow-lg" style={{ color: "#000", width: 'auto' }}>
   <h2 className="faq-h2">Featured Topics</h2>
   <h2>Where is Nebula Media located?</h2>
@@ -94,7 +94,7 @@ function Faq() {
           Some Town, Ca <br />
           123445 <br />
           Phone: <a href="tel:416.856.5764"> (416.856.5764)</a><br />
-          Email: <a href="mailto://info@nebmedia.io">info@nebmedia.io</a>
+          Email: <a href="mailto://nebulamedia3d@gmail.com">nebulamedia3d@gmail.com</a>
         </address>
         </Card.Text>
         

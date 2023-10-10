@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React from "react";
 import BgVideo from '../../assets/videos/bg.mp4'
 
 
@@ -15,10 +15,11 @@ function LandingPage() {
             </div>
             <div className="home-text">
                 <h1 className="landing-h1">Nebula Media</h1>
-                <p className="landing-p">Animation, Visual effects, Video editing & Compositing</p>
+                <p className="landing-p">3D, Animation, Visual effects, Video editing & Compositing</p>
             </div>
 
-            <div className="home-btn">Enter
+            <div className="home-btn">
+            Enter
             
             </div>
         </div>

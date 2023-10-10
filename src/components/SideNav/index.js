@@ -1,11 +1,11 @@
 
 import React, { useState }  from 'react';
-import { Container, Button } from 'react-bootstrap/';
+import { Container } from 'react-bootstrap/';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import logo from '../../assets/images/logo.png';
-import Toggle from "react-toggle";
+// import Toggle from "react-toggle";
 // import Card from 'react-bootstrap/Card';
 import { FaUser, FaBuffer, FaAt, FaQuestionCircle } from 'react-icons/fa';
 import { SocialIcon } from 'react-social-icons';
@@ -87,7 +87,7 @@ function SideNav(props) {
                 <SocialIcon className="social-icons" url="mailto:colinnebula@gmail.com" network="mailto" style={{ height: 10, width: 10 }} bgColor="#024e76"/>
 
                 <SocialIcon className="social-icons" url="https://github.com/ColinNebula" network="github" style={{ height: 10, width: 10 }} bgColor="#024e76"/>
-                <SocialIcon className="social-icons" url="https://youtube.com/ColinNebula" network="youtube" style={{ height: 10, width: 10 }} bgColor="#024e76"/>
+                <SocialIcon className="social-icons" url="https://youtube.com/nebulamedia3d" network="youtube" style={{ height: 10, width: 10 }} bgColor="#024e76"/>
                 </div>
                 </Form>
               </Offcanvas.Body>
