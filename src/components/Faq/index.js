@@ -58,7 +58,10 @@ function Faq() {
   for your project.</p>
   
   <h2 id="how-do">How do I send my videos to Nebula Media?</h2>
-  <p>Please mail them directly or use the dropbox NebulaMedia@dropbox.com</p>
+  <p>Please zip the video file before sending it. If you do not already have a zip program, <br/>
+  you can acquire one from win-rar.com</p> 
+  <a href="https://www.win-rar.com/start.html?&L=0"> Latest version of WinRAR </a>
+  <p>Other conventional methods like mailing them directly or use the <br/>dropbox NebulaMedia@dropbox.com</p>
   
   <h2 id="how-do1">How do I download my completed video from Nebula Media?</h2>
   <p>We use dropbox for this primarily. Our team will advise you directly.</p>

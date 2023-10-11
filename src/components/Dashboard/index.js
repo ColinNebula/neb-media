@@ -30,13 +30,12 @@ function Dashboard() {
           >
             <Modal.Header closeButton>
               <Modal.Title id="example-modal-sizes-title-lg">
-                Byte Size Soccer Videos
+                Free Rider Animation.
               </Modal.Title>
             </Modal.Header>
             <Modal.Body>
               <p>
-                Nebula Media teamed up with legend british superstar goalie, Tony
-                Waiters.
+                A short low budget animated film made in blender.
               </p>
               <div className="iframe">
               <iframe width="560" height="315" 
@@ -141,7 +140,7 @@ function Dashboard() {
           A short low poly film completely made in blender. 
           </Card.Text>
           <Button variant="outline-dark" onClick={() => setLgShow1(true)}>See Video on Youtube</Button>
-          
+          <br/>
         </Card.ImgOverlay>
     
   </Card>
@@ -161,8 +160,9 @@ function Dashboard() {
         
           <Card.Title className="humble-title text-white">Byte Size Soccer Videos</Card.Title>
           <Card.Text className="from-title text-white">
-          Nebula Media and Tony Waiters brings you Byte Size Soccer videos. A series of videos edited by Nebula Media teaching kids all about soccer.
+          A series of videos edited by Nebula Media teaching kids all about soccer.
           </Card.Text>
+          
           <Button variant="outline-dark" onClick={() => setLgShow(true)}>See Video on Youtube</Button>
           
         </Card.ImgOverlay>
