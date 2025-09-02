@@ -1,101 +1,233 @@
 
-import React, { useState }  from 'react';
+import React, { useState } from 'react';
 import { Container } from 'react-bootstrap/';
-import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import logo from '../../assets/images/logo.png';
-// import Toggle from "react-toggle";
-// import Card from 'react-bootstrap/Card';
-import { FaUser, FaBuffer, FaAt, FaQuestionCircle } from 'react-icons/fa';
-import { SocialIcon } from 'react-social-icons';
-
-// import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import { useMediaQuery } from "react-responsive";
+import { 
+  FaHome, 
+  FaUser, 
+  FaEnvelope, 
+  FaQuestionCircle, 
+  FaBars,
+  FaTimes,
+  FaGithub,
+  FaYoutube,
+  FaLinkedin,
+  FaTwitter
+} from 'react-icons/fa';
+import logo from '../../assets/images/logo.png';
 
 function SideNav(props) {
-  const {currentTab, setCurrentTab } = props;
-  const [isExpended, setExpendState] = useState(false);
-  const [isDark, setIsDark] = useState(true);
-  const systemPrefersDark = useMediaQuery(
+  const { currentTab, setCurrentTab } = props;
+  const [showOffcanvas, setShowOffcanvas] = useState(false);
+
+  const handleCloseOffcanvas = () => setShowOffcanvas(false);
+  const handleShowOffcanvas = () => setShowOffcanvas(true);
+
+  const navigationItems = [
     {
-      query: "(prefers-color-scheme: dark)",
+      id: 'dashboard',
+      label: 'Dashboard',
+      icon: FaHome,
+      tab: 'dashboard'
     },
-    undefined,
-    (isSystemDark) => setIsDark(isSystemDark)
-  );
+    {
+      id: 'about-us',
+      label: 'About Us',
+      icon: FaUser,
+      tab: 'about-us'
+    },
+    {
+      id: 'contact',
+      label: 'Contact',
+      icon: FaEnvelope,
+      tab: 'contact'
+    },
+    {
+      id: 'faq',
+      label: 'FAQs',
+      icon: FaQuestionCircle,
+      tab: 'faq'
+    }
+  ];
+
+  const socialLinks = [
+    {
+      url: 'https://github.com/ColinNebula',
+      icon: FaGithub,
+      label: 'GitHub',
+      color: '#333'
+    },
+    {
+      url: 'https://youtube.com/nebulamedia3d',
+      icon: FaYoutube,
+      label: 'YouTube',
+      color: '#FF0000'
+    },
+    {
+      url: 'https://linkedin.com/company/nebulamedia',
+      icon: FaLinkedin,
+      label: 'LinkedIn',
+      color: '#0077B5'
+    },
+    {
+      url: 'mailto:nebulamedia3d@gmail.com',
+      icon: FaEnvelope,
+      label: 'Email',
+      color: '#358ed3'
+    }
+  ];
+
+  const handleNavClick = (tab) => {
+    setCurrentTab(tab);
+    handleCloseOffcanvas();
+  };
+
   return (
-    
-    <>
-    
-      {[false].map((expand) => (
-        <Navbar data-bs-theme="dark" key={expand} expand={expand} className="bg-body-tertiary mb-3">
-          <Container fluid>
-            <Navbar.Brand href="/">
-            <img src={logo} width="90px" height="40px" alt="logo" />
-            </Navbar.Brand>
+    <div className="professional-nav">
+      {/* Main Navigation Bar */}
+      <Navbar 
+        expand={false} 
+        className="professional-navbar shadow-sm"
+        fixed="top"
+      >
+        <Container fluid className="px-4">
+          {/* Brand Logo */}
+          <Navbar.Brand 
+            href="#" 
+            className="navbar-brand-custom"
+            onClick={() => handleNavClick('dashboard')}
+          >
+            <img 
+              src={logo} 
+              width="120" 
+              height="50" 
+              alt="Nebula Media Logo" 
+              className="brand-logo"
+            />
+            <span className="brand-text">Nebula Media</span>
+          </Navbar.Brand>
 
-          
-            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
-            <Navbar.Offcanvas
-              id={`offcanvasNavbar-expand-${expand}`}
-              aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
-              placement="end"
-            >
-              <Offcanvas.Header closeButton>
-                <Offcanvas.Title className="side-neb" id={`offcanvasNavbarLabel-expand-${expand}`}>
-                <img src={logo} width="90px" height="40px" alt="logo" />
-                <br/>
-                  Nebula Media
-                </Offcanvas.Title>
-              </Offcanvas.Header>
-              <Offcanvas.Body>
-                <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <Nav.Link id="b-dash" className={currentTab === "/" ? "mx-2 navActive" : "mx-2"} href="#dashboard"> <FaBuffer /> 
-                  <span onClick={() => setCurrentTab("dashboard")}> Dashboard</span>
-                  </Nav.Link>
+          {/* Desktop Navigation Links */}
+          <Nav className="desktop-nav d-none d-lg-flex">
+            {navigationItems.map((item) => (
+              <Nav.Link
+                key={item.id}
+                className={`nav-item-desktop ${currentTab === item.tab ? 'active' : ''}`}
+                onClick={() => handleNavClick(item.tab)}
+              >
+                <item.icon className="nav-icon me-2" />
+                {item.label}
+              </Nav.Link>
+            ))}
+          </Nav>
 
-                  <Nav.Link id="a-dash" className={currentTab === "about-us" ? "mx-2 navActive" : "mx-2"}
-                  href="#about-us"><FaUser /> <span onClick={() => setCurrentTab("about-us")}> About Us</span>
-                  </Nav.Link>
+          {/* Mobile Menu Toggle */}
+          <button
+            className="mobile-menu-toggle d-lg-none"
+            onClick={handleShowOffcanvas}
+            aria-label="Open navigation menu"
+          >
+            <FaBars />
+          </button>
+        </Container>
+      </Navbar>
 
-                  <Nav.Link id="c-dash" className={currentTab === "contact" ? "mx-2 navActive" : "mx-2"}
-                  href="#about-us"><FaAt /> <span onClick={() => setCurrentTab("contact")}> Contact</span>
-                  </Nav.Link>
+      {/* Mobile Offcanvas Menu */}
+      <Offcanvas 
+        show={showOffcanvas} 
+        onHide={handleCloseOffcanvas} 
+        placement="end"
+        className="professional-offcanvas"
+      >
+        <Offcanvas.Header className="offcanvas-header-custom">
+          <div className="offcanvas-brand">
+            <img 
+              src={logo} 
+              width="100" 
+              height="42" 
+              alt="Nebula Media Logo" 
+              className="mb-2"
+            />
+            <h5 className="brand-title mb-0">Nebula Media</h5>
+            <p className="brand-subtitle">Digital Excellence</p>
+          </div>
+          <button
+            className="offcanvas-close-btn"
+            onClick={handleCloseOffcanvas}
+            aria-label="Close navigation menu"
+          >
+            <FaTimes />
+          </button>
+        </Offcanvas.Header>
 
-                  <Nav.Link id="d-dash" className={currentTab === "faq" ? "mx-2 navActive" : "mx-2"}
-                  href="#faq"><FaQuestionCircle /> <span onClick={() => setCurrentTab("faq")}> FAQs</span>
-                  </Nav.Link>
-
-                </Nav>
-                <Form className="d-flex">
-                  
-        
-
-                <div className="side-footer">
-                {isExpended && (
-                    <div className="side-info">
-                    <div className="icons" alt="admin" srcset="" />
-                <div className="side-footer-info">
-                <p className="side_footer-user-name"> Nebula </p>
-          
+        <Offcanvas.Body className="offcanvas-body-custom">
+          {/* Navigation Links */}
+          <Nav className="mobile-nav flex-column">
+            {navigationItems.map((item) => (
+              <Nav.Link
+                key={item.id}
+                className={`nav-item-mobile ${currentTab === item.tab ? 'active' : ''}`}
+                onClick={() => handleNavClick(item.tab)}
+              >
+                <div className="nav-item-content">
+                  <item.icon className="nav-icon" />
+                  <span className="nav-label">{item.label}</span>
                 </div>
-                </div>
-                )}
-               
-                <SocialIcon className="social-icons" url="mailto:colinnebula@gmail.com" network="mailto" style={{ height: 10, width: 10 }} bgColor="#024e76"/>
+              </Nav.Link>
+            ))}
+          </Nav>
 
-                <SocialIcon className="social-icons" url="https://github.com/ColinNebula" network="github" style={{ height: 10, width: 10 }} bgColor="#024e76"/>
-                <SocialIcon className="social-icons" url="https://youtube.com/nebulamedia3d" network="youtube" style={{ height: 10, width: 10 }} bgColor="#024e76"/>
-                </div>
-                </Form>
-              </Offcanvas.Body>
-            </Navbar.Offcanvas>
-          </Container>
-        </Navbar>
-      ))}
-    </>
+          {/* Divider */}
+          <hr className="nav-divider" />
+
+          {/* Social Links */}
+          <div className="social-section">
+            <h6 className="social-title">Connect With Us</h6>
+            <div className="social-links-container">
+              {socialLinks.map((social, index) => (
+                <a
+                  key={index}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-link-professional"
+                  style={{ '--hover-color': social.color }}
+                  aria-label={social.label}
+                >
+                  <social.icon className="social-icon" />
+                  <span className="social-label">{social.label}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Contact Info */}
+          <div className="contact-section">
+            <h6 className="contact-title">Get In Touch</h6>
+            <div className="contact-info">
+              <p className="contact-item">
+                <strong>Email:</strong><br />
+                nebulamedia3d@gmail.com
+              </p>
+              <p className="contact-item">
+                <strong>Phone:</strong><br />
+                (416) 856-5764
+              </p>
+            </div>
+          </div>
+
+          {/* Footer */}
+          <div className="offcanvas-footer">
+            <p className="footer-text">
+              © 2025 Nebula Media<br />
+              <span className="footer-tagline">Transforming Ideas Into Digital Excellence</span>
+            </p>
+          </div>
+        </Offcanvas.Body>
+      </Offcanvas>
+    </div>
   );
 }
 

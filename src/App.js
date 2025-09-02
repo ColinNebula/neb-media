@@ -3,6 +3,7 @@ import "./App.css";
 import React, { useState } from 'react';
 
 import Header from './components/Header';
+import Footer from './components/Footer';
 import About from "./components/About";
 import Faq from "./components/Faq";
 import Contact from "./components/Contact";
@@ -29,7 +30,7 @@ function App() {
           return <Faq />;
 
           case "landing-page":
-            return <LandingPage />;
+            return <LandingPage setCurrentTab={setCurrentTab} />;
 
       default:
         return null;
@@ -38,20 +39,22 @@ function App() {
 
   return (
     
-    <div>
-    <div>
-      
-				<Header currentTab={currentTab} setCurrentTab={setCurrentTab}></Header>
-        
-			</div>
+    <div className="app-container">
+      {currentTab !== "landing-page" && (
+        <div>
+          <Header currentTab={currentTab} setCurrentTab={setCurrentTab}></Header>
+        </div>
+      )}
 
-  
-  
-      <div>
-      <main>{renderTab()}</main>
-    </div>
+      <div className="main-content">
+        <main>{renderTab()}</main>
+      </div>
+
+      {currentTab !== "landing-page" && (
+        <Footer />
+      )}
    
-  </div>
+    </div>
 
   );
 }
