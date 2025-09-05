@@ -22,7 +22,10 @@ import {
   FaCalendarAlt,
   FaMapMarkerAlt,
   FaPhone,
-  FaEnvelope
+  FaEnvelope,
+  FaRocket,
+  FaLightbulb,
+  FaCog
 } from "react-icons/fa";
 import hero from "../../assets/images/hero.png";
 import byte from "../../assets/images/byte.png";
@@ -34,36 +37,44 @@ function Dashboard() {
   const [lgShow1, setLgShow1] = useState(false);
 
   const stats = [
-    { icon: FaVideo, label: "Projects Completed", value: "150+", color: "#358ed3" },
-    { icon: FaUsers, label: "Happy Clients", value: "75+", color: "#7eb8dc" },
-    { icon: FaEye, label: "Total Views", value: "2M+", color: "#358ed3" },
-    { icon: FaTrophy, label: "Awards Won", value: "12", color: "#7eb8dc" }
+    { icon: FaVideo, label: "Projects Completed", value: "150+", color: "var(--primary-color)", gradient: "var(--primary-gradient)" },
+    { icon: FaUsers, label: "Happy Clients", value: "75+", color: "var(--secondary-color)", gradient: "var(--secondary-gradient)" },
+    { icon: FaEye, label: "Total Views", value: "2M+", color: "var(--accent-color)", gradient: "var(--accent-gradient)" },
+    { icon: FaTrophy, label: "Awards Won", value: "12", color: "var(--primary-color)", gradient: "var(--dark-gradient)" }
   ];
 
   const services = [
     {
+      icon: FaVideo,
       title: "Video Production",
-      description: "Professional video content from concept to final cut",
+      description: "Professional video content from concept to final cut with cutting-edge technology",
       progress: 95,
-      projects: 45
+      projects: 45,
+      gradient: "var(--primary-gradient)"
     },
     {
+      icon: FaRocket,
       title: "3D Animation", 
-      description: "Stunning 3D animations and visual effects",
+      description: "Stunning 3D animations and visual effects that bring stories to life",
       progress: 88,
-      projects: 32
+      projects: 32,
+      gradient: "var(--secondary-gradient)"
     },
     {
+      icon: FaLightbulb,
       title: "Brand Strategy",
-      description: "Complete brand development and marketing solutions", 
+      description: "Complete brand development and innovative marketing solutions", 
       progress: 92,
-      projects: 28
+      projects: 28,
+      gradient: "var(--accent-gradient)"
     },
     {
+      icon: FaCog,
       title: "Digital Marketing",
-      description: "Data-driven marketing campaigns that deliver results",
+      description: "Data-driven marketing campaigns that deliver measurable results",
       progress: 90,
-      projects: 38
+      projects: 38,
+      gradient: "var(--dark-gradient)"
     }
   ];
 
@@ -89,22 +100,24 @@ function Dashboard() {
         <section className="dashboard-hero">
           <Row className="align-items-center mb-5">
             <Col lg={6}>
-              <div className="hero-content">
-                <Badge bg="primary" className="mb-3">Welcome to Nebula Media</Badge>
+              <div className="hero-content animate-slide-in-left">
+                <Badge className="mb-3 px-3 py-2" style={{ background: 'var(--accent-gradient)', border: 'none' }}>
+                  Welcome to Nebula Media
+                </Badge>
                 <h1 className="display-4 fw-bold mb-3">
                   Transforming Ideas Into 
-                  <span className="text-primary"> Digital Excellence</span>
+                  <span className="text-gradient"> Digital Excellence</span>
                 </h1>
-                <p className="lead mb-4">
+                <p className="lead mb-4" style={{ color: 'var(--text-muted)' }}>
                   From simple concepts to surreal experiences, we craft compelling narratives 
                   that connect brands with their audiences across all digital platforms.
                 </p>
                 <div className="hero-buttons">
-                  <Button variant="primary" size="lg" className="me-3">
+                  <Button className="btn-modern me-3" size="lg">
                     <FaPlay className="me-2" />
                     View Our Work
                   </Button>
-                  <Button variant="outline-primary" size="lg">
+                  <Button className="btn-outline-modern" size="lg">
                     Get Started
                     <FaArrowRight className="ms-2" />
                   </Button>
@@ -112,8 +125,22 @@ function Dashboard() {
               </div>
             </Col>
             <Col lg={6}>
-              <div className="hero-image">
-                <img src={hero} alt="Nebula Media Hero" className="img-fluid rounded-3 shadow-lg" />
+              <div className="hero-image animate-slide-in-right">
+                <div className="image-wrapper position-relative">
+                  <img 
+                    src={hero} 
+                    alt="Nebula Media Hero" 
+                    className="img-fluid rounded-3 shadow-lg animate-float" 
+                    style={{ borderRadius: 'var(--radius-xl)' }}
+                  />
+                  <div 
+                    className="position-absolute top-0 start-0 w-100 h-100 rounded-3"
+                    style={{
+                      background: 'linear-gradient(45deg, rgba(102, 126, 234, 0.1), rgba(240, 147, 251, 0.1))',
+                      borderRadius: 'var(--radius-xl)'
+                    }}
+                  ></div>
+                </div>
               </div>
             </Col>
           </Row>
@@ -124,15 +151,13 @@ function Dashboard() {
           <Row>
             {stats.map((stat, index) => (
               <Col md={6} lg={3} key={index} className="mb-4">
-                <Card className="stat-card h-100 text-center border-0 shadow-sm">
-                  <Card.Body className="p-4">
-                    <div className="stat-icon mb-3" style={{ color: stat.color }}>
-                      <stat.icon size={40} />
-                    </div>
-                    <h3 className="stat-value mb-1">{stat.value}</h3>
-                    <p className="stat-label text-muted mb-0">{stat.label}</p>
-                  </Card.Body>
-                </Card>
+                <div className="stats-card animate-fade-in-scale" style={{ animationDelay: `${index * 0.2}s` }}>
+                  <div className="stats-icon" style={{ background: stat.gradient }}>
+                    <stat.icon />
+                  </div>
+                  <div className="stats-value">{stat.value}</div>
+                  <div className="stats-label">{stat.label}</div>
+                </div>
               </Col>
             ))}
           </Row>
@@ -142,35 +167,42 @@ function Dashboard() {
         <section className="services-section mb-5">
           <Row className="mb-4">
             <Col>
-              <h2 className="section-title text-center mb-3">Our Expertise</h2>
-              <p className="section-subtitle text-center text-muted">
-                Delivering world-class solutions with proven results
+              <h2 className="section-title text-center mb-3 animate-fade-in-up">Our Expertise</h2>
+              <p className="section-subtitle text-center text-muted animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+                Delivering world-class solutions with proven results across multiple industries
               </p>
             </Col>
           </Row>
           <Row>
             {services.map((service, index) => (
               <Col md={6} lg={3} key={index} className="mb-4">
-                <Card className="service-card h-100 border-0 shadow-sm">
-                  <Card.Body className="p-4">
-                    <h5 className="service-title mb-3">{service.title}</h5>
-                    <p className="service-description text-muted mb-3">{service.description}</p>
-                    <div className="service-stats mb-3">
-                      <div className="d-flex justify-content-between align-items-center mb-2">
-                        <span className="small">Expertise Level</span>
-                        <span className="small fw-bold">{service.progress}%</span>
-                      </div>
-                      <ProgressBar 
-                        now={service.progress} 
-                        className="custom-progress" 
-                        style={{ height: '6px' }}
-                      />
+                <div className="modern-card animate-fade-in-scale" style={{ animationDelay: `${index * 0.15}s` }}>
+                  <div className="service-icon mb-3" style={{ background: service.gradient }}>
+                    <service.icon style={{ color: 'white', fontSize: '1.5rem' }} />
+                  </div>
+                  <h5 className="service-title mb-3">{service.title}</h5>
+                  <p className="service-description mb-3">{service.description}</p>
+                  <div className="service-stats mb-3">
+                    <div className="d-flex justify-content-between align-items-center mb-2">
+                      <span className="small fw-bold">Expertise Level</span>
+                      <span className="small fw-bold text-primary">{service.progress}%</span>
                     </div>
-                    <div className="service-projects">
-                      <span className="small text-muted">{service.projects} projects completed</span>
+                    <div className="progress-container">
+                      <div 
+                        className="progress-bar-modern" 
+                        style={{ 
+                          width: `${service.progress}%`,
+                          background: service.gradient
+                        }}
+                      ></div>
                     </div>
-                  </Card.Body>
-                </Card>
+                  </div>
+                  <div className="service-projects">
+                    <Badge bg="light" text="dark" className="fw-bold">
+                      {service.projects} projects completed
+                    </Badge>
+                  </div>
+                </div>
               </Col>
             ))}
           </Row>

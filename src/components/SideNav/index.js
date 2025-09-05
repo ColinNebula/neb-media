@@ -14,13 +14,17 @@ import {
   FaGithub,
   FaYoutube,
   FaLinkedin,
-  FaTwitter
+  FaTwitter,
+  FaSun,
+  FaMoon
 } from 'react-icons/fa';
+import { useTheme } from '../../contexts/ThemeContext';
 import logo from '../../assets/images/logo.png';
 
 function SideNav(props) {
   const { currentTab, setCurrentTab } = props;
   const [showOffcanvas, setShowOffcanvas] = useState(false);
+  const { theme, toggleTheme, isDark } = useTheme();
 
   const handleCloseOffcanvas = () => setShowOffcanvas(false);
   const handleShowOffcanvas = () => setShowOffcanvas(true);
@@ -89,14 +93,14 @@ function SideNav(props) {
       {/* Main Navigation Bar */}
       <Navbar 
         expand={false} 
-        className="professional-navbar shadow-sm"
+        className="modern-nav shadow-sm"
         fixed="top"
       >
         <Container fluid className="px-4">
           {/* Brand Logo */}
           <Navbar.Brand 
             href="#" 
-            className="navbar-brand-custom"
+            className="nav-brand d-flex align-items-center"
             onClick={() => handleNavClick('dashboard')}
           >
             <img 
@@ -104,24 +108,36 @@ function SideNav(props) {
               width="120" 
               height="50" 
               alt="Nebula Media Logo" 
-              className="brand-logo"
+              className="brand-logo me-2"
             />
-            <span className="brand-text">Nebula Media</span>
+            <span className="nav-brand">Nebula Media3D</span>
           </Navbar.Brand>
 
           {/* Desktop Navigation Links */}
-          <Nav className="desktop-nav d-none d-lg-flex">
-            {navigationItems.map((item) => (
-              <Nav.Link
-                key={item.id}
-                className={`nav-item-desktop ${currentTab === item.tab ? 'active' : ''}`}
-                onClick={() => handleNavClick(item.tab)}
-              >
-                <item.icon className="nav-icon me-2" />
-                {item.label}
-              </Nav.Link>
-            ))}
-          </Nav>
+          <div className="d-none d-lg-flex align-items-center">
+            <Nav className="desktop-nav">
+              {navigationItems.map((item) => (
+                <Nav.Link
+                  key={item.id}
+                  className={`nav-link-modern ${currentTab === item.tab ? 'active' : ''}`}
+                  onClick={() => handleNavClick(item.tab)}
+                >
+                  <item.icon className="me-2" />
+                  {item.label}
+                </Nav.Link>
+              ))}
+            </Nav>
+            
+            {/* Theme Toggle Button */}
+            <button
+              className="theme-toggle-btn ms-3"
+              onClick={toggleTheme}
+              aria-label={`Switch to ${isDark ? 'light' : 'dark'} theme`}
+              title={`Switch to ${isDark ? 'light' : 'dark'} theme`}
+            >
+              {isDark ? <FaSun className="theme-icon" /> : <FaMoon className="theme-icon" />}
+            </button>
+          </div>
 
           {/* Mobile Menu Toggle */}
           <button
@@ -150,7 +166,7 @@ function SideNav(props) {
               alt="Nebula Media Logo" 
               className="mb-2"
             />
-            <h5 className="brand-title mb-0">Nebula Media</h5>
+            <h5 className="brand-title mb-0">Nebula Media3D</h5>
             <p className="brand-subtitle">Digital Excellence</p>
           </div>
           <button
@@ -178,6 +194,24 @@ function SideNav(props) {
               </Nav.Link>
             ))}
           </Nav>
+
+          {/* Divider */}
+          <hr className="nav-divider" />
+
+          {/* Theme Toggle */}
+          <div className="theme-section">
+            <h6 className="theme-title">Appearance</h6>
+            <button
+              className="theme-toggle-mobile"
+              onClick={toggleTheme}
+              aria-label={`Switch to ${isDark ? 'light' : 'dark'} theme`}
+            >
+              <div className="theme-toggle-content">
+                {isDark ? <FaSun className="theme-icon" /> : <FaMoon className="theme-icon" />}
+                <span className="theme-label">{isDark ? 'Light Theme' : 'Dark Theme'}</span>
+              </div>
+            </button>
+          </div>
 
           {/* Divider */}
           <hr className="nav-divider" />
@@ -221,7 +255,7 @@ function SideNav(props) {
           {/* Footer */}
           <div className="offcanvas-footer">
             <p className="footer-text">
-              © 2025 Nebula Media<br />
+              © 2025 Nebula Media3D<br />
               <span className="footer-tagline">Transforming Ideas Into Digital Excellence</span>
             </p>
           </div>

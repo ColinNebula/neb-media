@@ -9,6 +9,7 @@ import Faq from "./components/Faq";
 import Contact from "./components/Contact";
 import LandingPage from "./components/LandingPage";
 import Dashboard from "./components/Dashboard";
+import { ThemeProvider } from './contexts/ThemeContext';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -38,24 +39,24 @@ function App() {
   };
 
   return (
-    
-    <div className="app-container">
-      {currentTab !== "landing-page" && (
-        <div>
-          <Header currentTab={currentTab} setCurrentTab={setCurrentTab}></Header>
+    <ThemeProvider>
+      <div className="app-container">
+        {currentTab !== "landing-page" && (
+          <div>
+            <Header currentTab={currentTab} setCurrentTab={setCurrentTab}></Header>
+          </div>
+        )}
+
+        <div className="main-content">
+          <main>{renderTab()}</main>
         </div>
-      )}
 
-      <div className="main-content">
-        <main>{renderTab()}</main>
+        {currentTab !== "landing-page" && (
+          <Footer />
+        )}
+     
       </div>
-
-      {currentTab !== "landing-page" && (
-        <Footer />
-      )}
-   
-    </div>
-
+    </ThemeProvider>
   );
 }
 export default App;
