@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Container } from 'react-bootstrap/';
+import { Container, Button, Dropdown } from 'react-bootstrap/';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
@@ -16,18 +16,36 @@ import {
   FaLinkedin,
   FaTwitter,
   FaSun,
-  FaMoon
+  FaMoon,
+  FaSignInAlt,
+  FaSignOutAlt,
+  FaCog,
+  FaChartBar
 } from 'react-icons/fa';
 import { useTheme } from '../../contexts/ThemeContext';
+import { useUser } from '../../contexts/UserContext';
+import AuthModal from '../AuthModal';
 import logo from '../../assets/images/logo.png';
+import './SideNav.css';
 
 function SideNav(props) {
   const { currentTab, setCurrentTab } = props;
   const [showOffcanvas, setShowOffcanvas] = useState(false);
+  const [showAuthModal, setShowAuthModal] = useState(false);
   const { theme, toggleTheme, isDark } = useTheme();
+  const { user, logout } = useUser();
 
   const handleCloseOffcanvas = () => setShowOffcanvas(false);
   const handleShowOffcanvas = () => setShowOffcanvas(true);
+
+  const handleLogout = async () => {
+    try {
+      await logout();
+      setShowOffcanvas(false);
+    } catch (error) {
+      console.error('Logout error:', error);
+    }
+  };
 
   const navigationItems = [
     {
@@ -109,6 +127,10 @@ function SideNav(props) {
               height="50" 
               alt="Nebula Media Logo" 
               className="brand-logo me-2"
+              onError={(e) => {
+                e.target.style.display = 'none';
+                console.log('Logo failed to load');
+              }}
             />
             <span className="nav-brand">Nebula Media3D</span>
           </Navbar.Brand>
@@ -127,6 +149,46 @@ function SideNav(props) {
                 </Nav.Link>
               ))}
             </Nav>
+            
+            {/* Authentication Section */}
+            <div className="auth-section ms-3">
+              {user ? (
+                <Dropdown align="end">
+                  <Dropdown.Toggle 
+                    variant="outline-primary" 
+                    className="user-dropdown-toggle d-flex align-items-center"
+                    id="user-dropdown"
+                  >
+                    <FaUser className="me-2" />
+                    {user.username || user.email}
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu className="user-dropdown-menu">
+                    <Dropdown.Item onClick={() => handleNavClick('profile')}>
+                      <FaCog className="me-2" />
+                      Profile Settings
+                    </Dropdown.Item>
+                    <Dropdown.Item onClick={() => handleNavClick('analytics')}>
+                      <FaChartBar className="me-2" />
+                      My Videos
+                    </Dropdown.Item>
+                    <Dropdown.Divider />
+                    <Dropdown.Item onClick={handleLogout} className="text-danger">
+                      <FaSignOutAlt className="me-2" />
+                      Logout
+                    </Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              ) : (
+                <Button
+                  variant="outline-primary"
+                  onClick={() => setShowAuthModal(true)}
+                  className="login-btn"
+                >
+                  <FaSignInAlt className="me-2" />
+                  Login
+                </Button>
+              )}
+            </div>
             
             {/* Theme Toggle Button */}
             <button
@@ -179,6 +241,20 @@ function SideNav(props) {
         </Offcanvas.Header>
 
         <Offcanvas.Body className="offcanvas-body-custom">
+          {/* User Section */}
+          {user && (
+            <div className="user-section">
+              <div className="user-info">
+                <FaUser className="user-avatar" />
+                <div className="user-details">
+                  <h6 className="user-name">{user.username || user.email}</h6>
+                  <p className="user-email">{user.email}</p>
+                </div>
+              </div>
+              <hr className="nav-divider" />
+            </div>
+          )}
+
           {/* Navigation Links */}
           <Nav className="mobile-nav flex-column">
             {navigationItems.map((item) => (
@@ -193,7 +269,58 @@ function SideNav(props) {
                 </div>
               </Nav.Link>
             ))}
+
+            {/* User-specific navigation */}
+            {user && (
+              <>
+                <Nav.Link
+                  className={`nav-item-mobile ${currentTab === 'profile' ? 'active' : ''}`}
+                  onClick={() => handleNavClick('profile')}
+                >
+                  <div className="nav-item-content">
+                    <FaCog className="nav-icon" />
+                    <span className="nav-label">Profile Settings</span>
+                  </div>
+                </Nav.Link>
+                <Nav.Link
+                  className={`nav-item-mobile ${currentTab === 'analytics' ? 'active' : ''}`}
+                  onClick={() => handleNavClick('analytics')}
+                >
+                  <div className="nav-item-content">
+                    <FaChartBar className="nav-icon" />
+                    <span className="nav-label">My Videos</span>
+                  </div>
+                </Nav.Link>
+              </>
+            )}
           </Nav>
+
+          {/* Divider */}
+          <hr className="nav-divider" />
+
+          {/* Authentication Section */}
+          <div className="auth-section-mobile">
+            {user ? (
+              <button
+                className="auth-btn logout-btn"
+                onClick={handleLogout}
+              >
+                <FaSignOutAlt className="auth-icon" />
+                <span className="auth-label">Logout</span>
+              </button>
+            ) : (
+              <button
+                className="auth-btn login-btn"
+                onClick={() => {
+                  setShowAuthModal(true);
+                  setShowOffcanvas(false);
+                }}
+              >
+                <FaSignInAlt className="auth-icon" />
+                <span className="auth-label">Login / Register</span>
+              </button>
+            )}
+          </div>
 
           {/* Divider */}
           <hr className="nav-divider" />
@@ -261,6 +388,12 @@ function SideNav(props) {
           </div>
         </Offcanvas.Body>
       </Offcanvas>
+
+      {/* Authentication Modal */}
+      <AuthModal 
+        show={showAuthModal} 
+        onHide={() => setShowAuthModal(false)} 
+      />
     </div>
   );
 }

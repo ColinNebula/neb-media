@@ -32,9 +32,15 @@ import byte from "../../assets/images/byte.png";
 import rider from "../../assets/images/rider.png";
 import logo from "../../assets/images/logo.png";
 
-function Dashboard() {
+function Dashboard({ setCurrentTab }) {
   const [lgShow, setLgShow] = useState(false);
   const [lgShow1, setLgShow1] = useState(false);
+
+  const handleViewOurWork = () => {
+    if (setCurrentTab) {
+      setCurrentTab('video-player');
+    }
+  };
 
   const stats = [
     { icon: FaVideo, label: "Projects Completed", value: "150+", color: "var(--primary-color)", gradient: "var(--primary-gradient)" },
@@ -113,7 +119,7 @@ function Dashboard() {
                   that connect brands with their audiences across all digital platforms.
                 </p>
                 <div className="hero-buttons">
-                  <Button className="btn-modern me-3" size="lg">
+                  <Button className="btn-modern me-3" size="lg" onClick={handleViewOurWork}>
                     <FaPlay className="me-2" />
                     View Our Work
                   </Button>
@@ -132,6 +138,10 @@ function Dashboard() {
                     alt="Nebula Media Hero" 
                     className="img-fluid rounded-3 shadow-lg animate-float" 
                     style={{ borderRadius: 'var(--radius-xl)' }}
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      console.log('Hero image failed to load');
+                    }}
                   />
                   <div 
                     className="position-absolute top-0 start-0 w-100 h-100 rounded-3"
