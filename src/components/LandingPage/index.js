@@ -19,7 +19,17 @@ function LandingPage({ setCurrentTab }) {
             </div>
             
             <div className="home-text">
-                <h1> Welcome <span className="welcome"> to </span> ....
+                <h1> 
+                <span className="welcome-enhanced"> 
+                    Welcome 
+                    <div className="welcome-glow"></div>
+                    <div className="welcome-particles">
+                        <span className="welcome-particle"></span>
+                        <span className="welcome-particle"></span>
+                        <span className="welcome-particle"></span>
+                    </div>
+                </span> 
+                <span className="welcome-to"> to </span> 
                 <br/>
                 
                 <span className="lastly"> 

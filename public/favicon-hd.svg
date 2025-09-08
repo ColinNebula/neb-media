@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="nebulaBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#764ba2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f093fb;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="mediaGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="64" cy="64" r="60" fill="url(#nebulaBg)" stroke="#ffffff" stroke-width="4"/>
+  
+  <!-- Large Play Symbol -->
+  <polygon points="44,36 44,92 96,64" fill="url(#mediaGlow)" filter="url(#glow)" stroke="#ffffff" stroke-width="2"/>
+  
+  <!-- Enhanced stars -->
+  <circle cx="32" cy="24" r="3" fill="#ffffff" opacity="1"/>
+  <circle cx="100" cy="32" r="2.5" fill="#ffffff" opacity="0.9"/>
+  <circle cx="24" cy="100" r="2.5" fill="#ffffff" opacity="0.8"/>
+  <circle cx="104" cy="96" r="3" fill="#ffffff" opacity="1"/>
+  
+  <!-- Brand text -->
+  <text x="64" y="112" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#ffffff" opacity="0.9">NEBULA</text>
+</svg>

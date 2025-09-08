@@ -38,12 +38,15 @@ async function testConnection() {
     return true;
   } catch (error) {
     console.error('❌ Database connection failed:', error.message);
+    console.log('⚠️  Server will continue without database. Authentication will not work.');
     return false;
   }
 }
 
-// Initialize database connection test
-testConnection();
+// Initialize database connection test (non-blocking)
+testConnection().catch(err => {
+  console.log('⚠️  Database connection failed, but server will continue...');
+});
 
 module.exports = {
   pool,
