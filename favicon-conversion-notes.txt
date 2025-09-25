@@ -1,0 +1,12 @@
+<!-- This is a backup favicon reference -->
+<!-- The main favicon is now favicon.svg -->
+<!-- For older browsers that need .ico format: -->
+<!-- You can convert favicon.svg to favicon.ico using online tools -->
+<!-- Or use: https://convertio.co/svg-ico/ -->
+<!-- 
+To convert the favicon.svg to favicon.ico:
+1. Go to https://convertio.co/svg-ico/
+2. Upload the favicon.svg file
+3. Download the converted favicon.ico
+4. Replace the existing favicon.ico in the public folder
+-->

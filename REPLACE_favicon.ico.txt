@@ -1,0 +1,12 @@
+<!-- Nebula Media Favicon - 16x16 ICO replacement -->
+<!-- This file should be replaced with a proper .ico file -->
+<!-- 
+To create a proper favicon.ico:
+1. Use the favicon.svg or favicon-16.svg file
+2. Convert it to ICO format using an online converter like:
+   - https://convertio.co/svg-ico/
+   - https://favicon.io/favicon-converter/
+3. Replace this file with the converted favicon.ico
+
+For now, browsers will use the SVG favicon which provides better quality.
+-->

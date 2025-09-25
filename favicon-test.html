@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nebula Media - Enhanced Large Favicon Test</title>
+    <link rel="icon" href="favicon-hd.svg" type="image/svg+xml" />
+    <link rel="icon" href="favicon-large.svg" type="image/svg+xml" sizes="64x64" />
+    <link rel="icon" href="favicon.png" type="image/png" sizes="32x32" />
+    
+    <!-- Extension compatibility meta tags -->
+    <meta name="description" content="Nebula Media favicon testing page">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            padding: 50px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+        .favicon-preview {
+            background: white;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .logo-item {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .logo-item h4 {
+            color: #333;
+            margin: 10px 0 5px 0;
+        }
+        .logo-item img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .size-demo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .size-demo div {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Nebula Media - Enhanced Large Favicon Test</h1>
+    <p>Check the browser tab to see the larger, non-squished Nebula Media logo!</p>
+    
+    <div class="size-demo">
+        <div>
+            <h4>16x16 (Small)</h4>
+            <img src="favicon.png" width="16" height="16" alt="16x16 favicon">
+        </div>
+        <div>
+            <h4>32x32 (Standard)</h4>
+            <img src="favicon.png" width="32" height="32" alt="32x32 favicon">
+        </div>
+        <div>
+            <h4>64x64 (Large)</h4>
+            <img src="favicon-large.svg" width="64" height="64" alt="64x64 favicon">
+        </div>
+        <div>
+            <h4>128x128 (HD)</h4>
+            <img src="favicon-hd.svg" width="128" height="128" alt="128x128 favicon">
+        </div>
+    </div>
+    
+    <div class="logo-grid">
+        <div class="logo-item">
+            <h4>HD Favicon (128x128)</h4>
+            <img src="favicon-hd.svg" alt="Nebula Media HD Favicon" style="max-height: 128px;">
+            <p style="color: #666; font-size: 12px;">Vector SVG - Crisp at any size</p>
+        </div>
+        <div class="logo-item">
+            <h4>Large Favicon (64x64)</h4>
+            <img src="favicon-large.svg" alt="Nebula Media Large Favicon" style="max-height: 64px;">
+            <p style="color: #666; font-size: 12px;">Optimized for modern browsers</p>
+        </div>
+        <div class="logo-item">
+            <h4>Original Logo</h4>
+            <img src="logo-original.png" alt="Nebula Media Original Logo" style="max-height: 100px;">
+            <p style="color: #666; font-size: 12px;">Full resolution brand logo</p>
+        </div>
+    </div>
+    
+    <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin-top: 30px;">
+        <h3>🎉 Favicon Improvements</h3>
+        <ul style="text-align: left; display: inline-block;">
+            <li><strong>Larger Size:</strong> 64x64 and 128x128 variants for better visibility</li>
+            <li><strong>Better Proportions:</strong> Optimized aspect ratio prevents squishing</li>
+            <li><strong>Vector Format:</strong> SVG ensures crisp display at any size</li>
+            <li><strong>Enhanced Design:</strong> Improved contrast and brand elements</li>
+            <li><strong>Multiple Formats:</strong> SVG primary with PNG fallback</li>
+        </ul>
+    </div>
+    
+    <p><strong>Browser Tab:</strong> Should now display a larger, crisp Nebula Media logo!</p>
+    <p><a href="/neb-media" style="color: #FFD700;">← Back to Main Site</a></p>
+    
+    <script>
+        // Extension compatibility script
+        window.addEventListener('error', function(e) {
+            if (e.filename && e.filename.includes('contentScript')) {
+                console.log('Browser extension error detected - this is not related to your application');
+                return true; // Prevent error from propagating
+            }
+        });
+        
+        // Ensure page loads properly despite extension interference
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Favicon test page loaded successfully');
+        });
+    </script>
+</body>
+</html>
