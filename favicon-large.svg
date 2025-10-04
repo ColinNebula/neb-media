@@ -1,35 +1,52 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
   <defs>
-    <linearGradient id="nebulaBg" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#764ba2;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#f093fb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
     </linearGradient>
-    <linearGradient id="mediaGlow" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:1" />
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
     </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-      <feMerge> 
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
   </defs>
   
-  <!-- Background Circle with proper padding -->
-  <circle cx="32" cy="32" r="30" fill="url(#nebulaBg)" stroke="#ffffff" stroke-width="2"/>
+  <!-- Background -->
+  <rect width="64" height="64" rx="12" fill="url(#grad1)"/>
   
-  <!-- Large Play Symbol - better proportions -->
-  <polygon points="22,18 22,46 48,32" fill="url(#mediaGlow)" filter="url(#glow)" stroke="#ffffff" stroke-width="1"/>
+  <!-- Code Brackets -->
+  <path d="M 20 22 L 13 32 L 20 42" 
+    stroke="white" 
+    stroke-width="2" 
+    stroke-linecap="round" 
+    stroke-linejoin="round" 
+    fill="none"
+    opacity="0.9"/>
+  <path d="M 44 22 L 51 32 L 44 42" 
+    stroke="white" 
+    stroke-width="2" 
+    stroke-linecap="round" 
+    stroke-linejoin="round" 
+    fill="none"
+    opacity="0.9"/>
   
-  <!-- Enhanced stars -->
-  <circle cx="16" cy="12" r="2" fill="#ffffff" opacity="1"/>
-  <circle cx="50" cy="16" r="1.5" fill="#ffffff" opacity="0.9"/>
-  <circle cx="12" cy="50" r="1.5" fill="#ffffff" opacity="0.8"/>
-  <circle cx="52" cy="48" r="2" fill="#ffffff" opacity="1"/>
+  <!-- Central Star -->
+  <circle cx="32" cy="32" r="6" fill="white"/>
   
-  <!-- Brand initial 'N' -->
-  <text x="32" y="56" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#ffffff" opacity="0.9">N</text>
+  <!-- Orbiting Nodes -->
+  <circle cx="32" cy="18" r="1.5" fill="url(#grad2)"/>
+  <circle cx="46" cy="32" r="1.5" fill="url(#grad2)"/>
+  <circle cx="32" cy="46" r="1.5" fill="url(#grad2)"/>
+  <circle cx="18" cy="32" r="1.5" fill="url(#grad2)"/>
+  
+  <!-- Connection Lines -->
+  <line x1="32" y1="26" x2="32" y2="20" stroke="white" stroke-width="1" opacity="0.6"/>
+  <line x1="38" y1="32" x2="44" y2="32" stroke="white" stroke-width="1" opacity="0.6"/>
+  <line x1="32" y1="38" x2="32" y2="44" stroke="white" stroke-width="1" opacity="0.6"/>
+  <line x1="26" y1="32" x2="20" y2="32" stroke="white" stroke-width="1" opacity="0.6"/>
+  
+  <!-- Inner Ring -->
+  <circle cx="32" cy="32" r="10" fill="none" stroke="white" stroke-width="1" opacity="0.3"/>
+  
+  <!-- Outer Ring -->
+  <circle cx="32" cy="32" r="22" fill="none" stroke="white" stroke-width="1.5" opacity="0.2"/>
 </svg>
