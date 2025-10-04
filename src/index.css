@@ -307,6 +307,46 @@ main {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
+/* Bootstrap Card Overrides for Theme Support */
+.card-body {
+  background: var(--bg-surface) !important;
+  color: var(--text-primary) !important;
+}
+
+.card-header {
+  background: var(--bg-surface-alt) !important;
+  color: var(--text-primary) !important;
+  border-bottom-color: var(--border-color) !important;
+}
+
+.card-footer {
+  background: var(--bg-surface-alt) !important;
+  color: var(--text-secondary) !important;
+  border-top-color: var(--border-color) !important;
+}
+
+.modal-content {
+  background: var(--bg-surface) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+.modal-header {
+  background: var(--bg-surface-alt) !important;
+  color: var(--text-primary) !important;
+  border-bottom-color: var(--border-color) !important;
+}
+
+.modal-body {
+  background: var(--bg-surface) !important;
+  color: var(--text-primary) !important;
+}
+
+.modal-footer {
+  background: var(--bg-surface-alt) !important;
+  border-top-color: var(--border-color) !important;
+}
+
 /* Modern Stats Card */
 .stats-card {
   background: var(--bg-surface);
@@ -560,18 +600,18 @@ main {
 
 /* Enhanced Form Styles */
 .form-control-modern {
-  border: 2px solid var(--light-gray);
+  border: 2px solid var(--border-color);
   border-radius: var(--radius-md);
   padding: var(--spacing-md);
   font-size: 1rem;
   transition: all 0.3s ease;
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--bg-surface);
 }
 
 .form-control-modern:focus {
   border-color: var(--primary-color);
   box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-  background: white;
+  background: var(--bg-surface-alt);
 }
 
 .form-label-modern {
@@ -1154,6 +1194,9 @@ img {
 	justify-content: center;
 	align-items: center;
 	transition: 0.5s;
+	background: var(--bg-surface) !important;
+	color: var(--text-primary) !important;
+	border-color: var(--border-color) !important;
 }
 
 .card:hover {
@@ -2191,7 +2234,7 @@ img {
 .stat-card {
   transition: all 0.3s ease;
   border-radius: 1rem;
-  background: white;
+  background: var(--bg-surface);
 }
 
 .stat-card:hover {
@@ -2228,7 +2271,7 @@ img {
 .service-card {
   transition: all 0.3s ease;
   border-radius: 1rem;
-  background: white;
+  background: var(--bg-surface);
   border-left: 4px solid #358ed3 !important;
 }
 
@@ -2327,7 +2370,7 @@ img {
 .testimonial-card {
   transition: all 0.3s ease;
   border-radius: 1rem;
-  background: white;
+  background: var(--bg-surface);
 }
 
 .testimonial-card:hover {
@@ -2486,9 +2529,9 @@ img {
 
 /* Main Navbar */
 .professional-navbar {
-  background: rgba(255, 255, 255, 0.95) !important;
+  background: var(--bg-surface-alt) !important;
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(53, 142, 211, 0.1);
+  border-bottom: 1px solid var(--border-color);
   padding: 1rem 0;
   transition: all 0.3s ease;
 }
@@ -2500,7 +2543,7 @@ img {
 }
 
 .professional-navbar:hover {
-  background: rgba(255, 255, 255, 0.98) !important;
+  background: var(--bg-surface) !important;
 }
 
 /* Brand Section */
@@ -3105,7 +3148,7 @@ img {
 
 /* Contact Form Card */
 .contact-form-card {
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--bg-surface-alt);
   backdrop-filter: blur(10px);
   border-radius: 1rem;
   overflow: hidden;
@@ -3150,7 +3193,7 @@ img {
 .form-control-custom:focus {
   border-color: #358ed3;
   box-shadow: 0 0 0 0.2rem rgba(53, 142, 211, 0.15);
-  background-color: #fff;
+  background-color: var(--bg-surface-alt);
 }
 
 .form-control-custom::placeholder {
@@ -3190,7 +3233,7 @@ img {
 }
 
 .contact-info-card {
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--bg-surface);
   backdrop-filter: blur(10px);
   border-radius: 0.75rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -3249,7 +3292,7 @@ img {
 
 /* Social Media Card */
 .social-media-card {
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--bg-surface);
   backdrop-filter: blur(10px);
   border-radius: 0.75rem;
 }
@@ -3269,8 +3312,8 @@ img {
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
-  background: #f8f9fa;
-  color: #6c757d;
+  background: var(--bg-surface-alt);
+  color: var(--text-secondary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3282,7 +3325,7 @@ img {
 
 .social-link:hover {
   color: var(--hover-color);
-  background: rgba(255, 255, 255, 1);
+  background: var(--bg-surface);
   border-color: var(--hover-color);
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -3490,9 +3533,9 @@ img {
 }
 
 .faq-search .input-group-text {
-  background: #fff;
+  background: var(--bg-surface);
   border: none;
-  color: #6c757d;
+  color: var(--text-secondary);
   padding: 1rem 1.5rem;
 }
 
@@ -3500,13 +3543,14 @@ img {
   border: none;
   padding: 1rem 1.5rem;
   font-size: 1.1rem;
-  background: #fff;
+  background: var(--bg-surface);
+  color: var(--text-primary);
 }
 
 .search-input:focus {
   border: none;
   box-shadow: none;
-  background: #fff;
+  background: var(--bg-surface-alt);
 }
 
 /* FAQ Stats */
@@ -3534,7 +3578,7 @@ img {
 
 /* Category Cards */
 .faq-category-card {
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--bg-surface-alt);
   backdrop-filter: blur(10px);
   border-radius: 1rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -3639,7 +3683,7 @@ img {
 
 /* No Results */
 .no-results-card {
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--bg-surface);
   backdrop-filter: blur(10px);
   border-radius: 1rem;
 }
@@ -3707,7 +3751,7 @@ img {
 }
 
 .resource-card {
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--bg-surface);
   backdrop-filter: blur(10px);
   border-radius: 0.75rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -3941,7 +3985,7 @@ img {
 .stat-card {
   text-align: center;
   padding: 1.5rem 1rem;
-  background: rgba(255, 255, 255, 0.8);
+  background: var(--bg-surface);
   border-radius: 0.75rem;
   backdrop-filter: blur(10px);
   transition: transform 0.3s ease;
@@ -3991,7 +4035,7 @@ img {
 }
 
 .service-card {
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--bg-surface-alt);
   backdrop-filter: blur(10px);
   border-radius: 1rem;
   transition: all 0.3s ease;
@@ -4040,7 +4084,7 @@ img {
 }
 
 .value-card {
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--bg-surface);
   backdrop-filter: blur(10px);
   border-radius: 0.75rem;
   transition: transform 0.3s ease;
@@ -4075,7 +4119,7 @@ img {
 }
 
 .team-card {
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--bg-surface-alt);
   backdrop-filter: blur(10px);
   border-radius: 1rem;
   transition: transform 0.3s ease;
@@ -4195,7 +4239,7 @@ img {
 }
 
 .cta-card {
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--bg-surface-alt);
   backdrop-filter: blur(10px);
   border-radius: 1rem;
 }
@@ -4245,7 +4289,7 @@ img {
 }
 
 .skill-progress {
-  background: #f8f9fa;
+  background: var(--bg-surface-alt);
   padding: 1.5rem;
   border-radius: 0.5rem;
   margin-top: 1rem;

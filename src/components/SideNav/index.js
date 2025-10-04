@@ -82,19 +82,19 @@ function SideNav(props) {
       color: '#333'
     },
     {
-      url: 'https://youtube.com/nebulamedia3d',
-      icon: FaYoutube,
-      label: 'YouTube',
-      color: '#FF0000'
-    },
-    {
-      url: 'https://linkedin.com/company/nebulamedia',
+      url: 'https://linkedin.com/company/nebuladev',
       icon: FaLinkedin,
       label: 'LinkedIn',
       color: '#0077B5'
     },
     {
-      url: 'mailto:nebulamedia3d@gmail.com',
+      url: 'https://twitter.com/nebuladev',
+      icon: FaTwitter,
+      label: 'Twitter',
+      color: '#1DA1F2'
+    },
+    {
+      url: 'mailto:hello@nebuladev.com',
       icon: FaEnvelope,
       label: 'Email',
       color: '#358ed3'
@@ -125,14 +125,14 @@ function SideNav(props) {
               src={logo} 
               width="120" 
               height="50" 
-              alt="Nebula Media Logo" 
+              alt="Nebula Dev Logo" 
               className="brand-logo me-2"
               onError={(e) => {
                 e.target.style.display = 'none';
                 console.log('Logo failed to load');
               }}
             />
-            <span className="nav-brand">Nebula Media3D</span>
+            <span className="nav-brand">Nebula Dev</span>
           </Navbar.Brand>
 
           {/* Desktop Navigation Links */}
@@ -169,7 +169,7 @@ function SideNav(props) {
                     </Dropdown.Item>
                     <Dropdown.Item onClick={() => handleNavClick('analytics')}>
                       <FaChartBar className="me-2" />
-                      My Videos
+                      My Projects
                     </Dropdown.Item>
                     <Dropdown.Divider />
                     <Dropdown.Item onClick={handleLogout} className="text-danger">
@@ -225,11 +225,11 @@ function SideNav(props) {
               src={logo} 
               width="100" 
               height="42" 
-              alt="Nebula Media Logo" 
+              alt="Nebula Dev Logo" 
               className="mb-2"
             />
-            <h5 className="brand-title mb-0">Nebula Media3D</h5>
-            <p className="brand-subtitle">Digital Excellence</p>
+            <h5 className="brand-title mb-0">Nebula Dev</h5>
+            <p className="brand-subtitle">Web App Development</p>
           </div>
           <button
             className="offcanvas-close-btn"
@@ -288,7 +288,7 @@ function SideNav(props) {
                 >
                   <div className="nav-item-content">
                     <FaChartBar className="nav-icon" />
-                    <span className="nav-label">My Videos</span>
+                    <span className="nav-label">My Projects</span>
                   </div>
                 </Nav.Link>
               </>
@@ -370,7 +370,7 @@ function SideNav(props) {
             <div className="contact-info">
               <p className="contact-item">
                 <strong>Email:</strong><br />
-                nebulamedia3d@gmail.com
+                hello@nebuladev.com
               </p>
               <p className="contact-item">
                 <strong>Phone:</strong><br />
@@ -382,8 +382,8 @@ function SideNav(props) {
           {/* Footer */}
           <div className="offcanvas-footer">
             <p className="footer-text">
-              © 2025 Nebula Media3D<br />
-              <span className="footer-tagline">Transforming Ideas Into Digital Excellence</span>
+              © 2025 Nebula Dev<br />
+              <span className="footer-tagline">Building Powerful Web Applications</span>
             </p>
           </div>
         </Offcanvas.Body>

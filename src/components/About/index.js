@@ -40,57 +40,57 @@ function About() {
 
   const services = [
     {
-      id: 'video-editing',
-      title: 'Video Editing & Compositing',
-      icon: FaVideo,
-      description: 'Professional video editing and compositing services that bring your vision to life.',
-      details: 'Our bread and butter service includes sorting through footage, creating compelling narratives, advanced compositing, and high-quality rendering. We specialize in customizations and seamless 3D integration to elevate your content.',
-      skills: ['Adobe Premiere Pro', 'DaVinci Resolve', 'After Effects', 'Final Cut Pro'],
+      id: 'web-app',
+      title: 'Web App Development',
+      icon: FaDesktop,
+      description: 'Custom web applications built with modern frameworks and best practices.',
+      details: 'We specialize in building scalable, performant web applications using React, Vue, Angular, and Node.js. From single-page applications to complex enterprise systems, we deliver solutions tailored to your business needs.',
+      skills: ['React', 'Vue.js', 'Node.js', 'TypeScript'],
       color: '#358ed3'
     },
     {
-      id: 'animation',
-      title: '3D Animation',
-      icon: FaCube,
-      description: 'Custom 3D animations tailored to your specific needs and complexity requirements.',
-      details: 'From simple motion graphics to complex character animations, we create stunning 3D animations. Each piece is priced individually based on complexity, ensuring you get exactly what you need.',
-      skills: ['Cinema 4D', 'Blender', 'Maya', 'Motion Graphics'],
+      id: 'mobile-dev',
+      title: 'Mobile Development',
+      icon: FaCogs,
+      description: 'Native and cross-platform mobile apps for iOS and Android.',
+      details: 'Create stunning mobile experiences with React Native, Flutter, or native development. We build apps that are fast, intuitive, and provide seamless user experiences across all devices.',
+      skills: ['React Native', 'Flutter', 'iOS', 'Android'],
       color: '#7eb8dc'
     },
     {
-      id: 'modeling',
-      title: '3D Modeling',
-      icon: FaCogs,
-      description: 'Object digitization and custom 3D modeling for unique and personalized content.',
-      details: 'We specialize in creating detailed 3D models from scratch or digitizing real-world objects. Our models are optimized for various applications including video integration, web, and interactive media.',
-      skills: ['3D Sculpting', 'Texturing', 'UV Mapping', 'Optimization'],
+      id: 'ui-ux',
+      title: 'UI/UX Design',
+      icon: FaPaintBrush,
+      description: 'Beautiful, intuitive interfaces that users love.',
+      details: 'Our design team creates user-centered designs that combine aesthetics with functionality. We focus on creating engaging experiences that drive conversions and user satisfaction.',
+      skills: ['Figma', 'Adobe XD', 'User Research', 'Prototyping'],
       color: '#5cb85c'
     },
     {
-      id: '3d-integration',
-      title: '3D Integration',
-      icon: FaMagic,
-      description: 'Seamless integration of 3D elements into live-action footage.',
-      details: 'Advanced video manipulation techniques to incorporate 3D features that look natural and professional. We handle camera tracking, lighting matching, and realistic rendering.',
-      skills: ['Motion Tracking', 'Camera Matching', 'Lighting', 'Compositing'],
+      id: 'api-dev',
+      title: 'API Development',
+      icon: FaCube,
+      description: 'Robust RESTful and GraphQL APIs for seamless integration.',
+      details: 'Build powerful backend systems with secure, scalable APIs. We design and implement APIs that are well-documented, easy to integrate, and built to handle growth.',
+      skills: ['REST API', 'GraphQL', 'MongoDB', 'PostgreSQL'],
       color: '#f0ad4e'
     },
     {
-      id: '2d-art',
-      title: '2D Art & Graphics',
-      icon: FaPaintBrush,
-      description: 'Custom 2D artwork and graphic design integration for video projects.',
-      details: 'Creative 2D art solutions including custom illustrations, graphic overlays, title sequences, and brand integration that enhances your video content.',
-      skills: ['Illustrator', 'Photoshop', 'Typography', 'Brand Design'],
+      id: 'cloud',
+      title: 'Cloud Solutions',
+      icon: FaMagic,
+      description: 'Scalable cloud infrastructure and deployment strategies.',
+      details: 'Deploy and manage your applications on AWS, Azure, or Google Cloud. We handle everything from containerization to CI/CD pipelines, ensuring your apps run smoothly at scale.',
+      skills: ['AWS', 'Docker', 'Kubernetes', 'CI/CD'],
       color: '#d9534f'
     },
     {
-      id: 'green-screen',
-      title: 'Green Screen & VFX',
-      icon: FaDesktop,
-      description: 'Professional green screen removal and advanced visual effects.',
-      details: 'High-quality chroma key removal, background replacement, and advanced visual effects that create immersive and professional-looking content.',
-      skills: ['Chroma Key', 'Rotoscoping', 'VFX', 'Background Replacement'],
+      id: 'ecommerce',
+      title: 'E-Commerce Solutions',
+      icon: FaCode,
+      description: 'Complete online store development with payment integration.',
+      details: 'Build your online business with custom e-commerce platforms. We integrate payment gateways, inventory management, and create seamless shopping experiences that drive sales.',
+      skills: ['Shopify', 'WooCommerce', 'Stripe', 'PayPal'],
       color: '#5bc0de'
     }
   ];
@@ -98,10 +98,10 @@ function About() {
   const team = [
     {
       name: 'Colin Nebula',
-      role: 'Founder & Creative Director',
-      bio: 'With over 8 years in video production, Colin leads our creative vision and ensures every project meets the highest standards.',
+      role: 'Founder & Lead Developer',
+      bio: 'Full-stack developer with 8+ years of experience building scalable web applications and leading development teams.',
       image: logo,
-      skills: ['Creative Direction', 'Video Production', 'Client Relations'],
+      skills: ['React', 'Node.js', 'Architecture'],
       social: {
         linkedin: '#',
         twitter: '#',
@@ -110,10 +110,10 @@ function About() {
     },
     {
       name: 'Sarah Chen',
-      role: 'Lead 3D Artist',
-      bio: 'Specialized in complex 3D modeling and animation with expertise in both technical and artistic aspects.',
+      role: 'Senior Frontend Developer',
+      bio: 'Passionate about creating beautiful, performant user interfaces with modern JavaScript frameworks and design systems.',
       image: logo,
-      skills: ['3D Modeling', 'Animation', 'Texturing'],
+      skills: ['React', 'Vue.js', 'UI/UX'],
       social: {
         linkedin: '#',
         twitter: '#'
@@ -121,10 +121,10 @@ function About() {
     },
     {
       name: 'Mike Rodriguez',
-      role: 'Senior Video Editor',
-      bio: 'Expert in post-production workflows with a keen eye for storytelling and visual composition.',
+      role: 'Backend Engineer',
+      bio: 'Expert in building robust APIs and scalable backend systems with focus on security and performance optimization.',
       image: logo,
-      skills: ['Video Editing', 'Color Grading', 'Sound Design'],
+      skills: ['Node.js', 'Python', 'DevOps'],
       social: {
         linkedin: '#',
         instagram: '#'
@@ -158,7 +158,7 @@ function About() {
     {
       icon: FaHeart,
       title: 'Passion',
-      description: 'Our love for storytelling and visual arts drives us to create memorable content.'
+      description: 'Our dedication to modern development practices drives us to build exceptional applications.'
     }
   ];
 
@@ -179,21 +179,21 @@ function About() {
                 Our Story
               </Badge>
               <h1 className="display-4 fw-bold mb-3">
-                Bringing Your 
-                <span className="text-primary"> Vision to Life</span>
+                Building Your 
+                <span className="text-primary"> Digital Future</span>
               </h1>
               <p className="lead mb-4">
-                Since our inception, Nebula Media has been delivering high-quality video content 
-                customized to the unique specifications of each client. Our dedicated team combines 
-                technical expertise with creative vision to create compelling digital experiences.
+                Since our inception, Nebula Dev has been delivering cutting-edge web applications 
+                tailored to the unique needs of each client. Our dedicated team combines 
+                technical excellence with innovative solutions to create powerful digital platforms.
               </p>
               <div className="hero-buttons">
                 <Button variant="primary" size="lg" className="me-3">
                   <FaPlay className="me-2" />
-                  Watch Our Reel
+                  View Projects
                 </Button>
                 <Button variant="outline-primary" size="lg">
-                  View Portfolio
+                  Our Technologies
                 </Button>
               </div>
             </Col>
@@ -365,13 +365,13 @@ function About() {
                 <Card.Body className="p-5 text-center">
                   <FaQuoteLeft className="quote-icon mb-3" />
                   <blockquote className="testimonial-quote">
-                    "Nebula Media transformed our vision into reality. Their attention to detail 
-                    and creative expertise exceeded our expectations. The team's professionalism 
-                    and dedication to quality make them our go-to video production partner."
+                    "Nebula Dev transformed our business with a powerful web platform. Their technical expertise 
+                    and attention to detail exceeded our expectations. The team's professionalism 
+                    and dedication to quality make them our go-to development partner."
                   </blockquote>
                   <div className="testimonial-author">
                     <h5>Jessica Thompson</h5>
-                    <p>Marketing Director, TechCorp</p>
+                    <p>CTO, TechCorp</p>
                   </div>
                 </Card.Body>
               </Card>
@@ -385,8 +385,8 @@ function About() {
             <Card.Body className="p-5 text-center">
               <h2 className="cta-title mb-3">Ready to Start Your Project?</h2>
               <p className="cta-description mb-4">
-                Let's discuss how we can bring your vision to life with our comprehensive 
-                video production services. Get in touch for a free consultation.
+                Let's discuss how we can build your next web application with our comprehensive 
+                development services. Get in touch for a free consultation.
               </p>
               <div className="cta-buttons">
                 <Button variant="primary" size="lg" className="me-3">

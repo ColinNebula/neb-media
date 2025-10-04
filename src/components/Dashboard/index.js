@@ -43,41 +43,41 @@ function Dashboard({ setCurrentTab }) {
   };
 
   const stats = [
-    { icon: FaVideo, label: "Projects Completed", value: "150+", color: "var(--primary-color)", gradient: "var(--primary-gradient)" },
+    { icon: FaVideo, label: "Apps Developed", value: "150+", color: "var(--primary-color)", gradient: "var(--primary-gradient)" },
     { icon: FaUsers, label: "Happy Clients", value: "75+", color: "var(--secondary-color)", gradient: "var(--secondary-gradient)" },
-    { icon: FaEye, label: "Total Views", value: "2M+", color: "var(--accent-color)", gradient: "var(--accent-gradient)" },
+    { icon: FaEye, label: "Code Reviews", value: "2K+", color: "var(--accent-color)", gradient: "var(--accent-gradient)" },
     { icon: FaTrophy, label: "Awards Won", value: "12", color: "var(--primary-color)", gradient: "var(--dark-gradient)" }
   ];
 
   const services = [
     {
       icon: FaVideo,
-      title: "Video Production",
-      description: "Professional video content from concept to final cut with cutting-edge technology",
+      title: "Web App Development",
+      description: "Custom web applications built with React, Vue, and Node.js using modern architecture",
       progress: 95,
       projects: 45,
       gradient: "var(--primary-gradient)"
     },
     {
       icon: FaRocket,
-      title: "3D Animation", 
-      description: "Stunning 3D animations and visual effects that bring stories to life",
+      title: "Mobile Development", 
+      description: "Native and cross-platform mobile apps with React Native and Flutter",
       progress: 88,
       projects: 32,
       gradient: "var(--secondary-gradient)"
     },
     {
       icon: FaLightbulb,
-      title: "Brand Strategy",
-      description: "Complete brand development and innovative marketing solutions", 
+      title: "UI/UX Design",
+      description: "User-centered design and prototyping with Figma and modern design systems", 
       progress: 92,
       projects: 28,
       gradient: "var(--accent-gradient)"
     },
     {
       icon: FaCog,
-      title: "Digital Marketing",
-      description: "Data-driven marketing campaigns that deliver measurable results",
+      title: "API Development",
+      description: "RESTful and GraphQL APIs with comprehensive documentation and testing",
       progress: 90,
       projects: 38,
       gradient: "var(--dark-gradient)"
@@ -88,13 +88,13 @@ function Dashboard({ setCurrentTab }) {
     {
       name: "Sarah Johnson",
       company: "TechStart Inc.",
-      text: "Nebula Media transformed our brand vision into reality. Their attention to detail and creative approach exceeded our expectations.",
+      text: "Nebula Dev transformed our business with a powerful web platform. Their technical expertise and agile approach exceeded our expectations.",
       rating: 5
     },
     {
       name: "Michael Chen", 
       company: "Creative Solutions",
-      text: "The team at Nebula Media delivered exceptional quality on time and within budget. Highly recommend their services.",
+      text: "The team at Nebula Dev delivered a scalable application on time and within budget. Highly recommend their development services.",
       rating: 5
     }
   ];
@@ -108,15 +108,15 @@ function Dashboard({ setCurrentTab }) {
             <Col lg={6}>
               <div className="hero-content animate-slide-in-left">
                 <Badge className="mb-3 px-3 py-2" style={{ background: 'var(--accent-gradient)', border: 'none' }}>
-                  Welcome to Nebula Media
+                  Welcome to Nebula Dev
                 </Badge>
                 <h1 className="display-4 fw-bold mb-3">
-                  Transforming Ideas Into 
-                  <span className="text-gradient"> Digital Excellence</span>
+                  Building Powerful 
+                  <span className="text-gradient"> Web Applications</span>
                 </h1>
                 <p className="lead mb-4" style={{ color: 'var(--text-muted)' }}>
-                  From simple concepts to surreal experiences, we craft compelling narratives 
-                  that connect brands with their audiences across all digital platforms.
+                  From innovative startups to enterprise solutions, we develop cutting-edge web applications 
+                  that drive business growth and deliver exceptional user experiences.
                 </p>
                 <div className="hero-buttons">
                   <Button className="btn-modern me-3" size="lg" onClick={handleViewOurWork}>
@@ -135,7 +135,7 @@ function Dashboard({ setCurrentTab }) {
                 <div className="image-wrapper position-relative">
                   <img 
                     src={hero} 
-                    alt="Nebula Media Hero" 
+                    alt="Nebula Dev Hero" 
                     className="img-fluid rounded-3 shadow-lg animate-float" 
                     style={{ borderRadius: 'var(--radius-xl)' }}
                     onError={(e) => {
@@ -338,7 +338,7 @@ function Dashboard({ setCurrentTab }) {
           <Card className="cta-card border-0 shadow-lg bg-gradient-primary text-white">
             <Card.Body className="p-5 text-center">
               <div className="cta-logo mb-3">
-                <img src={logo} width="120" height="50" alt="Nebula Media Logo" />
+                <img src={logo} width="120" height="50" alt="Nebula Dev Logo" />
               </div>
               <h2 className="cta-title mb-3">Ready to Bring Your Vision to Life?</h2>
               <p className="cta-description mb-4">
@@ -398,20 +398,20 @@ function Dashboard({ setCurrentTab }) {
         >
           <Modal.Header closeButton className="border-0">
             <Modal.Title id="rider-modal-title">
-              Free Rider Animation
+              E-Commerce Platform Development
             </Modal.Title>
           </Modal.Header>
           <Modal.Body className="p-4">
             <p className="lead mb-4">
-              A stunning short low-budget animated film crafted entirely in Blender, 
-              showcasing our expertise in 3D animation and storytelling.
+              A comprehensive e-commerce platform built with React and Node.js, 
+              featuring real-time inventory management, secure payments, and advanced analytics.
             </p>
             <div className="video-container">
               <iframe 
                 width="100%" 
                 height="400" 
                 src="https://www.youtube.com/embed/N2WhwHaicR4?si=DpZil3O_vevDpqEl" 
-                title="Free Rider Animation - Nebula Media"
+                title="E-Commerce Platform - Nebula Dev"
                 frameBorder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                 allowFullScreen
@@ -430,20 +430,20 @@ function Dashboard({ setCurrentTab }) {
         >
           <Modal.Header closeButton className="border-0">
             <Modal.Title id="byte-modal-title">
-              Byte Size Soccer Videos
+              SaaS Dashboard Application
             </Modal.Title>
           </Modal.Header>
           <Modal.Body className="p-4">
             <p className="lead mb-4">
-              Nebula Media proudly collaborated with legendary British superstar goalkeeper 
-              Tony Waiters to create this engaging educational video series.
+              Nebula Dev created this comprehensive SaaS dashboard with advanced data visualization, 
+              real-time updates, and intuitive user management for enterprise clients.
             </p>
             <div className="video-container">
               <iframe
                 width="100%"
                 height="400"
                 src="https://www.youtube.com/embed/1wI6aDte_1Q"
-                title="Byte Size Soccer - Nebula Media"
+                title="SaaS Dashboard - Nebula Dev"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen

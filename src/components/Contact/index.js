@@ -123,7 +123,7 @@ function Contact() {
                 </h1>
                 <p className="lead mb-4">
                   Ready to bring your vision to life? We'd love to hear about your project 
-                  and discuss how Nebula Media can help you create compelling digital experiences.
+                  and discuss how Nebula Dev can help you build powerful web applications.
                 </p>
                 <div className="contact-stats">
                   <Row>
@@ -147,7 +147,7 @@ function Contact() {
               <div className="contact-hero-image">
                 <img 
                   src={logo} 
-                  alt="Nebula Media Logo" 
+                  alt="Nebula Dev Logo" 
                   className="hero-logo"
                   width="200"
                   height="85"

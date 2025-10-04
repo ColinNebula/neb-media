@@ -33,13 +33,13 @@ function LandingPage({ setCurrentTab }) {
                 <br/>
                 
                 <span className="lastly"> 
-                    Nebula Media3D
+                    Nebula Dev
                     <div className="text-glow"></div>
                 </span>
                 </h1>
                 
                 <div className="home-btn enhanced-btn" onClick={() => setCurrentTab("dashboard")}>
-                    <span>Enter Site</span>
+                    <span>View Our Services</span>
                     <div className="btn-glow"></div>
                 </div>
             </div>

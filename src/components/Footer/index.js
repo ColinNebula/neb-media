@@ -9,10 +9,10 @@ function Footer() {
             <div className="footer-container">
                 {/* Company Info Section */}
                 <div className="footer-section">
-                    <h3 className="footer-title">Nebula Media</h3>
+                    <h3 className="footer-title">Nebula Dev</h3>
                     <p className="footer-description">
-                        Creating innovative digital experiences and cutting-edge media solutions 
-                        that connect brands with their audiences across all platforms.
+                        Building powerful web applications and digital solutions that transform 
+                        businesses and create exceptional user experiences across all platforms.
                     </p>
                     <div className="social-links">
                         <a href="#" className="social-link" aria-label="Facebook">
@@ -37,11 +37,11 @@ function Footer() {
                 <div className="footer-section">
                     <h4 className="footer-subtitle">Services</h4>
                     <ul className="footer-links">
-                        <li><a href="#" className="footer-link">Digital Marketing</a></li>
-                        <li><a href="#" className="footer-link">Content Creation</a></li>
-                        <li><a href="#" className="footer-link">Video Production</a></li>
-                        <li><a href="#" className="footer-link">Brand Strategy</a></li>
-                        <li><a href="#" className="footer-link">Web Development</a></li>
+                        <li><a href="#" className="footer-link">Web App Development</a></li>
+                        <li><a href="#" className="footer-link">Mobile Development</a></li>
+                        <li><a href="#" className="footer-link">UI/UX Design</a></li>
+                        <li><a href="#" className="footer-link">API Development</a></li>
+                        <li><a href="#" className="footer-link">Cloud Solutions</a></li>
                     </ul>
                 </div>
 
@@ -52,8 +52,8 @@ function Footer() {
                         <li><a href="#" className="footer-link">About Us</a></li>
                         <li><a href="#" className="footer-link">Our Team</a></li>
                         <li><a href="#" className="footer-link">Careers</a></li>
-                        <li><a href="#" className="footer-link">News & Updates</a></li>
-                        <li><a href="#" className="footer-link">Case Studies</a></li>
+                        <li><a href="#" className="footer-link">Blog & Resources</a></li>
+                        <li><a href="#" className="footer-link">Portfolio</a></li>
                     </ul>
                 </div>
 
@@ -63,7 +63,7 @@ function Footer() {
                     <div className="contact-info">
                         <p className="contact-item">
                             <strong>Email:</strong><br />
-                            hello@nebulamedia.com
+                            hello@nebuladev.com
                         </p>
                         <p className="contact-item">
                             <strong>Phone:</strong><br />
@@ -82,7 +82,7 @@ function Footer() {
             <div className="footer-bottom">
                 <div className="footer-bottom-content">
                     <p className="copyright">
-                        © {currentYear} Nebula Media. All rights reserved.
+                        © {currentYear} Nebula Dev. All rights reserved.
                     </p>
                     <div className="footer-legal">
                         <a href="#" className="legal-link">Privacy Policy</a>
