@@ -25,7 +25,7 @@ import {
 import { useTheme } from '../../contexts/ThemeContext';
 import { useUser } from '../../contexts/UserContext';
 import AuthModal from '../AuthModal';
-import logo from '../../assets/images/logo.png';
+import logo from '../../assets/images/nebula-dev-logo-horizontal.svg';
 import './SideNav.css';
 
 function SideNav(props) {

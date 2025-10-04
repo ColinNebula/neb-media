@@ -25,7 +25,12 @@ import {
   FaEnvelope,
   FaRocket,
   FaLightbulb,
-  FaCog
+  FaCog,
+  FaExternalLinkAlt,
+  FaCamera,
+  FaShieldAlt,
+  FaGamepad,
+  FaDesktop
 } from "react-icons/fa";
 import hero from "../../assets/images/hero.png";
 import byte from "../../assets/images/byte.png";
@@ -96,6 +101,49 @@ function Dashboard({ setCurrentTab }) {
       company: "Creative Solutions",
       text: "The team at Nebula Dev delivered a scalable application on time and within budget. Highly recommend their development services.",
       rating: 5
+    }
+  ];
+
+  const featuredApps = [
+    {
+      title: "Nebula Screen Capture",
+      description: "Professional screen recording and capture tool with advanced editing features and real-time annotations.",
+      url: "https://colinnebula.github.io/nebula-screen-capture/",
+      icon: FaCamera,
+      badge: "Productivity Tool",
+      badgeColor: "primary",
+      tech: ["React", "Web APIs", "Canvas"],
+      gradient: "var(--primary-gradient)"
+    },
+    {
+      title: "Nebula Media Platform",
+      description: "Complete media management and production platform with advanced workflow automation and collaboration tools.",
+      url: "http://localhost:3000",
+      icon: FaDesktop,
+      badge: "Media Production",
+      badgeColor: "success",
+      tech: ["React", "Node.js", "MySQL"],
+      gradient: "var(--secondary-gradient)"
+    },
+    {
+      title: "Nebula VPN Client",
+      description: "Secure and fast VPN client with military-grade encryption, global server network, and zero-log policy.",
+      url: "https://colinnebula.github.io/nebula-vpn-client/",
+      icon: FaShieldAlt,
+      badge: "Security Tool",
+      badgeColor: "warning",
+      tech: ["React", "WebRTC", "Encryption"],
+      gradient: "var(--accent-gradient)"
+    },
+    {
+      title: "Quibish",
+      description: "Interactive gaming platform with real-time multiplayer capabilities and engaging user experience.",
+      url: "https://colinnebula.github.io/quibish",
+      icon: FaGamepad,
+      badge: "Gaming Platform",
+      badgeColor: "danger",
+      tech: ["React", "WebSocket", "Canvas"],
+      gradient: "var(--dark-gradient)"
     }
   ];
 
@@ -295,6 +343,65 @@ function Dashboard({ setCurrentTab }) {
                 </Card.Body>
               </Card>
             </Col>
+          </Row>
+        </section>
+
+        {/* Featured Web Apps Section */}
+        <section className="featured-apps-section mb-5">
+          <Row className="mb-4">
+            <Col>
+              <h2 className="section-title text-center mb-3">Featured Web Applications</h2>
+              <p className="section-subtitle text-center text-muted">
+                Explore our production-ready web applications built with cutting-edge technologies
+              </p>
+            </Col>
+          </Row>
+          <Row>
+            {featuredApps.map((app, index) => (
+              <Col md={6} lg={3} key={index} className="mb-4">
+                <Card className="modern-card h-100 border-0 shadow-sm hover-lift">
+                  <Card.Body className="p-4 d-flex flex-column">
+                    <div className="app-icon mb-3" style={{ 
+                      background: app.gradient,
+                      width: '60px',
+                      height: '60px',
+                      borderRadius: 'var(--radius-lg)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center'
+                    }}>
+                      <app.icon style={{ color: 'white', fontSize: '1.8rem' }} />
+                    </div>
+                    <Badge bg={app.badgeColor} className="mb-3 align-self-start">
+                      {app.badge}
+                    </Badge>
+                    <h5 className="app-title mb-3 fw-bold">{app.title}</h5>
+                    <p className="app-description text-muted mb-3 flex-grow-1">
+                      {app.description}
+                    </p>
+                    <div className="tech-stack mb-3">
+                      <div className="d-flex flex-wrap gap-1">
+                        {app.tech.map((tech, i) => (
+                          <Badge key={i} bg="light" text="dark" className="small">
+                            {tech}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                    <Button 
+                      variant="outline-primary" 
+                      className="w-100 d-flex align-items-center justify-content-center"
+                      href={app.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FaExternalLinkAlt className="me-2" />
+                      Launch App
+                    </Button>
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))}
           </Row>
         </section>
 

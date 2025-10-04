@@ -1,0 +1,66 @@
+<svg width="600" height="200" viewBox="0 0 600 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Icon Part -->
+  <g transform="translate(30, 30)">
+    <!-- Outer Ring -->
+    <circle cx="70" cy="70" r="65" fill="none" stroke="url(#logoGrad)" stroke-width="3" opacity="0.3"/>
+    
+    <!-- Code Brackets -->
+    <path d="M 35 45 L 20 70 L 35 95" 
+      stroke="url(#accentGrad)" 
+      stroke-width="5" 
+      stroke-linecap="round" 
+      stroke-linejoin="round" 
+      fill="none"/>
+    <path d="M 105 45 L 120 70 L 105 95" 
+      stroke="url(#accentGrad)" 
+      stroke-width="5" 
+      stroke-linecap="round" 
+      stroke-linejoin="round" 
+      fill="none"/>
+    
+    <!-- Central Star -->
+    <circle cx="70" cy="70" r="18" fill="url(#logoGrad)"/>
+    
+    <!-- Orbiting Particles -->
+    <circle cx="70" cy="30" r="4" fill="url(#accentGrad)"/>
+    <circle cx="110" cy="70" r="4" fill="url(#accentGrad)"/>
+    <circle cx="70" cy="110" r="4" fill="url(#accentGrad)"/>
+    <circle cx="30" cy="70" r="4" fill="url(#accentGrad)"/>
+    
+    <!-- Connection Lines -->
+    <line x1="70" y1="52" x2="70" y2="34" stroke="url(#logoGrad)" stroke-width="2" opacity="0.4"/>
+    <line x1="88" y1="70" x2="106" y2="70" stroke="url(#logoGrad)" stroke-width="2" opacity="0.4"/>
+    <line x1="70" y1="88" x2="70" y2="106" stroke="url(#logoGrad)" stroke-width="2" opacity="0.4"/>
+    <line x1="52" y1="70" x2="34" y2="70" stroke="url(#logoGrad)" stroke-width="2" opacity="0.4"/>
+    
+    <!-- Inner Ring -->
+    <circle cx="70" cy="70" r="28" fill="none" stroke="url(#accentGrad)" stroke-width="1.5" opacity="0.4"/>
+  </g>
+  
+  <!-- Text Part -->
+  <g transform="translate(180, 100)">
+    <!-- NEBULA -->
+    <text x="0" y="0" font-family="'Poppins', 'Arial', sans-serif" font-size="48" font-weight="700" fill="url(#logoGrad)">
+      NEBULA
+    </text>
+    <!-- DEV -->
+    <text x="0" y="50" font-family="'Poppins', 'Arial', sans-serif" font-size="36" font-weight="600" fill="url(#accentGrad)">
+      DEV
+    </text>
+    <!-- Tagline -->
+    <text x="0" y="75" font-family="'Inter', 'Arial', sans-serif" font-size="14" font-weight="400" fill="#718096" opacity="0.8">
+      Web App Development
+    </text>
+  </g>
+</svg>
