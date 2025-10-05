@@ -39,7 +39,12 @@ import {
   FaMobile,
   FaServer,
   FaCloud,
-  FaEnvelope
+  FaEnvelope,
+  FaExternalLinkAlt,
+  FaRocket,
+  FaCamera,
+  FaShieldAlt,
+  FaGamepad
 } from 'react-icons/fa';
 import logo from '../../assets/images/nebula-dev-logo.svg';
 
@@ -47,6 +52,7 @@ function About() {
   const [showModal, setShowModal] = useState(false);
   const [selectedService, setSelectedService] = useState(null);
   const [showTechModal, setShowTechModal] = useState(false);
+  const [showGetStarted, setShowGetStarted] = useState(false);
 
   const services = [
     {
@@ -139,6 +145,49 @@ function About() {
         linkedin: '#',
         instagram: '#'
       }
+    }
+  ];
+
+  const featuredApps = [
+    {
+      title: "Nebula Screen Capture",
+      description: "Professional screen recording and capture tool with advanced editing features and real-time annotations.",
+      url: "https://colinnebula.github.io/nebula-screen-capture/",
+      icon: FaCamera,
+      badge: "Productivity Tool",
+      badgeColor: "primary",
+      tech: ["React", "Web APIs", "Canvas"],
+      gradient: "var(--primary-gradient)"
+    },
+    {
+      title: "Nebula Media Platform",
+      description: "Complete media management and production platform with advanced workflow automation and collaboration tools.",
+      url: "http://localhost:3000",
+      icon: FaDesktop,
+      badge: "Media Production",
+      badgeColor: "success",
+      tech: ["React", "Node.js", "MySQL"],
+      gradient: "var(--secondary-gradient)"
+    },
+    {
+      title: "Nebula VPN Client",
+      description: "Secure and fast VPN client with military-grade encryption, global server network, and zero-log policy.",
+      url: "https://colinnebula.github.io/nebula-vpn-client/",
+      icon: FaShieldAlt,
+      badge: "Security Tool",
+      badgeColor: "warning",
+      tech: ["React", "WebRTC", "Encryption"],
+      gradient: "var(--accent-gradient)"
+    },
+    {
+      title: "Quibish",
+      description: "Interactive gaming platform with real-time multiplayer capabilities and engaging user experience.",
+      url: "https://colinnebula.github.io/quibish",
+      icon: FaGamepad,
+      badge: "Gaming Platform",
+      badgeColor: "danger",
+      tech: ["React", "WebSocket", "Canvas"],
+      gradient: "var(--dark-gradient)"
     }
   ];
 
@@ -277,7 +326,7 @@ function About() {
                 technical excellence with innovative solutions to create powerful digital platforms.
               </p>
               <div className="hero-buttons">
-                <Button variant="primary" size="lg" className="me-3">
+                <Button variant="primary" size="lg" className="me-3" onClick={() => setShowGetStarted(true)}>
                   <FaPlay className="me-2" />
                   View Projects
                 </Button>
@@ -659,6 +708,121 @@ function About() {
                 <FaEnvelope className="me-2" />
                 Get in Touch
               </Button>
+            </div>
+          </Modal.Body>
+        </Modal>
+
+        {/* Get Started Modal */}
+        <Modal 
+          show={showGetStarted} 
+          onHide={() => setShowGetStarted(false)}
+          size="xl"
+          centered
+          className="get-started-modal"
+        >
+          <Modal.Header closeButton style={{ 
+            background: 'var(--primary-gradient)',
+            color: 'white',
+            border: 'none'
+          }}>
+            <Modal.Title>
+              <FaRocket className="me-2" />
+              Our Featured Projects
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body style={{ 
+            background: 'var(--bg-surface)',
+            color: 'var(--text-primary)',
+            padding: '2rem'
+          }}>
+            <div className="get-started-content">
+              <div className="text-center mb-4">
+                <h3 style={{ color: 'var(--text-primary)' }}>Explore Our Featured Applications</h3>
+                <p className="lead" style={{ color: 'var(--text-muted)' }}>
+                  Check out our latest web applications and see what we can build for you
+                </p>
+              </div>
+
+              <Row className="g-4">
+                {featuredApps.map((app, index) => (
+                  <Col md={6} key={index}>
+                    <Card className="featured-app-card h-100" style={{
+                      background: 'var(--bg-surface-alt)',
+                      border: '1px solid var(--border-color)',
+                      borderRadius: 'var(--radius-lg)',
+                      transition: 'all 0.3s ease',
+                      overflow: 'hidden'
+                    }}>
+                      <div style={{
+                        background: app.gradient,
+                        padding: '2rem',
+                        textAlign: 'center'
+                      }}>
+                        <app.icon size={60} color="white" />
+                      </div>
+                      <Card.Body>
+                        <div className="d-flex justify-content-between align-items-start mb-3">
+                          <h5 style={{ color: 'var(--text-primary)', marginBottom: '0.5rem' }}>
+                            {app.title}
+                          </h5>
+                          <Badge bg={app.badgeColor}>{app.badge}</Badge>
+                        </div>
+                        <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '1rem' }}>
+                          {app.description}
+                        </p>
+                        <div className="tech-stack mb-3">
+                          {app.tech.map((tech, techIndex) => (
+                            <Badge 
+                              key={techIndex} 
+                              bg="secondary" 
+                              className="me-2 mb-2"
+                              style={{ 
+                                background: 'var(--bg-surface)',
+                                color: 'var(--text-secondary)',
+                                border: '1px solid var(--border-color)'
+                              }}
+                            >
+                              {tech}
+                            </Badge>
+                          ))}
+                        </div>
+                        <Button 
+                          variant="outline-primary" 
+                          className="w-100"
+                          href={app.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{
+                            borderRadius: 'var(--radius-md)',
+                            fontWeight: '500'
+                          }}
+                        >
+                          Launch App <FaExternalLinkAlt className="ms-2" size={14} />
+                        </Button>
+                      </Card.Body>
+                    </Card>
+                  </Col>
+                ))}
+              </Row>
+
+              <div className="text-center mt-5">
+                <h4 style={{ color: 'var(--text-primary)', marginBottom: '1rem' }}>
+                  Ready to Build Your Own App?
+                </h4>
+                <p style={{ color: 'var(--text-muted)', marginBottom: '2rem' }}>
+                  Let's discuss your project and turn your ideas into reality
+                </p>
+                <Button 
+                  size="lg"
+                  variant="primary"
+                  onClick={() => {
+                    setShowGetStarted(false);
+                  }}
+                >
+                  <FaEnvelope className="me-2" />
+                  Contact Us
+                </Button>
+              </div>
             </div>
           </Modal.Body>
         </Modal>
