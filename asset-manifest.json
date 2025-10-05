@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/neb-media/static/css/main.90e1f067.css",
-    "main.js": "/neb-media/static/js/main.2ff8f173.js",
+    "main.js": "/neb-media/static/js/main.eff82d3d.js",
     "static/js/787.6a6471c4.chunk.js": "/neb-media/static/js/787.6a6471c4.chunk.js",
     "static/media/bg.mp4": "/neb-media/static/media/bg.ddf51cfc17038a97a0df.mp4",
     "static/media/hero.png": "/neb-media/static/media/hero.2e37b044f726750f36b6.png",
@@ -11,11 +11,11 @@
     "static/media/nebula-dev-logo-horizontal.svg": "/neb-media/static/media/nebula-dev-logo-horizontal.b4dd1279f3b65a51cabd846f6e1129ea.svg",
     "index.html": "/neb-media/index.html",
     "main.90e1f067.css.map": "/neb-media/static/css/main.90e1f067.css.map",
-    "main.2ff8f173.js.map": "/neb-media/static/js/main.2ff8f173.js.map",
+    "main.eff82d3d.js.map": "/neb-media/static/js/main.eff82d3d.js.map",
     "787.6a6471c4.chunk.js.map": "/neb-media/static/js/787.6a6471c4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.90e1f067.css",
-    "static/js/main.2ff8f173.js"
+    "static/js/main.eff82d3d.js"
   ]
 }
