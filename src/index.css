@@ -4758,3 +4758,73 @@ img {
 .get-started-content::-webkit-scrollbar-thumb:hover {
   background: var(--primary-color-dark);
 }
+
+/* Technologies Modal Styles */
+.technologies-modal .modal-content {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.technologies-modal .modal-header .btn-close {
+  filter: brightness(0) invert(1);
+}
+
+.technologies-modal .modal-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.technologies-modal .modal-body::-webkit-scrollbar-track {
+  background: var(--bg-surface-alt);
+  border-radius: 4px;
+}
+
+.technologies-modal .modal-body::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+
+.technologies-modal .modal-body::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color-dark);
+}
+
+.tech-category {
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.tech-category:nth-child(2) { animation-delay: 0.1s; }
+.tech-category:nth-child(3) { animation-delay: 0.2s; }
+.tech-category:nth-child(4) { animation-delay: 0.3s; }
+.tech-category:nth-child(5) { animation-delay: 0.4s; }
+.tech-category:nth-child(6) { animation-delay: 0.5s; }
+
+.tech-card {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.tech-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border-color: var(--primary-color) !important;
+}
+
+.tech-category-icon {
+  transition: all 0.3s ease;
+}
+
+.tech-category:hover .tech-category-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
