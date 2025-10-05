@@ -4828,3 +4828,662 @@ img {
     transform: translateY(0);
   }
 }
+
+/* ========================================
+   ENHANCED MOBILE RESPONSIVENESS
+   For All Modern Smartphones & Devices
+   ======================================== */
+
+/* ========================================
+   EXTRA SMALL DEVICES (Phones < 390px)
+   iPhone SE, older Android phones
+   ======================================== */
+@media (max-width: 389px) {
+  /* Base Font Size */
+  html {
+    font-size: 14px;
+  }
+
+  /* Navigation */
+  .modern-nav {
+    min-height: 80px !important;
+    padding: 0.5rem 0 !important;
+  }
+
+  .nav-item-desktop {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.8rem !important;
+  }
+
+  .logo-container img {
+    height: 35px !important;
+  }
+
+  /* Hero Section */
+  .hero-section h1 {
+    font-size: 1.75rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .hero-section p {
+    font-size: 0.9rem !important;
+  }
+
+  .btn-modern,
+  .btn-outline-modern {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.85rem !important;
+  }
+
+  /* Cards */
+  .stat-card,
+  .service-card,
+  .testimonial-card,
+  .project-card {
+    padding: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .stat-card h3 {
+    font-size: 1.5rem !important;
+  }
+
+  .service-card h4,
+  .testimonial-card h5 {
+    font-size: 1rem !important;
+  }
+
+  /* Modal */
+  .modal-header h5 {
+    font-size: 1.1rem !important;
+  }
+
+  .modal-body {
+    padding: 1rem !important;
+  }
+
+  /* Footer */
+  .footer-section {
+    padding: 1rem 0.5rem !important;
+  }
+
+  .footer-title {
+    font-size: 1.1rem !important;
+  }
+
+  .footer-subtitle {
+    font-size: 0.95rem !important;
+  }
+
+  /* Container Padding */
+  .container {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+}
+
+/* ========================================
+   SMALL DEVICES (Phones 390px - 430px)
+   iPhone 12/13/14 Mini, iPhone 12/13/14/15 Pro
+   ======================================== */
+@media (min-width: 390px) and (max-width: 430px) {
+  /* Base Font Size */
+  html {
+    font-size: 15px;
+  }
+
+  /* Navigation */
+  .modern-nav {
+    min-height: 90px !important;
+    padding: 0.75rem 0 !important;
+  }
+
+  .nav-item-desktop {
+    padding: 0.6rem 1.25rem !important;
+    font-size: 0.85rem !important;
+  }
+
+  .logo-container img {
+    height: 40px !important;
+  }
+
+  /* Hero Section */
+  .hero-section h1 {
+    font-size: 2rem !important;
+    line-height: 1.3 !important;
+  }
+
+  .hero-section p {
+    font-size: 0.95rem !important;
+  }
+
+  /* Cards */
+  .stat-card,
+  .service-card,
+  .testimonial-card,
+  .project-card {
+    padding: 1.25rem !important;
+  }
+
+  /* Buttons */
+  .btn-modern,
+  .btn-outline-modern {
+    padding: 0.6rem 1.25rem !important;
+    font-size: 0.9rem !important;
+  }
+
+  /* Grid Adjustments */
+  .row > [class*='col-'] {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
+/* ========================================
+   MEDIUM DEVICES (Phones 431px - 480px)
+   iPhone 14/15 Pro Max, Pixel 7/8
+   ======================================== */
+@media (min-width: 431px) and (max-width: 480px) {
+  /* Base Font Size */
+  html {
+    font-size: 15.5px;
+  }
+
+  /* Navigation */
+  .modern-nav {
+    min-height: 100px !important;
+  }
+
+  .nav-item-desktop {
+    padding: 0.65rem 1.5rem !important;
+    font-size: 0.9rem !important;
+  }
+
+  .logo-container img {
+    height: 42px !important;
+  }
+
+  /* Hero Section */
+  .hero-section h1 {
+    font-size: 2.25rem !important;
+    line-height: 1.3 !important;
+  }
+
+  .hero-section p {
+    font-size: 1rem !important;
+  }
+
+  /* Cards */
+  .stat-card h3 {
+    font-size: 2rem !important;
+  }
+
+  .service-card h4 {
+    font-size: 1.15rem !important;
+  }
+}
+
+/* ========================================
+   LARGE PHONES (481px - 576px)
+   Large Android phones, phablets
+   ======================================== */
+@media (min-width: 481px) and (max-width: 576px) {
+  /* Base Font Size */
+  html {
+    font-size: 16px;
+  }
+
+  /* Navigation */
+  .modern-nav {
+    min-height: 105px !important;
+  }
+
+  .nav-item-desktop {
+    padding: 0.7rem 1.6rem !important;
+    font-size: 0.95rem !important;
+  }
+
+  .logo-container img {
+    height: 45px !important;
+  }
+
+  /* Hero Section */
+  .hero-section h1 {
+    font-size: 2.5rem !important;
+  }
+
+  .hero-section p {
+    font-size: 1.05rem !important;
+  }
+
+  /* Cards - 2 Column Grid */
+  .service-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem !important;
+  }
+}
+
+/* ========================================
+   TABLETS (577px - 768px)
+   iPad Mini, small tablets
+   ======================================== */
+@media (min-width: 577px) and (max-width: 768px) {
+  /* Navigation */
+  .nav-item-desktop {
+    padding: 0.75rem 1.75rem !important;
+    font-size: 1rem !important;
+  }
+
+  /* Hero Section */
+  .hero-section h1 {
+    font-size: 2.75rem !important;
+  }
+
+  /* Grid Layout */
+  .service-grid,
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.5rem !important;
+  }
+
+  /* Stats - 2x2 Grid */
+  .stats-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.5rem !important;
+  }
+}
+
+/* ========================================
+   LANDSCAPE ORIENTATION
+   For all phones in landscape mode
+   ======================================== */
+@media (max-height: 480px) and (orientation: landscape) {
+  /* Reduce vertical spacing */
+  .hero-section {
+    padding: 2rem 0 !important;
+    min-height: auto !important;
+  }
+
+  .hero-section h1 {
+    font-size: 1.75rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .hero-section p {
+    font-size: 0.9rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* Navigation */
+  .modern-nav {
+    min-height: 60px !important;
+    padding: 0.5rem 0 !important;
+  }
+
+  .nav-item-desktop {
+    padding: 0.4rem 1rem !important;
+  }
+
+  /* Cards */
+  .stat-card,
+  .service-card,
+  .testimonial-card {
+    padding: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* Modal */
+  .modal-dialog {
+    max-width: 90vw !important;
+    margin: 1rem auto !important;
+  }
+
+  .modal-body {
+    max-height: calc(100vh - 120px) !important;
+    overflow-y: auto !important;
+  }
+
+  /* Footer */
+  .nebula-footer {
+    padding: 1.5rem 0 !important;
+  }
+
+  .footer-section {
+    padding: 0.5rem !important;
+  }
+}
+
+/* ========================================
+   SPECIFIC DEVICE OPTIMIZATIONS
+   ======================================== */
+
+/* iPhone 14 Pro Max (430x932) */
+@media (width: 430px) and (height: 932px) {
+  .modern-nav {
+    /* Account for Dynamic Island */
+    padding-top: max(1rem, env(safe-area-inset-top)) !important;
+  }
+
+  .container {
+    padding-left: max(1rem, env(safe-area-inset-left)) !important;
+    padding-right: max(1rem, env(safe-area-inset-right)) !important;
+  }
+}
+
+/* Samsung Galaxy S21/S22/S23 Ultra (412x915) */
+@media (width: 412px) {
+  .hero-section h1 {
+    font-size: 2.1rem !important;
+  }
+
+  .stat-card {
+    min-height: 140px !important;
+  }
+}
+
+/* Google Pixel 7/8 (412x915) */
+@media (min-width: 410px) and (max-width: 414px) {
+  .service-card {
+    min-height: 200px !important;
+  }
+
+  .testimonial-card {
+    min-height: 220px !important;
+  }
+}
+
+/* ========================================
+   TOUCH OPTIMIZATION
+   Improve touch targets for mobile
+   ======================================== */
+@media (hover: none) and (pointer: coarse) {
+  /* Increase tap targets */
+  .nav-item-desktop,
+  .btn,
+  .btn-modern,
+  .btn-outline-modern,
+  a {
+    min-height: 44px !important;
+    min-width: 44px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* Remove hover effects on touch devices */
+  .service-card:hover,
+  .testimonial-card:hover,
+  .project-card:hover {
+    transform: none !important;
+  }
+
+  /* Add active states instead */
+  .service-card:active,
+  .testimonial-card:active,
+  .project-card:active {
+    transform: scale(0.98) !important;
+    transition: transform 0.1s ease !important;
+  }
+
+  /* Larger form inputs */
+  input,
+  textarea,
+  select {
+    min-height: 48px !important;
+    font-size: 16px !important; /* Prevent zoom on iOS */
+  }
+
+  /* Larger modal close buttons */
+  .modal-header .btn-close {
+    width: 44px !important;
+    height: 44px !important;
+    padding: 1rem !important;
+  }
+
+  /* Better spacing for touch */
+  .footer-links a,
+  .social-link {
+    padding: 0.5rem !important;
+    margin: 0.25rem !important;
+  }
+}
+
+/* ========================================
+   MODAL RESPONSIVENESS
+   ======================================== */
+@media (max-width: 576px) {
+  .modal-dialog {
+    margin: 0.5rem !important;
+    max-width: calc(100% - 1rem) !important;
+  }
+
+  .modal-fullscreen-sm-down {
+    max-width: 100% !important;
+    margin: 0 !important;
+    height: 100vh !important;
+  }
+
+  .modal-fullscreen-sm-down .modal-content {
+    height: 100vh !important;
+    border-radius: 0 !important;
+  }
+
+  /* Get Started Modal */
+  .get-started-modal .modal-dialog {
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .featured-app-card {
+    margin-bottom: 1rem !important;
+  }
+
+  .app-tech-badges {
+    flex-wrap: wrap !important;
+    gap: 0.25rem !important;
+  }
+
+  /* Technologies Modal */
+  .technologies-modal .tech-card {
+    margin-bottom: 0.75rem !important;
+  }
+
+  .progress {
+    height: 0.5rem !important;
+  }
+}
+
+/* ========================================
+   TYPOGRAPHY SCALING
+   Better readability on small screens
+   ======================================== */
+@media (max-width: 576px) {
+  h1 {
+    font-size: 1.75rem !important;
+    line-height: 1.2 !important;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+    line-height: 1.3 !important;
+  }
+
+  h3 {
+    font-size: 1.25rem !important;
+    line-height: 1.3 !important;
+  }
+
+  h4 {
+    font-size: 1.1rem !important;
+    line-height: 1.4 !important;
+  }
+
+  h5 {
+    font-size: 1rem !important;
+    line-height: 1.4 !important;
+  }
+
+  p {
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+  }
+
+  small,
+  .small {
+    font-size: 0.85rem !important;
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY IMPROVEMENTS
+   ======================================== */
+@media (max-width: 768px) {
+  /* Focus indicators */
+  *:focus {
+    outline: 3px solid var(--primary-color) !important;
+    outline-offset: 2px !important;
+  }
+
+  /* Skip to content link */
+  .skip-to-content {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-color);
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    z-index: 10000;
+  }
+
+  .skip-to-content:focus {
+    top: 0;
+  }
+
+  /* Better contrast for text */
+  .text-muted {
+    opacity: 0.85 !important;
+  }
+}
+
+/* ========================================
+   PERFORMANCE OPTIMIZATIONS
+   ======================================== */
+@media (max-width: 768px) {
+  /* Reduce animations on mobile for better performance */
+  * {
+    animation-duration: 0.3s !important;
+    transition-duration: 0.2s !important;
+  }
+
+  /* Simplify shadows */
+  .card,
+  .modal-content,
+  .btn {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  /* Disable complex transforms */
+  .service-card:hover,
+  .testimonial-card:hover {
+    transform: none !important;
+  }
+}
+
+/* ========================================
+   SAFE AREA INSETS
+   For devices with notches (iPhone X+)
+   ======================================== */
+@supports (padding: max(0px)) {
+  .modern-nav {
+    padding-left: max(1rem, env(safe-area-inset-left)) !important;
+    padding-right: max(1rem, env(safe-area-inset-right)) !important;
+    padding-top: max(1rem, env(safe-area-inset-top)) !important;
+  }
+
+  .container {
+    padding-left: max(1rem, env(safe-area-inset-left)) !important;
+    padding-right: max(1rem, env(safe-area-inset-right)) !important;
+  }
+
+  .nebula-footer {
+    padding-bottom: max(2rem, env(safe-area-inset-bottom)) !important;
+  }
+
+  .modal-content {
+    padding-bottom: env(safe-area-inset-bottom) !important;
+  }
+}
+
+/* ========================================
+   FOLDABLE DEVICES
+   Samsung Galaxy Fold, Z Fold
+   ======================================== */
+@media (min-width: 653px) and (max-width: 717px) {
+  .service-grid,
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .modal-dialog {
+    max-width: 90% !important;
+  }
+}
+
+/* ========================================
+   HIGH DPI DISPLAYS
+   Retina and high-resolution screens
+   ======================================== */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Sharper text rendering */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Crisper borders */
+  .card,
+  .modal-content,
+  .btn {
+    border-width: 0.5px !important;
+  }
+}
+
+/* ========================================
+   REDUCED MOTION
+   Respect user preferences
+   ======================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+@media print {
+  .modern-nav,
+  .nebula-footer,
+  .btn,
+  .modal {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  .card {
+    border: 1px solid black !important;
+    page-break-inside: avoid !important;
+  }
+}
