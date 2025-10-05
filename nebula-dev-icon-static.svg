@@ -1,0 +1,61 @@
+<svg width="512" height="512" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gradient Definitions -->
+  <defs>
+    <linearGradient id="primaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="glowGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#667eea;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Background Circle for better visibility -->
+  <circle cx="100" cy="100" r="95" fill="#1a1a2e"/>
+  
+  <!-- Glow Effect -->
+  <circle cx="100" cy="100" r="80" fill="url(#glowGradient)" opacity="0.3"/>
+  
+  <!-- Outer Ring (Nebula) -->
+  <circle cx="100" cy="100" r="70" fill="none" stroke="url(#primaryGradient)" stroke-width="3" opacity="0.8"/>
+  
+  <!-- Code Brackets -->
+  <path d="M 65 70 L 50 100 L 65 130" 
+    stroke="url(#accentGradient)" 
+    stroke-width="5" 
+    stroke-linecap="round" 
+    stroke-linejoin="round" 
+    fill="none"/>
+  <path d="M 135 70 L 150 100 L 135 130" 
+    stroke="url(#accentGradient)" 
+    stroke-width="5" 
+    stroke-linecap="round" 
+    stroke-linejoin="round" 
+    fill="none"/>
+  
+  <!-- Central Star/Node -->
+  <circle cx="100" cy="100" r="21" fill="url(#primaryGradient)"/>
+  
+  <!-- Orbiting Particles (static positions) -->
+  <circle cx="100" cy="60" r="4" fill="url(#accentGradient)"/>
+  <circle cx="140" cy="100" r="4" fill="url(#accentGradient)"/>
+  <circle cx="100" cy="140" r="4" fill="url(#accentGradient)"/>
+  <circle cx="60" cy="100" r="4" fill="url(#accentGradient)"/>
+  
+  <!-- Connection Lines -->
+  <line x1="100" y1="79" x2="100" y2="60" stroke="url(#primaryGradient)" stroke-width="2" opacity="0.5"/>
+  <line x1="121" y1="100" x2="140" y2="100" stroke="url(#primaryGradient)" stroke-width="2" opacity="0.5"/>
+  <line x1="100" y1="121" x2="100" y2="140" stroke="url(#primaryGradient)" stroke-width="2" opacity="0.5"/>
+  <line x1="79" y1="100" x2="60" y2="100" stroke="url(#primaryGradient)" stroke-width="2" opacity="0.5"/>
+  
+  <!-- Inner Accent Ring -->
+  <circle cx="100" cy="100" r="30" fill="none" stroke="url(#accentGradient)" stroke-width="1.5" opacity="0.6"/>
+  
+  <!-- Additional orbital rings for depth -->
+  <circle cx="100" cy="100" r="50" fill="none" stroke="url(#primaryGradient)" stroke-width="1" opacity="0.3"/>
+</svg>
