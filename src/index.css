@@ -4544,3 +4544,58 @@ img {
   opacity: 0;
   transition: opacity 0.3s ease;
 }
+
+/* Get Started Modal Styles */
+.get-started-modal .modal-content {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.get-started-modal .modal-header {
+  padding: 1.5rem 2rem;
+}
+
+.get-started-modal .modal-header .btn-close {
+  filter: brightness(0) invert(1);
+}
+
+.get-started-modal .featured-app-card {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.get-started-modal .featured-app-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border-color: var(--primary-color) !important;
+}
+
+.get-started-modal .tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.get-started-content {
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.get-started-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.get-started-content::-webkit-scrollbar-track {
+  background: var(--bg-surface-alt);
+  border-radius: 4px;
+}
+
+.get-started-content::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+
+.get-started-content::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color-dark);
+}

@@ -40,6 +40,7 @@ import logo from "../../assets/images/logo.png";
 function Dashboard({ setCurrentTab }) {
   const [lgShow, setLgShow] = useState(false);
   const [lgShow1, setLgShow1] = useState(false);
+  const [showGetStarted, setShowGetStarted] = useState(false);
 
   const handleViewOurWork = () => {
     if (setCurrentTab) {
@@ -171,7 +172,7 @@ function Dashboard({ setCurrentTab }) {
                     <FaPlay className="me-2" />
                     View Our Work
                   </Button>
-                  <Button className="btn-outline-modern" size="lg">
+                  <Button className="btn-outline-modern" size="lg" onClick={() => setShowGetStarted(true)}>
                     Get Started
                     <FaArrowRight className="ms-2" />
                   </Button>
@@ -556,6 +557,133 @@ function Dashboard({ setCurrentTab }) {
                 allowFullScreen
                 className="rounded"
               />
+            </div>
+          </Modal.Body>
+        </Modal>
+
+        {/* Get Started Modal */}
+        <Modal 
+          show={showGetStarted} 
+          onHide={() => setShowGetStarted(false)}
+          size="xl"
+          centered
+          className="get-started-modal"
+        >
+          <Modal.Header closeButton style={{ 
+            background: 'var(--primary-gradient)',
+            color: 'white',
+            border: 'none'
+          }}>
+            <Modal.Title>
+              <FaRocket className="me-2" />
+              Get Started with Nebula Dev
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body style={{ 
+            background: 'var(--bg-surface)',
+            color: 'var(--text-primary)',
+            padding: '2rem'
+          }}>
+            <div className="get-started-content">
+              <div className="text-center mb-4">
+                <h3 style={{ color: 'var(--text-primary)' }}>Explore Our Featured Applications</h3>
+                <p className="lead" style={{ color: 'var(--text-muted)' }}>
+                  Check out our latest web applications and see what we can build for you
+                </p>
+              </div>
+
+              <Row className="g-4">
+                {featuredApps.map((app, index) => (
+                  <Col md={6} key={index}>
+                    <Card className="featured-app-card h-100" style={{
+                      background: 'var(--bg-surface-alt)',
+                      border: '1px solid var(--border-color)',
+                      borderRadius: 'var(--radius-lg)',
+                      transition: 'all 0.3s ease',
+                      overflow: 'hidden'
+                    }}>
+                      <div style={{
+                        background: app.gradient,
+                        padding: '2rem',
+                        textAlign: 'center'
+                      }}>
+                        <app.icon size={60} color="white" />
+                      </div>
+                      <Card.Body>
+                        <div className="d-flex justify-content-between align-items-start mb-3">
+                          <h5 style={{ color: 'var(--text-primary)', marginBottom: '0.5rem' }}>
+                            {app.title}
+                          </h5>
+                          <Badge bg={app.badgeColor}>{app.badge}</Badge>
+                        </div>
+                        <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '1rem' }}>
+                          {app.description}
+                        </p>
+                        <div className="tech-stack mb-3">
+                          {app.tech.map((tech, techIndex) => (
+                            <Badge 
+                              key={techIndex} 
+                              bg="secondary" 
+                              className="me-2 mb-2"
+                              style={{ 
+                                background: 'var(--bg-surface)',
+                                color: 'var(--text-secondary)',
+                                border: '1px solid var(--border-color)'
+                              }}
+                            >
+                              {tech}
+                            </Badge>
+                          ))}
+                        </div>
+                        <Button 
+                          variant="outline-primary" 
+                          className="w-100"
+                          href={app.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{
+                            borderRadius: 'var(--radius-md)',
+                            fontWeight: '500'
+                          }}
+                        >
+                          Launch App <FaExternalLinkAlt className="ms-2" size={14} />
+                        </Button>
+                      </Card.Body>
+                    </Card>
+                  </Col>
+                ))}
+              </Row>
+
+              <div className="text-center mt-5">
+                <h4 style={{ color: 'var(--text-primary)', marginBottom: '1rem' }}>
+                  Ready to Build Your Own App?
+                </h4>
+                <p style={{ color: 'var(--text-muted)', marginBottom: '2rem' }}>
+                  Let's discuss your project and turn your ideas into reality
+                </p>
+                <Button 
+                  size="lg"
+                  className="btn-modern me-3"
+                  onClick={() => {
+                    setShowGetStarted(false);
+                    setCurrentTab('contact');
+                  }}
+                >
+                  <FaEnvelope className="me-2" />
+                  Contact Us
+                </Button>
+                <Button 
+                  size="lg"
+                  variant="outline-secondary"
+                  onClick={() => {
+                    setShowGetStarted(false);
+                    setCurrentTab('about-us');
+                  }}
+                >
+                  Learn More About Us
+                  <FaArrowRight className="ms-2" />
+                </Button>
+              </div>
             </div>
           </Modal.Body>
         </Modal>
