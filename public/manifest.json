@@ -3,30 +3,32 @@
   "name": "Nebula Dev - Web App Development",
   "icons": [
     {
-      "src": "favicon-hd.svg",
+      "src": "nebula-dev-icon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"
     },
     {
-      "src": "favicon-large.svg",
+      "src": "nebula-dev-icon.svg",
       "sizes": "64x64",
       "type": "image/svg+xml"
     },
     {
-      "src": "favicon.png",
+      "src": "nebula-dev-icon.svg",
       "sizes": "32x32 24x24 16x16",
-      "type": "image/png"
+      "type": "image/svg+xml"
     },
     {
-      "src": "logo-original.png",
+      "src": "nebula-dev-icon-192.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "192x192",
+      "purpose": "any maskable"
     },
     {
-      "src": "logo-original.png",
+      "src": "nebula-dev-icon-512.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "purpose": "any maskable"
     }
   ],
   "start_url": ".",
