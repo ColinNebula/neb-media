@@ -26,7 +26,7 @@ import {
 } from 'react-icons/fa';
 import logo from '../../assets/images/nebula-dev-logo.svg';
 
-function Contact() {
+function Contact({ setCurrentTab }) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -324,7 +324,21 @@ function Contact() {
                       )}
                     </Button>
                     <p className="form-note mt-3 text-muted">
-                      * Required fields. We respect your privacy and will never share your information.
+                      * Required fields. We respect your privacy and will never share your information. 
+                      <a 
+                        href="#" 
+                        onClick={(e) => {
+                          e.preventDefault();
+                          if (setCurrentTab) setCurrentTab('privacy-policy');
+                        }}
+                        style={{ 
+                          color: 'var(--primary-color)', 
+                          textDecoration: 'none',
+                          marginLeft: '0.25rem'
+                        }}
+                      >
+                        View Privacy Policy
+                      </a>
                     </p>
                   </div>
                 </Form>

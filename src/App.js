@@ -10,6 +10,9 @@ import Contact from "./components/Contact";
 import LandingPage from "./components/LandingPage";
 import Dashboard from "./components/Dashboard";
 import MediaPlayerDemo from "./components/VideoPlayerDemo";
+import PrivacyPolicy from "./components/Privacy Policy";
+import TermsOfService from "./components/Terms of Service";
+import CookiePolicy from "./components/Cookie Policy";
 import { ThemeProvider } from './contexts/ThemeContext';
 import { UserProvider } from './contexts/UserContext';
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -27,13 +30,22 @@ function App() {
         return <About Us />;
 
       case "contact":
-        return <Contact />;
+        return <Contact setCurrentTab={setCurrentTab} />;
 
         case "faq":
           return <Faq />;
 
         case "video-player":
           return <MediaPlayerDemo />;
+
+        case "privacy-policy":
+          return <PrivacyPolicy />;
+
+        case "terms-of-service":
+          return <TermsOfService />;
+
+        case "cookie-policy":
+          return <CookiePolicy />;
 
           case "landing-page":
             return <LandingPage setCurrentTab={setCurrentTab} />;
@@ -58,7 +70,7 @@ function App() {
           </div>
 
           {currentTab !== "landing-page" && (
-            <Footer />
+            <Footer setCurrentTab={setCurrentTab} />
           )}
        
         </div>

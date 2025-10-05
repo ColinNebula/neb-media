@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaYoutube } from 'react-icons/fa';
 
-function Footer() {
+function Footer({ setCurrentTab }) {
     const currentYear = new Date().getFullYear();
 
     return (
@@ -67,12 +67,12 @@ function Footer() {
                         </p>
                         <p className="contact-item">
                             <strong>Phone:</strong><br />
-                            +1 (555) 123-4567
+                            +1 (416) 856-4567
                         </p>
                         <p className="contact-item">
                             <strong>Address:</strong><br />
-                            123 Innovation Drive<br />
-                            Tech City, TC 12345
+                            46 Wildfire Road<br />
+                            Woodbridge, ON 1L4L 8Y9
                         </p>
                     </div>
                 </div>
@@ -85,11 +85,38 @@ function Footer() {
                         © {currentYear} Nebula Dev. All rights reserved.
                     </p>
                     <div className="footer-legal">
-                        <a href="#" className="legal-link">Privacy Policy</a>
+                        <a 
+                            href="#" 
+                            className="legal-link"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                if (setCurrentTab) setCurrentTab('privacy-policy');
+                            }}
+                        >
+                            Privacy Policy
+                        </a>
                         <span className="separator">|</span>
-                        <a href="#" className="legal-link">Terms of Service</a>
+                        <a 
+                            href="#" 
+                            className="legal-link"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                if (setCurrentTab) setCurrentTab('terms-of-service');
+                            }}
+                        >
+                            Terms of Service
+                        </a>
                         <span className="separator">|</span>
-                        <a href="#" className="legal-link">Cookie Policy</a>
+                        <a 
+                            href="#" 
+                            className="legal-link"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                if (setCurrentTab) setCurrentTab('cookie-policy');
+                            }}
+                        >
+                            Cookie Policy
+                        </a>
                     </div>
                 </div>
             </div>
