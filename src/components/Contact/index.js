@@ -24,7 +24,7 @@ import {
   FaInstagram,
   FaYoutube
 } from 'react-icons/fa';
-import logo from '../../assets/images/logo.png';
+import logo from '../../assets/images/nebula-dev-logo.svg';
 
 function Contact() {
   const [formData, setFormData] = useState({

@@ -41,7 +41,7 @@ import {
   FaCloud,
   FaEnvelope
 } from 'react-icons/fa';
-import logo from '../../assets/images/logo.png';
+import logo from '../../assets/images/nebula-dev-logo.svg';
 
 function About() {
   const [showModal, setShowModal] = useState(false);

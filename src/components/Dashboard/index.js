@@ -35,7 +35,7 @@ import {
 import hero from "../../assets/images/hero.png";
 import byte from "../../assets/images/byte.png";
 import rider from "../../assets/images/rider.png";
-import logo from "../../assets/images/logo.png";
+import logo from "../../assets/images/nebula-dev-logo.svg";
 
 function Dashboard({ setCurrentTab }) {
   const [lgShow, setLgShow] = useState(false);
