@@ -874,6 +874,28 @@ main {
   }
 }
 
+/* Gentler float animation for mobile devices */
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-1px);
+  }
+}
+
+/* Subtle breathing/scale animation for mobile - more natural than bounce */
+@keyframes mobileBreathing {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.002);
+    opacity: 0.99;
+  }
+}
+
 /* Animation Classes */
 .animate-fade-in-up {
   animation: fadeInUp 1s ease-out;
@@ -892,7 +914,20 @@ main {
 }
 
 .animate-float {
-  animation: float 3s ease-in-out infinite;
+  animation: float 8s ease-in-out infinite;
+}
+
+/* Subtle breathing animation for mobile devices - more natural than vertical movement */
+@media (max-width: 768px) {
+  .animate-float {
+    animation: mobileBreathing 6s ease-in-out infinite;
+  }
+}
+
+@media (max-width: 576px) {
+  .animate-float {
+    animation: mobileBreathing 8s ease-in-out infinite;
+  }
 }
 
 /* Modern Progress Bar */
@@ -3570,10 +3605,13 @@ img {
 @media (max-width: 768px) {
   .professional-contact {
     padding: 1rem 0;
+    padding-top: max(3rem, env(safe-area-inset-top, 0) + 2rem) !important;
   }
   
   .contact-hero {
-    padding: 2rem 0;
+    padding: 3rem 0 2rem 0;
+    padding-top: max(3rem, env(safe-area-inset-top, 0) + 2rem) !important;
+    margin-top: 1rem;
   }
   
   .contact-hero-content h1 {
@@ -3620,6 +3658,21 @@ img {
 }
 
 @media (max-width: 576px) {
+  .professional-contact {
+    padding: 0.5rem 0;
+    padding-top: max(3.5rem, env(safe-area-inset-top, 0) + 2.5rem) !important;
+  }
+
+  .contact-hero {
+    padding: 4.5rem 0 2rem 0 !important;
+    padding-top: max(4.5rem, env(safe-area-inset-top, 0) + 3.5rem) !important;
+    margin-top: 2rem !important;
+  }
+
+  .contact-hero-content {
+    margin-top: 1rem;
+  }
+
   .contact-hero-content h1 {
     font-size: 1.75rem;
   }
@@ -3972,10 +4025,13 @@ img {
 @media (max-width: 768px) {
   .professional-faq {
     padding: 1rem 0;
+    padding-top: max(3rem, env(safe-area-inset-top, 0) + 2rem) !important;
   }
   
   .faq-hero {
-    padding: 2rem 0;
+    padding: 4rem 0 2rem 0;
+    padding-top: max(4rem, env(safe-area-inset-top, 0) + 3rem) !important;
+    margin-top: 1.5rem;
   }
   
   .faq-hero h1 {
@@ -4022,6 +4078,17 @@ img {
 }
 
 @media (max-width: 576px) {
+  .professional-faq {
+    padding: 0.5rem 0;
+    padding-top: max(3.5rem, env(safe-area-inset-top, 0) + 2.5rem) !important;
+  }
+
+  .faq-hero {
+    padding: 4.5rem 0 2rem 0 !important;
+    padding-top: max(4.5rem, env(safe-area-inset-top, 0) + 3.5rem) !important;
+    margin-top: 2rem !important;
+  }
+
   .faq-hero h1 {
     font-size: 1.75rem;
   }
@@ -4536,10 +4603,13 @@ img {
 @media (max-width: 768px) {
   .professional-about {
     padding: 1rem 0;
+    padding-top: max(3rem, env(safe-area-inset-top, 0) + 2rem) !important;
   }
   
   .about-hero {
-    padding: 2rem 0;
+    padding: 4rem 0 2rem 0;
+    padding-top: max(4rem, env(safe-area-inset-top, 0) + 3rem) !important;
+    margin-top: 1.5rem;
   }
   
   .about-hero h1 {
@@ -4592,6 +4662,17 @@ img {
 }
 
 @media (max-width: 576px) {
+  .professional-about {
+    padding: 0.5rem 0;
+    padding-top: max(3.5rem, env(safe-area-inset-top, 0) + 2.5rem) !important;
+  }
+
+  .about-hero {
+    padding: 4.5rem 0 2rem 0 !important;
+    padding-top: max(4.5rem, env(safe-area-inset-top, 0) + 3.5rem) !important;
+    margin-top: 2rem !important;
+  }
+
   .about-hero h1 {
     font-size: 1.75rem;
   }
@@ -5366,12 +5447,38 @@ img {
   .small {
     font-size: 0.85rem !important;
   }
+
+  /* Legal Pages Padding */
+  .privacy-policy-page,
+  .cookie-policy-page {
+    padding-top: 2rem !important;
+  }
+
+  .privacy-hero,
+  .terms-hero {
+    padding-top: 4rem !important;
+    padding-bottom: 2rem !important;
+    margin-top: 1.5rem !important;
+  }
 }
 
 /* ========================================
    ACCESSIBILITY IMPROVEMENTS
    ======================================== */
 @media (max-width: 768px) {
+  /* Legal Pages Padding - Tablet */
+  .privacy-policy-page,
+  .cookie-policy-page {
+    padding-top: 1.5rem !important;
+  }
+
+  .privacy-hero,
+  .terms-hero {
+    padding-top: 3rem !important;
+    padding-bottom: 2rem !important;
+    margin-top: 1rem !important;
+  }
+
   /* Focus indicators */
   *:focus {
     outline: 3px solid var(--primary-color) !important;
