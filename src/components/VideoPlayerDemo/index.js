@@ -315,37 +315,22 @@ const MediaPlayerDemo = () => {
                 </Col>
               </Row>
 
-              {/* Sample Media */}
+              {/* Sample Media - Compact View */}
               <h5 className="mb-3">Sample Media</h5>
-              <Row>
+              <div className="sample-media-grid">
                 {filteredMedia.map((media) => (
-                  <Col md={4} key={media.id} className="mb-3">
-                    <Card 
-                      className={`sample-video-card ${isDark ? 'dark' : 'light'} ${selectedMedia?.id === media.id ? 'selected' : ''}`}
-                      onClick={() => selectSampleMedia(media)}
-                    >
-                      <div className="video-thumbnail">
-                        <div 
-                          className="video-thumbnail-placeholder"
-                          style={{ backgroundColor: media.color }}
-                        >
-                          <div className="thumbnail-content">
-                            {media.type === 'video' ? <FaVideo className="thumbnail-icon" /> : <FaMusic className="thumbnail-icon" />}
-                            <span className="thumbnail-text">{media.format} {media.type}</span>
-                          </div>
-                        </div>
-                        <div className="play-overlay">
-                          <FaPlay />
-                        </div>
-                      </div>
-                      <Card.Body>
-                        <h6>{media.title}</h6>
-                        <small className="text-muted">{media.format} • {media.type}</small>
-                      </Card.Body>
-                    </Card>
-                  </Col>
+                  <div 
+                    key={media.id}
+                    className={`sample-media-chip ${selectedMedia?.id === media.id ? 'selected' : ''}`}
+                    onClick={() => selectSampleMedia(media)}
+                    style={{ borderLeftColor: media.color }}
+                  >
+                    {media.type === 'video' ? <FaVideo /> : <FaMusic />}
+                    <span className="media-title">{media.title}</span>
+                    <span className="media-format">{media.format}</span>
+                  </div>
                 ))}
-              </Row>
+              </div>
             </Card.Body>
           </Card>
         </Col>
@@ -364,114 +349,59 @@ const MediaPlayerDemo = () => {
             <Card.Body>
               {/* Video Streaming Platforms */}
               <div className="format-category mb-4">
-                <h5 className="category-title">� Video Streaming Platforms</h5>
-                <Row>
+                <h5 className="category-title">🎬 Video Streaming Platforms</h5>
+                <div className="format-badges">
                   {supportedFormats.filter(f => f.category === 'Video Streaming').map((format, index) => (
-                    <Col md={6} lg={4} key={index} className="mb-3">
-                      <div className="format-item streaming">
-                        <div className="format-header">
-                          <strong>{format.format}</strong>
-                          <span className="format-extension streaming">{format.extension}</span>
-                        </div>
-                        <p className="format-description">{format.description}</p>
-                      </div>
-                    </Col>
+                    <span key={index} className="format-badge streaming" title={format.description}>
+                      <strong>{format.format}</strong>
+                      <code>{format.extension}</code>
+                    </span>
                   ))}
-                </Row>
+                </div>
               </div>
 
               {/* Audio Streaming Platforms */}
               <div className="format-category mb-4">
                 <h5 className="category-title">🎵 Audio Streaming Platforms</h5>
-                <Row>
+                <div className="format-badges">
                   {supportedFormats.filter(f => f.category === 'Audio Streaming').map((format, index) => (
-                    <Col md={6} lg={4} key={index} className="mb-3">
-                      <div className="format-item streaming audio">
-                        <div className="format-header">
-                          <strong>{format.format}</strong>
-                          <span className="format-extension audio">{format.extension}</span>
-                        </div>
-                        <p className="format-description">{format.description}</p>
-                      </div>
-                    </Col>
+                    <span key={index} className="format-badge audio" title={format.description}>
+                      <strong>{format.format}</strong>
+                      <code>{format.extension}</code>
+                    </span>
                   ))}
-                </Row>
+                </div>
               </div>
 
               {/* Video Files */}
               <div className="format-category mb-4">
-                <h5 className="category-title">� Video File Formats</h5>
-                <Row>
+                <h5 className="category-title">📹 Video File Formats</h5>
+                <div className="format-badges">
                   {supportedFormats.filter(f => f.category === 'Video Files').map((format, index) => (
-                    <Col md={6} lg={4} key={index} className="mb-3">
-                      <div className="format-item direct">
-                        <div className="format-header">
-                          <strong>{format.format}</strong>
-                          <span className="format-extension direct">{format.extension}</span>
-                        </div>
-                        <p className="format-description">{format.description}</p>
-                      </div>
-                    </Col>
+                    <span key={index} className="format-badge video-file" title={format.description}>
+                      <strong>{format.format}</strong>
+                      <code>{format.extension}</code>
+                    </span>
                   ))}
-                </Row>
+                </div>
               </div>
 
               {/* Audio Files */}
-              <div className="format-category">
+              <div className="format-category mb-4">
                 <h5 className="category-title">🎧 Audio File Formats</h5>
-                <Row>
+                <div className="format-badges">
                   {supportedFormats.filter(f => f.category === 'Audio Files').map((format, index) => (
-                    <Col md={6} lg={4} key={index} className="mb-3">
-                      <div className="format-item direct audio">
-                        <div className="format-header">
-                          <strong>{format.format}</strong>
-                          <span className="format-extension audio">{format.extension}</span>
-                        </div>
-                        <p className="format-description">{format.description}</p>
-                      </div>
-                    </Col>
+                    <span key={index} className="format-badge audio-file" title={format.description}>
+                      <strong>{format.format}</strong>
+                      <code>{format.extension}</code>
+                    </span>
                   ))}
-                </Row>
+                </div>
               </div>
               
               <Alert variant="info" className="mt-4">
                 <strong>🎯 Pro Tip:</strong> Simply paste any YouTube, Vimeo, SoundCloud, Spotify, or other supported platform URL, and our media player will automatically detect and embed it with full functionality!
               </Alert>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-
-      {/* Features List */}
-      <Row className="mt-5">
-        <Col lg={11} xl={10} className="mx-auto">
-          <Card className={`features-card ${isDark ? 'dark' : 'light'}`}>
-            <Card.Header>
-              <h4 className="mb-0">Player Features</h4>
-            </Card.Header>
-            <Card.Body>
-              <Row>
-                <Col md={6}>
-                  <ul className="feature-list">
-                    <li>🎬 YouTube & Vimeo embedding</li>
-                    <li>� Twitch & Dailymotion support</li>
-                    <li>✨ Auto-platform detection</li>
-                    <li>🔄 Play/Pause controls</li>
-                    <li>⏩ Skip forward/backward (10s)</li>
-                    <li>� Volume control with mute</li>
-                  </ul>
-                </Col>
-                <Col md={6}>
-                  <ul className="feature-list">
-                    <li>🎯 Fullscreen mode</li>
-                    <li>⚡ Variable playback speed</li>
-                    <li>📊 Progress bar with scrubbing</li>
-                    <li>⏰ Time display</li>
-                    <li>💾 Download functionality</li>
-                    <li>� Light/Dark theme support</li>
-                  </ul>
-                </Col>
-              </Row>
             </Card.Body>
           </Card>
         </Col>

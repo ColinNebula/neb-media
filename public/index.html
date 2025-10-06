@@ -2,6 +2,31 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()" />
+    
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self';
+      script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.youtube.com https://player.vimeo.com https://w.soundcloud.com https://open.spotify.com;
+      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+      font-src 'self' https://fonts.gstatic.com data:;
+      img-src 'self' data: https: blob:;
+      media-src 'self' https: blob:;
+      connect-src 'self' https://www.youtube.com https://player.vimeo.com https://api.soundcloud.com https://api.spotify.com;
+      frame-src 'self' https://www.youtube.com https://player.vimeo.com https://w.soundcloud.com https://open.spotify.com;
+      object-src 'none';
+      base-uri 'self';
+      form-action 'self';
+      frame-ancestors 'self';
+      upgrade-insecure-requests;
+    " />
+    
     <!-- Enhanced larger favicon for better visibility -->
     <link rel="icon" href="%PUBLIC_URL%/favicon-hd.svg?v=3" type="image/svg+xml" sizes="any" />
     <link rel="icon" href="%PUBLIC_URL%/favicon-large.svg?v=3" type="image/svg+xml" sizes="64x64" />

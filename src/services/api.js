@@ -1,6 +1,7 @@
 import axios from 'axios';
+import { getApiUrl, isValidToken, secureStorage } from '../config/security';
 
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001/api';
+const API_BASE_URL = getApiUrl();
 
 // Create axios instance
 const api = axios.create({
@@ -12,8 +13,8 @@ const api = axios.create({
 
 // Add token to requests
 api.interceptors.request.use((config) => {
-  const token = localStorage.getItem('authToken');
-  if (token) {
+  const token = secureStorage.getItem('authToken');
+  if (token && isValidToken(token)) {
     config.headers.Authorization = `Bearer ${token}`;
   }
   return config;
@@ -25,8 +26,8 @@ api.interceptors.response.use(
   (error) => {
     if (error.response?.status === 401 || error.response?.status === 403) {
       // Token expired or invalid
-      localStorage.removeItem('authToken');
-      localStorage.removeItem('user');
+      secureStorage.removeItem('authToken');
+      secureStorage.removeItem('user');
       // Optionally redirect to login page
       // window.location.href = '/login';
     }
@@ -40,8 +41,8 @@ export const authAPI = {
   register: async (userData) => {
     const response = await api.post('/auth/register', userData);
     if (response.data.token) {
-      localStorage.setItem('authToken', response.data.token);
-      localStorage.setItem('user', JSON.stringify(response.data.user));
+      secureStorage.setItem('authToken', response.data.token);
+      secureStorage.setItem('user', response.data.user);
     }
     return response.data;
   },
@@ -50,8 +51,8 @@ export const authAPI = {
   login: async (login, password) => {
     const response = await api.post('/auth/login', { login, password });
     if (response.data.token) {
-      localStorage.setItem('authToken', response.data.token);
-      localStorage.setItem('user', JSON.stringify(response.data.user));
+      secureStorage.setItem('authToken', response.data.token);
+      secureStorage.setItem('user', response.data.user);
     }
     return response.data;
   },
@@ -61,8 +62,8 @@ export const authAPI = {
     try {
       await api.post('/auth/logout');
     } finally {
-      localStorage.removeItem('authToken');
-      localStorage.removeItem('user');
+      secureStorage.removeItem('authToken');
+      secureStorage.removeItem('user');
     }
   },
 
@@ -74,13 +75,13 @@ export const authAPI = {
 
   // Get current user from localStorage
   getCurrentUser: () => {
-    const user = localStorage.getItem('user');
-    return user ? JSON.parse(user) : null;
+    return secureStorage.getItem('user');
   },
 
   // Check if user is authenticated
   isAuthenticated: () => {
-    return !!localStorage.getItem('authToken');
+    const token = secureStorage.getItem('authToken');
+    return token && isValidToken(token);
   }
 };
 

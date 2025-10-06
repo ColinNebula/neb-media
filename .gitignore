@@ -20,6 +20,31 @@
 .env.test.local
 .env.production.local
 
+# logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Sensitive files
+*.pem
+*.key
+*.cert
+config/secrets.js
+
+# Backend specific
+/backend/.env
+/backend/uploads/*
+!/backend/uploads/.gitkeep
+

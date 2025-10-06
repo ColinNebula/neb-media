@@ -83,16 +83,17 @@ const MediaPlayer = ({
   const [eqBands, setEqBands] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0]); // 10-band EQ
   const [bassBoost, setBassBoost] = useState(0);
   const [trebleBoost, setTrebleBoost] = useState(0);
-  const [showWaveformViz, setShowWaveformViz] = useState(showWaveform);
+  const [showWaveformViz, setShowWaveformViz] = useState(false);
   const [crossfadeEnabled, setCrossfadeEnabled] = useState(crossfade);
   const [crossfadeDuration, setCrossfadeDuration] = useState(3);
   const [showMiniPlayer, setShowMiniPlayer] = useState(false);
-  const [showLyricsPanel, setShowLyricsPanel] = useState(showLyrics);
+  const [showLyricsPanel, setShowLyricsPanel] = useState(false);
   const [currentLyrics, setCurrentLyrics] = useState('');
   const [pitchShift, setPitchShift] = useState(0);
   const [tempoShift, setTempoShift] = useState(0);
   const [showSpectrum, setShowSpectrum] = useState(false);
   const [showPlaylistPanel, setShowPlaylistPanel] = useState(false);
+  const [showAdvancedControls, setShowAdvancedControls] = useState(false);
   
   // Audio analysis
   const audioContextRef = useRef(null);
@@ -1097,6 +1098,28 @@ const MediaPlayer = ({
                 </div>
 
                 <div className="controls-right">
+                  {/* Advanced Audio Controls Toggle (for audio only) */}
+                  {mediaType === 'audio' && (
+                    <button 
+                      className={`control-btn ${showAdvancedControls ? 'active' : ''}`} 
+                      onClick={() => setShowAdvancedControls(!showAdvancedControls)}
+                      title="Advanced Audio Controls"
+                    >
+                      <FaCog className={showAdvancedControls ? 'spinning' : ''} />
+                    </button>
+                  )}
+
+                  {/* Playlist Toggle */}
+                  {playlist && playlist.length > 0 && (
+                    <button 
+                      className={`control-btn ${showPlaylistPanel ? 'active' : ''}`}
+                      onClick={() => setShowPlaylistPanel(!showPlaylistPanel)}
+                      title="Show Playlist"
+                    >
+                      🎵 <span className="playlist-count">{playlist.length}</span>
+                    </button>
+                  )}
+
                   {/* Download Button */}
                   {showDownload && !isEmbedded && (
                     <button className="control-btn" onClick={downloadMedia} title={`Download ${mediaType}`}>
@@ -1216,65 +1239,81 @@ const MediaPlayer = ({
             </div>
           )}
 
-          {/* Audio Effects Panel */}
-          <div className="audio-effects-panel">
-            <div className="effects-row">
-              <div className="effect-control">
-                <label>Pitch Shift</label>
-                <input
-                  type="range"
-                  min="-12"
-                  max="12"
-                  step="1"
-                  value={pitchShift}
-                  onChange={(e) => applyPitchShift(parseFloat(e.target.value))}
-                  className="effect-slider"
-                />
-                <span>{pitchShift > 0 ? '+' : ''}{pitchShift} semitones</span>
+          {/* Audio Effects Panel - Collapsible */}
+          {showAdvancedControls && (
+            <div className="audio-effects-panel">
+              <div className="effects-header">
+                <h4>Advanced Audio Controls</h4>
+                <button 
+                  className="effects-close-btn"
+                  onClick={() => setShowAdvancedControls(false)}
+                >
+                  ×
+                </button>
               </div>
-              
-              <div className="effect-control">
-                <label>Tempo</label>
-                <input
-                  type="range"
-                  min="-50"
-                  max="100"
-                  step="5"
-                  value={tempoShift}
-                  onChange={(e) => applyTempoShift(parseFloat(e.target.value))}
-                  className="effect-slider"
-                />
-                <span>{tempoShift > 0 ? '+' : ''}{tempoShift}%</span>
-              </div>
-            </div>
 
-            <div className="effects-buttons">
-              <button 
-                className={`effect-btn ${showEq ? 'active' : ''}`}
-                onClick={() => setShowEq(!showEq)}
-              >
-                EQ
-              </button>
-              <button 
-                className={`effect-btn ${showSpectrum ? 'active' : ''}`}
-                onClick={() => setShowSpectrum(!showSpectrum)}
-              >
-                Spectrum
-              </button>
-              <button 
-                className={`effect-btn ${crossfadeEnabled ? 'active' : ''}`}
-                onClick={() => setCrossfadeEnabled(!crossfadeEnabled)}
-              >
-                Crossfade
-              </button>
-              <button 
-                className={`effect-btn ${showWaveformViz ? 'active' : ''}`}
-                onClick={() => setShowWaveformViz(!showWaveformViz)}
-              >
-                Waveform
-              </button>
+              <div className="effects-row">
+                <div className="effect-control">
+                  <label>Pitch Shift</label>
+                  <input
+                    type="range"
+                    min="-12"
+                    max="12"
+                    step="1"
+                    value={pitchShift}
+                    onChange={(e) => applyPitchShift(parseFloat(e.target.value))}
+                    className="effect-slider"
+                  />
+                  <span>{pitchShift > 0 ? '+' : ''}{pitchShift} semitones</span>
+                </div>
+                
+                <div className="effect-control">
+                  <label>Tempo</label>
+                  <input
+                    type="range"
+                    min="-50"
+                    max="100"
+                    step="5"
+                    value={tempoShift}
+                    onChange={(e) => applyTempoShift(parseFloat(e.target.value))}
+                    className="effect-slider"
+                  />
+                  <span>{tempoShift > 0 ? '+' : ''}{tempoShift}%</span>
+                </div>
+              </div>
+
+              <div className="effects-buttons">
+                <button 
+                  className={`effect-btn ${showEq ? 'active' : ''}`}
+                  onClick={() => setShowEq(!showEq)}
+                  title="Toggle Equalizer"
+                >
+                  EQ
+                </button>
+                <button 
+                  className={`effect-btn ${showSpectrum ? 'active' : ''}`}
+                  onClick={() => setShowSpectrum(!showSpectrum)}
+                  title="Toggle Spectrum Analyzer"
+                >
+                  Spectrum
+                </button>
+                <button 
+                  className={`effect-btn ${crossfadeEnabled ? 'active' : ''}`}
+                  onClick={() => setCrossfadeEnabled(!crossfadeEnabled)}
+                  title="Toggle Crossfade"
+                >
+                  Crossfade
+                </button>
+                <button 
+                  className={`effect-btn ${showWaveformViz ? 'active' : ''}`}
+                  onClick={() => setShowWaveformViz(!showWaveformViz)}
+                  title="Toggle Waveform"
+                >
+                  Waveform
+                </button>
+              </div>
             </div>
-          </div>
+          )}
         </>
       )}
 
