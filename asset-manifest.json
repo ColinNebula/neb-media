@@ -1,21 +1,22 @@
 {
   "files": {
-    "main.css": "/neb-media/static/css/main.a51b7cce.css",
-    "main.js": "/neb-media/static/js/main.d6828a96.js",
-    "static/js/787.6a6471c4.chunk.js": "/neb-media/static/js/787.6a6471c4.chunk.js",
+    "main.css": "/neb-media/static/css/main.952380ea.css",
+    "main.js": "/neb-media/static/js/main.087c38ee.js",
+    "static/js/453.691e2018.chunk.js": "/neb-media/static/js/453.691e2018.chunk.js",
     "static/media/bg.mp4": "/neb-media/static/media/bg.ddf51cfc17038a97a0df.mp4",
     "static/media/hero.png": "/neb-media/static/media/hero.2e37b044f726750f36b6.png",
     "static/media/rider.png": "/neb-media/static/media/rider.3a33318e9c3a221cc1b8.png",
     "static/media/byte.png": "/neb-media/static/media/byte.4b26eb00605c8423c49f.png",
+    "service-worker.js": "/neb-media/service-worker.js",
     "static/media/nebula-dev-logo.svg": "/neb-media/static/media/nebula-dev-logo.05f054c049407f99f815bb2c202f3d38.svg",
-    "static/media/nebula-dev-logo-horizontal.svg": "/neb-media/static/media/nebula-dev-logo-horizontal.b4dd1279f3b65a51cabd846f6e1129ea.svg",
     "index.html": "/neb-media/index.html",
-    "main.a51b7cce.css.map": "/neb-media/static/css/main.a51b7cce.css.map",
-    "main.d6828a96.js.map": "/neb-media/static/js/main.d6828a96.js.map",
-    "787.6a6471c4.chunk.js.map": "/neb-media/static/js/787.6a6471c4.chunk.js.map"
+    "static/media/nebula-dev-logo-horizontal.svg": "/neb-media/static/media/nebula-dev-logo-horizontal.b4dd1279f3b65a51cabd846f6e1129ea.svg",
+    "main.952380ea.css.map": "/neb-media/static/css/main.952380ea.css.map",
+    "main.087c38ee.js.map": "/neb-media/static/js/main.087c38ee.js.map",
+    "453.691e2018.chunk.js.map": "/neb-media/static/js/453.691e2018.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a51b7cce.css",
-    "static/js/main.d6828a96.js"
+    "static/css/main.952380ea.css",
+    "static/js/main.087c38ee.js"
   ]
 }

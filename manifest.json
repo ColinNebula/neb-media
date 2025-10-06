@@ -1,22 +1,13 @@
 {
-  "short_name": "Nebula Dev",
-  "name": "Nebula Dev - Web App Development",
+  "short_name": "Neb Media",
+  "name": "Neb Media - Universal Media Player Platform",
+  "description": "Professional media player with support for YouTube, Vimeo, SoundCloud, Spotify and all major video/audio formats",
   "icons": [
     {
       "src": "nebula-dev-icon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"
-    },
-    {
-      "src": "nebula-dev-icon.svg",
-      "sizes": "64x64",
-      "type": "image/svg+xml"
-    },
-    {
-      "src": "nebula-dev-icon.svg",
-      "sizes": "32x32 24x24 16x16",
-      "type": "image/svg+xml"
     },
     {
       "src": "nebula-dev-icon-192.png",
@@ -31,8 +22,45 @@
       "purpose": "any maskable"
     }
   ],
-  "start_url": ".",
+  "start_url": "/neb-media",
+  "scope": "/neb-media/",
   "display": "standalone",
+  "orientation": "portrait-primary",
   "theme_color": "#667eea",
-  "background_color": "#764ba2"
+  "background_color": "#ffffff",
+  "categories": ["entertainment", "music", "video", "productivity"],
+  "prefer_related_applications": false,
+  "shortcuts": [
+    {
+      "name": "Media Player",
+      "short_name": "Player",
+      "description": "Open the universal media player",
+      "url": "/neb-media/media-player",
+      "icons": [
+        {
+          "src": "nebula-dev-icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Dashboard",
+      "short_name": "Dashboard",
+      "description": "View your dashboard",
+      "url": "/neb-media/dashboard",
+      "icons": [
+        {
+          "src": "nebula-dev-icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "screenshots": [],
+  "serviceworker": {
+    "src": "/service-worker.js",
+    "scope": "/neb-media/"
+  }
 }
