@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaYoutube } from 'react-icons/fa';
 
-function Footer({ setCurrentTab }) {
+function Footer({ setCurrentTab, onGetStartedClick }) {
     const currentYear = new Date().getFullYear();
 
     return (
@@ -37,7 +37,20 @@ function Footer({ setCurrentTab }) {
                 <div className="footer-section">
                     <h4 className="footer-subtitle">Services</h4>
                     <ul className="footer-links">
-                        <li><a href="#" className="footer-link">Web App Development</a></li>
+                        <li>
+                            <a 
+                                href="#" 
+                                className="footer-link"
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    if (onGetStartedClick) {
+                                        onGetStartedClick();
+                                    }
+                                }}
+                            >
+                                Web App Development
+                            </a>
+                        </li>
                         <li><a href="#" className="footer-link">Mobile Development</a></li>
                         <li><a href="#" className="footer-link">UI/UX Design</a></li>
                         <li><a href="#" className="footer-link">API Development</a></li>
@@ -49,8 +62,39 @@ function Footer({ setCurrentTab }) {
                 <div className="footer-section">
                     <h4 className="footer-subtitle">Company</h4>
                     <ul className="footer-links">
-                        <li><a href="#" className="footer-link">About Us</a></li>
-                        <li><a href="#" className="footer-link">Our Team</a></li>
+                        <li>
+                            <a 
+                                href="#" 
+                                className="footer-link"
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    if (setCurrentTab) setCurrentTab('about-us');
+                                }}
+                            >
+                                About Us
+                            </a>
+                        </li>
+                        <li>
+                            <a 
+                                href="#" 
+                                className="footer-link"
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    if (setCurrentTab) {
+                                        setCurrentTab('about-us');
+                                        // Scroll to team section after a brief delay
+                                        setTimeout(() => {
+                                            const teamSection = document.getElementById('team-section');
+                                            if (teamSection) {
+                                                teamSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                            }
+                                        }, 100);
+                                    }
+                                }}
+                            >
+                                Our Team
+                            </a>
+                        </li>
                         <li><a href="#" className="footer-link">Careers</a></li>
                         <li><a href="#" className="footer-link">Blog & Resources</a></li>
                         <li><a href="#" className="footer-link">Portfolio</a></li>
@@ -63,11 +107,21 @@ function Footer({ setCurrentTab }) {
                     <div className="contact-info">
                         <p className="contact-item">
                             <strong>Email:</strong><br />
-                            hello@nebuladev.com
+                            <a 
+                                href="mailto:hello@nebuladev.com" 
+                                className="footer-link"
+                            >
+                                hello@nebuladev.com
+                            </a>
                         </p>
                         <p className="contact-item">
                             <strong>Phone:</strong><br />
-                            +1 (416) 856-4567
+                            <a 
+                                href="tel:+14168564567" 
+                                className="footer-link"
+                            >
+                                +1 (416) 856-4567
+                            </a>
                         </p>
                         <p className="contact-item">
                             <strong>Address:</strong><br />

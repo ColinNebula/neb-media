@@ -20,11 +20,27 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
 
   const [currentTab, setCurrentTab] = useState("landing-page");
+  const [showGetStartedModal, setShowGetStartedModal] = useState(false);
+
+  const handleGetStartedClick = () => {
+    // If not on dashboard, navigate to dashboard first
+    if (currentTab !== "dashboard") {
+      setCurrentTab("dashboard");
+    }
+    // Show the modal
+    setShowGetStartedModal(true);
+  };
 
   const renderTab = () => {
     switch (currentTab) {
       case "dashboard":
-        return <Dashboard setCurrentTab={setCurrentTab} />;
+        return (
+          <Dashboard 
+            setCurrentTab={setCurrentTab}
+            externalShowGetStarted={showGetStartedModal}
+            externalSetShowGetStarted={setShowGetStartedModal}
+          />
+        );
 
       case "about-us":
         return <About Us />;
@@ -70,7 +86,10 @@ function App() {
           </div>
 
           {currentTab !== "landing-page" && (
-            <Footer setCurrentTab={setCurrentTab} />
+            <Footer 
+              setCurrentTab={setCurrentTab} 
+              onGetStartedClick={handleGetStartedClick}
+            />
           )}
        
         </div>

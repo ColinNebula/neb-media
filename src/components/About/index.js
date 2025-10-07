@@ -437,7 +437,7 @@ function About() {
         </section>
 
         {/* Team Section */}
-        <section className="about-team mb-5">
+        <section id="team-section" className="about-team mb-5">
           <Row>
             <Col lg={8} className="mx-auto text-center mb-5">
               <h2 className="section-title">Meet Our Team</h2>

@@ -157,6 +157,27 @@
   background-clip: text !important;
 }
 
+/* Fix h2 text in dark mode - make it visible with gradient */
+[data-theme="dark"] h2 {
+  background: linear-gradient(135deg, #a78bfa 0%, #c084fc 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  color: transparent !important;
+}
+
+/* Alternative: solid bright color for h2 if gradient doesn't work */
+[data-theme="dark"] .section-title,
+[data-theme="dark"] .dashboard-hero h2,
+[data-theme="dark"] .about-h2,
+[data-theme="dark"] .contact-h2,
+[data-theme="dark"] .faq-h2 {
+  background: linear-gradient(135deg, #a78bfa 0%, #c084fc 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
 [data-theme="dark"] .stat-card p,
 [data-theme="dark"] .service-card p,
 [data-theme="dark"] .testimonial-card p,

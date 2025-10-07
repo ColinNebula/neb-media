@@ -37,10 +37,14 @@ import byte from "../../assets/images/byte.png";
 import rider from "../../assets/images/rider.png";
 import logo from "../../assets/images/nebula-dev-logo.svg";
 
-function Dashboard({ setCurrentTab }) {
+function Dashboard({ setCurrentTab, externalShowGetStarted, externalSetShowGetStarted }) {
   const [lgShow, setLgShow] = useState(false);
   const [lgShow1, setLgShow1] = useState(false);
   const [showGetStarted, setShowGetStarted] = useState(false);
+
+  // Use external state if provided, otherwise use local state
+  const isGetStartedOpen = externalShowGetStarted !== undefined ? externalShowGetStarted : showGetStarted;
+  const setIsGetStartedOpen = externalSetShowGetStarted !== undefined ? externalSetShowGetStarted : setShowGetStarted;
 
   const handleViewOurWork = () => {
     if (setCurrentTab) {
@@ -117,6 +121,16 @@ function Dashboard({ setCurrentTab }) {
       gradient: "var(--primary-gradient)"
     },
     {
+      title: "Nebula Media Converter",
+      description: "A cutting-edge, browser-based media conversion platform that brings professional-grade file processing directly to your web browser with FFmpeg.wasm.",
+      url: "https://colinnebula.github.io/nebula-media-converter/",
+      icon: FaVideo,
+      badge: "Media Tool",
+      badgeColor: "info",
+      tech: ["React", "FFmpeg.wasm", "Web Workers"],
+      gradient: "var(--accent-gradient)"
+    },
+    {
       title: "Nebula Media Platform",
       description: "Complete media management and production platform with advanced workflow automation and collaboration tools.",
       url: "http://localhost:3000",
@@ -172,7 +186,7 @@ function Dashboard({ setCurrentTab }) {
                     <FaPlay className="me-2" />
                     View Our Work
                   </Button>
-                  <Button className="btn-outline-modern" size="lg" onClick={() => setShowGetStarted(true)}>
+                  <Button className="btn-outline-modern" size="lg" onClick={() => setIsGetStartedOpen(true)}>
                     Get Started
                     <FaArrowRight className="ms-2" />
                   </Button>
@@ -563,9 +577,9 @@ function Dashboard({ setCurrentTab }) {
 
         {/* Get Started Modal */}
         <Modal 
-          show={showGetStarted} 
-          onHide={() => setShowGetStarted(false)}
-          size="xl"
+          show={isGetStartedOpen} 
+          onHide={() => setIsGetStartedOpen(false)}
+          size="lg"
           centered
           className="get-started-modal"
         >
@@ -665,7 +679,7 @@ function Dashboard({ setCurrentTab }) {
                   size="lg"
                   className="btn-modern me-3"
                   onClick={() => {
-                    setShowGetStarted(false);
+                    setIsGetStartedOpen(false);
                     setCurrentTab('contact');
                   }}
                 >
@@ -676,7 +690,7 @@ function Dashboard({ setCurrentTab }) {
                   size="lg"
                   variant="outline-secondary"
                   onClick={() => {
-                    setShowGetStarted(false);
+                    setIsGetStartedOpen(false);
                     setCurrentTab('about-us');
                   }}
                 >
