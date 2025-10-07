@@ -125,7 +125,7 @@ function About() {
       }
     },
     {
-      name: 'Sarah Chen',
+      name: 'Jag Nebula',
       role: 'Senior Frontend Developer',
       bio: 'Passionate about creating beautiful, performant user interfaces with modern JavaScript frameworks and design systems.',
       image: logo,
@@ -181,7 +181,7 @@ function About() {
     },
     {
       title: "Quibish",
-      description: "Interactive gaming platform with real-time multiplayer capabilities and engaging user experience.",
+      description: " A revolutionary communication platform that combines modern web technologies with innovative features to deliver an unparalleled messaging and calling experience. Built with React and WebSocket, Quibish offers real-time messaging, voice and video calls, and seamless file sharing in a sleek, user-friendly interface.",
       url: "https://colinnebula.github.io/quibish",
       icon: FaGamepad,
       badge: "Gaming Platform",
@@ -495,27 +495,7 @@ function About() {
           </Row>
         </section>
 
-        {/* Testimonial Section */}
-        <section className="about-testimonial mb-5">
-          <Row>
-            <Col lg={8} className="mx-auto">
-              <Card className="testimonial-card border-0 shadow-lg bg-gradient-primary text-white">
-                <Card.Body className="p-5 text-center">
-                  <FaQuoteLeft className="quote-icon mb-3" />
-                  <blockquote className="testimonial-quote">
-                    "Nebula Dev transformed our business with a powerful web platform. Their technical expertise 
-                    and attention to detail exceeded our expectations. The team's professionalism 
-                    and dedication to quality make them our go-to development partner."
-                  </blockquote>
-                  <div className="testimonial-author">
-                    <h5>Jessica Thompson</h5>
-                    <p>CTO, TechCorp</p>
-                  </div>
-                </Card.Body>
-              </Card>
-            </Col>
-          </Row>
-        </section>
+       
 
         {/* CTA Section */}
         <section className="about-cta">

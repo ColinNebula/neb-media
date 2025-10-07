@@ -76,7 +76,7 @@ function Contact({ setCurrentTab }) {
     {
       icon: FaMapMarkerAlt,
       title: 'Our Location',
-      details: ['55 Main Street', 'Vaughan, ON L4L-8Y9', 'Canada'],
+      details: ['46 Wildfire Road', 'Vaughan, ON L4L-8Y9', 'Canada'],
       color: '#358ed3'
     },
     {

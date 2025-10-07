@@ -49,7 +49,7 @@ function App() {
         return <Contact setCurrentTab={setCurrentTab} />;
 
         case "faq":
-          return <Faq />;
+          return <Faq setCurrentTab={setCurrentTab} />;
 
         case "video-player":
           return <MediaPlayerDemo />;

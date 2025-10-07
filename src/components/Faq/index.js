@@ -8,7 +8,9 @@ import {
   Badge, 
   Button,
   InputGroup,
-  Form
+  Form,
+  Modal,
+  ProgressBar
 } from 'react-bootstrap';
 import { 
   FaQuestionCircle,
@@ -29,12 +31,21 @@ import {
   FaVideo,
   FaEdit,
   FaPalette,
-  FaCode
+  FaCode,
+  FaPlay,
+  FaRocket,
+  FaDesktop,
+  FaLightbulb,
+  FaCog,
+  FaCheckCircle
 } from 'react-icons/fa';
 
-function Faq() {
+function Faq({ setCurrentTab }) {
   const [searchTerm, setSearchTerm] = useState('');
   const [activeKey, setActiveKey] = useState(null);
+  const [showPortfolioModal, setShowPortfolioModal] = useState(false);
+  const [showPricingModal, setShowPricingModal] = useState(false);
+  const [showAboutModal, setShowAboutModal] = useState(false);
 
   const faqData = [
     {
@@ -334,7 +345,11 @@ function Faq() {
                       <FaVideo className="resource-icon mb-3" />
                       <h5>Portfolio</h5>
                       <p className="text-muted">View our latest work and case studies</p>
-                      <Button variant="outline-primary" size="sm">
+                      <Button 
+                        variant="outline-primary" 
+                        size="sm"
+                        onClick={() => setShowPortfolioModal(true)}
+                      >
                         View Portfolio <FaExternalLinkAlt className="ms-1" />
                       </Button>
                     </Card.Body>
@@ -346,7 +361,11 @@ function Faq() {
                       <FaDollarSign className="resource-icon mb-3" />
                       <h5>Pricing Guide</h5>
                       <p className="text-muted">Get detailed pricing information</p>
-                      <Button variant="outline-primary" size="sm">
+                      <Button 
+                        variant="outline-primary" 
+                        size="sm"
+                        onClick={() => setShowPricingModal(true)}
+                      >
                         View Pricing <FaExternalLinkAlt className="ms-1" />
                       </Button>
                     </Card.Body>
@@ -358,7 +377,11 @@ function Faq() {
                       <FaUsers className="resource-icon mb-3" />
                       <h5>About Us</h5>
                       <p className="text-muted">Learn more about our team and mission</p>
-                      <Button variant="outline-primary" size="sm">
+                      <Button 
+                        variant="outline-primary" 
+                        size="sm"
+                        onClick={() => setShowAboutModal(true)}
+                      >
                         About Us <FaExternalLinkAlt className="ms-1" />
                       </Button>
                     </Card.Body>
@@ -368,6 +391,528 @@ function Faq() {
             </Col>
           </Row>
         </section>
+
+        {/* Portfolio Modal */}
+        <Modal 
+          show={showPortfolioModal} 
+          onHide={() => setShowPortfolioModal(false)}
+          size="xl"
+          centered
+          className="portfolio-modal"
+        >
+          <Modal.Header closeButton style={{ 
+            background: 'var(--primary-gradient)',
+            color: 'white',
+            border: 'none'
+          }}>
+            <Modal.Title>
+              <FaVideo className="me-2" />
+              Our Portfolio
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body style={{ 
+            background: 'var(--bg-surface)',
+            color: 'var(--text-primary)',
+            padding: '2rem'
+          }}>
+            <div className="text-center mb-4">
+              <h3 style={{ color: 'var(--text-primary)' }}>Featured Projects</h3>
+              <p className="lead" style={{ color: 'var(--text-muted)' }}>
+                Explore our latest video production work and creative solutions
+              </p>
+            </div>
+
+            <Row className="g-4">
+              <Col md={6}>
+                <Card style={{
+                  background: 'var(--bg-surface-alt)',
+                  border: '1px solid var(--border-color)',
+                  borderRadius: 'var(--radius-lg)'
+                }}>
+                  <div style={{
+                    background: 'var(--primary-gradient)',
+                    padding: '2rem',
+                    textAlign: 'center'
+                  }}>
+                    <FaVideo size={48} color="white" />
+                  </div>
+                  <Card.Body>
+                    <h5 style={{ color: 'var(--text-primary)' }}>Corporate Video Production</h5>
+                    <p style={{ color: 'var(--text-muted)' }}>
+                      Professional corporate videos with 3D animation, motion graphics, and high-end post-production.
+                    </p>
+                    <Badge bg="primary" className="me-2">Video Editing</Badge>
+                    <Badge bg="secondary" className="me-2">3D Animation</Badge>
+                    <Badge bg="success">Motion Graphics</Badge>
+                  </Card.Body>
+                </Card>
+              </Col>
+
+              <Col md={6}>
+                <Card style={{
+                  background: 'var(--bg-surface-alt)',
+                  border: '1px solid var(--border-color)',
+                  borderRadius: 'var(--radius-lg)'
+                }}>
+                  <div style={{
+                    background: 'var(--secondary-gradient)',
+                    padding: '2rem',
+                    textAlign: 'center'
+                  }}>
+                    <FaPalette size={48} color="white" />
+                  </div>
+                  <Card.Body>
+                    <h5 style={{ color: 'var(--text-primary)' }}>Creative Content</h5>
+                    <p style={{ color: 'var(--text-muted)' }}>
+                      Engaging social media content, promotional videos, and branded multimedia experiences.
+                    </p>
+                    <Badge bg="primary" className="me-2">Social Media</Badge>
+                    <Badge bg="secondary" className="me-2">Branding</Badge>
+                    <Badge bg="success">Color Grading</Badge>
+                  </Card.Body>
+                </Card>
+              </Col>
+
+              <Col md={6}>
+                <Card style={{
+                  background: 'var(--bg-surface-alt)',
+                  border: '1px solid var(--border-color)',
+                  borderRadius: 'var(--radius-lg)'
+                }}>
+                  <div style={{
+                    background: 'var(--accent-gradient)',
+                    padding: '2rem',
+                    textAlign: 'center'
+                  }}>
+                    <FaPlay size={48} color="white" />
+                  </div>
+                  <Card.Body>
+                    <h5 style={{ color: 'var(--text-primary)' }}>Event Coverage</h5>
+                    <p style={{ color: 'var(--text-muted)' }}>
+                      Complete event video production with multi-camera setups and live streaming capabilities.
+                    </p>
+                    <Badge bg="primary" className="me-2">Multi-Camera</Badge>
+                    <Badge bg="secondary" className="me-2">Live Streaming</Badge>
+                    <Badge bg="success">Drone Footage</Badge>
+                  </Card.Body>
+                </Card>
+              </Col>
+
+              <Col md={6}>
+                <Card style={{
+                  background: 'var(--bg-surface-alt)',
+                  border: '1px solid var(--border-color)',
+                  borderRadius: 'var(--radius-lg)'
+                }}>
+                  <div style={{
+                    background: 'var(--dark-gradient)',
+                    padding: '2rem',
+                    textAlign: 'center'
+                  }}>
+                    <FaRocket size={48} color="white" />
+                  </div>
+                  <Card.Body>
+                    <h5 style={{ color: 'var(--text-primary)' }}>Product Launches</h5>
+                    <p style={{ color: 'var(--text-muted)' }}>
+                      Dynamic product showcase videos with cinematic visuals and compelling storytelling.
+                    </p>
+                    <Badge bg="primary" className="me-2">Product Videos</Badge>
+                    <Badge bg="secondary" className="me-2">VFX</Badge>
+                    <Badge bg="success">Audio Design</Badge>
+                  </Card.Body>
+                </Card>
+              </Col>
+            </Row>
+
+            <div className="text-center mt-4">
+              <p style={{ color: 'var(--text-muted)' }}>
+                Want to see more? Visit our video player to explore our full portfolio
+              </p>
+            </div>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="outline-secondary" onClick={() => setShowPortfolioModal(false)}>
+              Close
+            </Button>
+          </Modal.Footer>
+        </Modal>
+
+        {/* Pricing Modal */}
+        <Modal 
+          show={showPricingModal} 
+          onHide={() => setShowPricingModal(false)}
+          size="lg"
+          centered
+          className="pricing-modal"
+        >
+          <Modal.Header closeButton style={{ 
+            background: 'var(--secondary-gradient)',
+            color: 'white',
+            border: 'none'
+          }}>
+            <Modal.Title>
+              <FaDollarSign className="me-2" />
+              Pricing Guide
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body style={{ 
+            background: 'var(--bg-surface)',
+            color: 'var(--text-primary)',
+            padding: '2rem'
+          }}>
+            <div className="text-center mb-4">
+              <h3 style={{ color: 'var(--text-primary)' }}>Our Pricing Structure</h3>
+              <p className="lead" style={{ color: 'var(--text-muted)' }}>
+                Transparent and competitive pricing for video production and development services
+              </p>
+            </div>
+
+            {/* Video Production Pricing */}
+            <div className="mb-4">
+              <h5 style={{ color: 'var(--text-primary)', marginBottom: '1rem' }}>
+                <FaVideo className="me-2" />
+                Video Production Services
+              </h5>
+              <Row className="g-4">
+                <Col md={6}>
+                  <Card style={{
+                    background: 'var(--bg-surface-alt)',
+                    border: '2px solid var(--primary-color)',
+                    borderRadius: 'var(--radius-lg)',
+                    height: '100%'
+                  }}>
+                    <Card.Body className="text-center p-4">
+                      <FaEdit size={40} style={{ color: 'var(--primary-color)' }} className="mb-3" />
+                      <h4 style={{ color: 'var(--text-primary)' }}>Basic Editing</h4>
+                      <h2 style={{ color: 'var(--primary-color)', margin: '1rem 0' }}>$500+</h2>
+                      <ul style={{ 
+                        listStyle: 'none', 
+                        padding: 0,
+                        color: 'var(--text-muted)',
+                        textAlign: 'left'
+                      }}>
+                        <li className="mb-2"><FaCheckCircle className="me-2" style={{ color: 'var(--primary-color)' }} />Up to 5 minutes</li>
+                        <li className="mb-2"><FaCheckCircle className="me-2" style={{ color: 'var(--primary-color)' }} />Color correction</li>
+                        <li className="mb-2"><FaCheckCircle className="me-2" style={{ color: 'var(--primary-color)' }} />Basic transitions</li>
+                        <li className="mb-2"><FaCheckCircle className="me-2" style={{ color: 'var(--primary-color)' }} />Audio mixing</li>
+                        <li className="mb-2"><FaCheckCircle className="me-2" style={{ color: 'var(--primary-color)' }} />3-5 day turnaround</li>
+                      </ul>
+                    </Card.Body>
+                  </Card>
+                </Col>
+
+                <Col md={6}>
+                  <Card style={{
+                    background: 'var(--bg-surface-alt)',
+                    border: '2px solid var(--secondary-color)',
+                    borderRadius: 'var(--radius-lg)',
+                    height: '100%'
+                  }}>
+                    <Card.Body className="text-center p-4">
+                      <FaPalette size={40} style={{ color: 'var(--secondary-color)' }} className="mb-3" />
+                      <h4 style={{ color: 'var(--text-primary)' }}>Advanced Production</h4>
+                      <h2 style={{ color: 'var(--secondary-color)', margin: '1rem 0' }}>$1,500+</h2>
+                      <ul style={{ 
+                        listStyle: 'none', 
+                        padding: 0,
+                        color: 'var(--text-muted)',
+                        textAlign: 'left'
+                      }}>
+                        <li className="mb-2"><FaCheckCircle className="me-2" style={{ color: 'var(--secondary-color)' }} />Up to 15 minutes</li>
+                        <li className="mb-2"><FaCheckCircle className="me-2" style={{ color: 'var(--secondary-color)' }} />Motion graphics</li>
+                        <li className="mb-2"><FaCheckCircle className="me-2" style={{ color: 'var(--secondary-color)' }} />Visual effects</li>
+                        <li className="mb-2"><FaCheckCircle className="me-2" style={{ color: 'var(--secondary-color)' }} />Sound design</li>
+                        <li className="mb-2"><FaCheckCircle className="me-2" style={{ color: 'var(--secondary-color)' }} />1-2 week turnaround</li>
+                      </ul>
+                    </Card.Body>
+                  </Card>
+                </Col>
+
+                <Col md={12}>
+                  <Card style={{
+                    background: 'linear-gradient(135deg, var(--primary-color), var(--secondary-color))',
+                    border: 'none',
+                    borderRadius: 'var(--radius-lg)',
+                    color: 'white'
+                  }}>
+                    <Card.Body className="text-center p-4">
+                      <FaRocket size={40} className="mb-3" />
+                      <h4>Premium Video Package</h4>
+                      <h2 style={{ margin: '1rem 0' }}>$2,000 - $10,000+</h2>
+                      <p className="mb-3">
+                        Complete video production with 3D animation, complex VFX, multi-camera setups, 
+                        drone footage, and comprehensive post-production services.
+                      </p>
+                      <Row>
+                        <Col sm={6} className="mb-2">
+                          <small><FaCheckCircle className="me-2" />Unlimited length</small>
+                        </Col>
+                        <Col sm={6} className="mb-2">
+                          <small><FaCheckCircle className="me-2" />3D animation</small>
+                        </Col>
+                        <Col sm={6} className="mb-2">
+                          <small><FaCheckCircle className="me-2" />Advanced VFX</small>
+                        </Col>
+                        <Col sm={6} className="mb-2">
+                          <small><FaCheckCircle className="me-2" />Custom timeline</small>
+                        </Col>
+                      </Row>
+                    </Card.Body>
+                  </Card>
+                </Col>
+              </Row>
+            </div>
+
+            {/* Web & Mobile Development Pricing */}
+            <div className="mb-4">
+              <h5 style={{ color: 'var(--text-primary)', marginBottom: '1rem' }}>
+                <FaDesktop className="me-2" />
+                Web & Mobile Development Services
+              </h5>
+              <Row className="g-4">
+                <Col md={4}>
+                  <Card style={{
+                    background: 'var(--bg-surface-alt)',
+                    border: '2px solid #5cb85c',
+                    borderRadius: 'var(--radius-lg)',
+                    height: '100%'
+                  }}>
+                    <Card.Body className="text-center p-4">
+                      <FaCode size={40} style={{ color: '#5cb85c' }} className="mb-3" />
+                      <h4 style={{ color: 'var(--text-primary)' }}>Web Pages</h4>
+                      <h2 style={{ color: '#5cb85c', margin: '1rem 0' }}>$1,000+</h2>
+                      <ul style={{ 
+                        listStyle: 'none', 
+                        padding: 0,
+                        color: 'var(--text-muted)',
+                        textAlign: 'left',
+                        fontSize: '0.9rem'
+                      }}>
+                        <li className="mb-2"><FaCheckCircle className="me-2" style={{ color: '#5cb85c' }} />Landing pages</li>
+                        <li className="mb-2"><FaCheckCircle className="me-2" style={{ color: '#5cb85c' }} />Responsive design</li>
+                        <li className="mb-2"><FaCheckCircle className="me-2" style={{ color: '#5cb85c' }} />SEO optimized</li>
+                        <li className="mb-2"><FaCheckCircle className="me-2" style={{ color: '#5cb85c' }} />Contact forms</li>
+                        <li className="mb-2"><FaCheckCircle className="me-2" style={{ color: '#5cb85c' }} />1-2 week delivery</li>
+                      </ul>
+                    </Card.Body>
+                  </Card>
+                </Col>
+
+                <Col md={4}>
+                  <Card style={{
+                    background: 'var(--bg-surface-alt)',
+                    border: '2px solid #f0ad4e',
+                    borderRadius: 'var(--radius-lg)',
+                    height: '100%'
+                  }}>
+                    <Card.Body className="text-center p-4">
+                      <FaDesktop size={40} style={{ color: '#f0ad4e' }} className="mb-3" />
+                      <h4 style={{ color: 'var(--text-primary)' }}>Web Applications</h4>
+                      <h2 style={{ color: '#f0ad4e', margin: '1rem 0' }}>$5,000+</h2>
+                      <ul style={{ 
+                        listStyle: 'none', 
+                        padding: 0,
+                        color: 'var(--text-muted)',
+                        textAlign: 'left',
+                        fontSize: '0.9rem'
+                      }}>
+                        <li className="mb-2"><FaCheckCircle className="me-2" style={{ color: '#f0ad4e' }} />Custom features</li>
+                        <li className="mb-2"><FaCheckCircle className="me-2" style={{ color: '#f0ad4e' }} />React/Vue/Angular</li>
+                        <li className="mb-2"><FaCheckCircle className="me-2" style={{ color: '#f0ad4e' }} />Database integration</li>
+                        <li className="mb-2"><FaCheckCircle className="me-2" style={{ color: '#f0ad4e' }} />User authentication</li>
+                        <li className="mb-2"><FaCheckCircle className="me-2" style={{ color: '#f0ad4e' }} />4-8 week delivery</li>
+                      </ul>
+                    </Card.Body>
+                  </Card>
+                </Col>
+
+                <Col md={4}>
+                  <Card style={{
+                    background: 'var(--bg-surface-alt)',
+                    border: '2px solid #d9534f',
+                    borderRadius: 'var(--radius-lg)',
+                    height: '100%'
+                  }}>
+                    <Card.Body className="text-center p-4">
+                      <FaRocket size={40} style={{ color: '#d9534f' }} className="mb-3" />
+                      <h4 style={{ color: 'var(--text-primary)' }}>Mobile Apps</h4>
+                      <h2 style={{ color: '#d9534f', margin: '1rem 0' }}>$8,000+</h2>
+                      <ul style={{ 
+                        listStyle: 'none', 
+                        padding: 0,
+                        color: 'var(--text-muted)',
+                        textAlign: 'left',
+                        fontSize: '0.9rem'
+                      }}>
+                        <li className="mb-2"><FaCheckCircle className="me-2" style={{ color: '#d9534f' }} />iOS & Android</li>
+                        <li className="mb-2"><FaCheckCircle className="me-2" style={{ color: '#d9534f' }} />React Native/Flutter</li>
+                        <li className="mb-2"><FaCheckCircle className="me-2" style={{ color: '#d9534f' }} />API integration</li>
+                        <li className="mb-2"><FaCheckCircle className="me-2" style={{ color: '#d9534f' }} />Push notifications</li>
+                        <li className="mb-2"><FaCheckCircle className="me-2" style={{ color: '#d9534f' }} />8-12 week delivery</li>
+                      </ul>
+                    </Card.Body>
+                  </Card>
+                </Col>
+              </Row>
+            </div>
+
+            <div className="text-center mt-4 pt-3" style={{ borderTop: '1px solid var(--border-color)' }}>
+              <p style={{ color: 'var(--text-muted)' }}>
+                <strong>Note:</strong> Final pricing depends on project complexity, length, and specific requirements. 
+                Contact us for a detailed quote tailored to your needs.
+              </p>
+            </div>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="outline-secondary" onClick={() => setShowPricingModal(false)}>
+              Close
+            </Button>
+            <Button 
+              variant="primary"
+              onClick={() => {
+                setShowPricingModal(false);
+                if (setCurrentTab) {
+                  setCurrentTab('contact');
+                }
+              }}
+            >
+              Request Custom Quote
+            </Button>
+          </Modal.Footer>
+        </Modal>
+
+        {/* About Us Modal */}
+        <Modal 
+          show={showAboutModal} 
+          onHide={() => setShowAboutModal(false)}
+          size="lg"
+          centered
+          className="about-modal"
+        >
+          <Modal.Header closeButton style={{ 
+            background: 'var(--accent-gradient)',
+            color: 'white',
+            border: 'none'
+          }}>
+            <Modal.Title>
+              <FaUsers className="me-2" />
+              About Nebula Media
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body style={{ 
+            background: 'var(--bg-surface)',
+            color: 'var(--text-primary)',
+            padding: '2rem'
+          }}>
+            <div className="text-center mb-4">
+              <h3 style={{ color: 'var(--text-primary)' }}>Who We Are</h3>
+              <p className="lead" style={{ color: 'var(--text-muted)' }}>
+                Your trusted partner in professional video production and creative media solutions
+              </p>
+            </div>
+
+            <div className="mb-4">
+              <h5 style={{ color: 'var(--text-primary)' }}>Our Mission</h5>
+              <p style={{ color: 'var(--text-muted)' }}>
+                At Nebula Media, we're passionate about transforming ideas into captivating visual stories. 
+                Based in Vaughan, Ontario, we combine cutting-edge technology with creative excellence to 
+                deliver video production services that exceed expectations.
+              </p>
+            </div>
+
+            <div className="mb-4">
+              <h5 style={{ color: 'var(--text-primary)' }}>What We Do</h5>
+              <Row>
+                <Col md={6} className="mb-3">
+                  <div className="d-flex align-items-start">
+                    <FaVideo size={24} style={{ color: 'var(--primary-color)' }} className="me-3 mt-1" />
+                    <div>
+                      <h6 style={{ color: 'var(--text-primary)' }}>Video Editing</h6>
+                      <small style={{ color: 'var(--text-muted)' }}>
+                        Professional editing with advanced color grading and effects
+                      </small>
+                    </div>
+                  </div>
+                </Col>
+                <Col md={6} className="mb-3">
+                  <div className="d-flex align-items-start">
+                    <FaDesktop size={24} style={{ color: 'var(--secondary-color)' }} className="me-3 mt-1" />
+                    <div>
+                      <h6 style={{ color: 'var(--text-primary)' }}>3D Animation</h6>
+                      <small style={{ color: 'var(--text-muted)' }}>
+                        Stunning 3D animations and motion graphics
+                      </small>
+                    </div>
+                  </div>
+                </Col>
+                <Col md={6} className="mb-3">
+                  <div className="d-flex align-items-start">
+                    <FaLightbulb size={24} style={{ color: 'var(--accent-color)' }} className="me-3 mt-1" />
+                    <div>
+                      <h6 style={{ color: 'var(--text-primary)' }}>Creative Services</h6>
+                      <small style={{ color: 'var(--text-muted)' }}>
+                        Concept development and creative direction
+                      </small>
+                    </div>
+                  </div>
+                </Col>
+                <Col md={6} className="mb-3">
+                  <div className="d-flex align-items-start">
+                    <FaCog size={24} style={{ color: '#5cb85c' }} className="me-3 mt-1" />
+                    <div>
+                      <h6 style={{ color: 'var(--text-primary)' }}>Post-Production</h6>
+                      <small style={{ color: 'var(--text-muted)' }}>
+                        Complete post-production and finishing services
+                      </small>
+                    </div>
+                  </div>
+                </Col>
+              </Row>
+            </div>
+
+            <div className="mb-4">
+              <h5 style={{ color: 'var(--text-primary)' }}>Our Stats</h5>
+              <Row className="text-center">
+                <Col xs={4}>
+                  <h3 style={{ color: 'var(--primary-color)' }}>150+</h3>
+                  <small style={{ color: 'var(--text-muted)' }}>Projects Completed</small>
+                </Col>
+                <Col xs={4}>
+                  <h3 style={{ color: 'var(--primary-color)' }}>75+</h3>
+                  <small style={{ color: 'var(--text-muted)' }}>Happy Clients</small>
+                </Col>
+                <Col xs={4}>
+                  <h3 style={{ color: 'var(--primary-color)' }}>10+</h3>
+                  <small style={{ color: 'var(--text-muted)' }}>Years Experience</small>
+                </Col>
+              </Row>
+            </div>
+
+            <div className="text-center p-3" style={{ 
+              background: 'var(--bg-surface-alt)',
+              borderRadius: 'var(--radius-lg)'
+            }}>
+              <p style={{ color: 'var(--text-muted)', marginBottom: '1rem' }}>
+                <strong>Ready to work together?</strong>
+              </p>
+              <div>
+                <a href="tel:416.856.5764" style={{ color: 'var(--primary-color)', textDecoration: 'none', marginRight: '1.5rem' }}>
+                  <FaPhone className="me-2" />
+                  (416) 856-5764
+                </a>
+                <a href="mailto:nebulamedia3d@gmail.com" style={{ color: 'var(--primary-color)', textDecoration: 'none' }}>
+                  <FaEnvelope className="me-2" />
+                  nebulamedia3d@gmail.com
+                </a>
+              </div>
+            </div>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="outline-secondary" onClick={() => setShowAboutModal(false)}>
+              Close
+            </Button>
+          </Modal.Footer>
+        </Modal>
       </Container>
     </div>
   );

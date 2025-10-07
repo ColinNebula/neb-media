@@ -141,12 +141,25 @@
 [data-theme="dark"] .contact-info-card p,
 [data-theme="dark"] .social-media-card h5,
 [data-theme="dark"] .about-h2,
+[data-theme="dark"] .contact-info-title,
+[data-theme="dark"] .contact-detail,
+[data-theme="dark"] .social-title,
+[data-theme="dark"] .form-label,
 [data-theme="dark"] h1,
 [data-theme="dark"] h2,
 [data-theme="dark"] h3,
 [data-theme="dark"] h4,
 [data-theme="dark"] h5 {
   color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .stat-label {
+  color: #6b7280 !important;
+}
+
+/* Make stat numbers visible in dark mode with bright color */
+[data-theme="dark"] .stat-number {
+  color: #7eb8dc !important;
 }
 
 /* Fix h1 gradient text in dark mode - make it visible */
@@ -171,7 +184,9 @@
 [data-theme="dark"] .dashboard-hero h2,
 [data-theme="dark"] .about-h2,
 [data-theme="dark"] .contact-h2,
-[data-theme="dark"] .faq-h2 {
+[data-theme="dark"] .faq-h2,
+[data-theme="dark"] .form-title,
+[data-theme="dark"] .cta-title {
   background: linear-gradient(135deg, #a78bfa 0%, #c084fc 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
@@ -195,6 +210,25 @@
 
 [data-theme="dark"] a:not(.btn):not(.nav-link):not(.navbar-brand):hover {
   color: var(--accent-color) !important;
+}
+
+/* Additional dark mode text overrides for hardcoded colors */
+[data-theme="dark"] .form-subtitle,
+[data-theme="dark"] .form-note,
+[data-theme="dark"] .form-control-custom::placeholder,
+[data-theme="dark"] .accordion-button,
+[data-theme="dark"] .faq-category-btn,
+[data-theme="dark"] .question-title,
+[data-theme="dark"] .answer-text,
+[data-theme="dark"] .breadcrumb-item,
+[data-theme="dark"] .page-subtitle,
+[data-theme="dark"] .card-text,
+[data-theme="dark"] .description,
+[data-theme="dark"] .info-text,
+[data-theme="dark"] .helper-text,
+[data-theme="dark"] small,
+[data-theme="dark"] .small {
+  color: var(--text-muted) !important;
 }
 
 /* Global Styles and Typography */
@@ -2557,6 +2591,7 @@ img {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
+  color: inherit;
 }
 
 .cta-description {
@@ -3384,7 +3419,7 @@ img {
 .stat-number {
   font-size: 2rem;
   font-weight: 700;
-  color: #358ed3;
+  color: var(--primary-color);
   margin-bottom: 0.5rem;
 }
 
@@ -3426,7 +3461,7 @@ img {
 .form-title {
   font-size: 1.8rem;
   font-weight: 600;
-  color: #2c3e50;
+  color: var(--text-primary);
 }
 
 .form-subtitle {
@@ -3613,6 +3648,7 @@ img {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1rem;
+  color: inherit;
 }
 
 .cta-description {
@@ -3993,6 +4029,7 @@ img {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1rem;
+  color: inherit;
 }
 
 .cta-description {
@@ -4543,7 +4580,7 @@ img {
 .cta-title {
   font-size: 2rem;
   font-weight: 700;
-  color: #2c3e50;
+  color: var(--text-primary);
   margin-bottom: 1rem;
 }
 
