@@ -20,18 +20,19 @@ import {
   FaSignInAlt,
   FaSignOutAlt,
   FaCog,
-  FaChartBar
+  FaChartBar,
+  FaBell
 } from 'react-icons/fa';
 import { useTheme } from '../../contexts/ThemeContext';
 import { useUser } from '../../contexts/UserContext';
-import AuthModal from '../AuthModal';
+import NewsletterModal from '../NewsletterModal';
 import logo from '../../assets/images/nebula-dev-logo-horizontal.svg';
 import './SideNav.css';
 
 function SideNav(props) {
   const { currentTab, setCurrentTab } = props;
   const [showOffcanvas, setShowOffcanvas] = useState(false);
-  const [showAuthModal, setShowAuthModal] = useState(false);
+  const [showNewsletterModal, setShowNewsletterModal] = useState(false);
   const { theme, toggleTheme, isDark } = useTheme();
   const { user, logout } = useUser();
 
@@ -150,44 +151,16 @@ function SideNav(props) {
               ))}
             </Nav>
             
-            {/* Authentication Section */}
-            <div className="auth-section ms-3">
-              {user ? (
-                <Dropdown align="end">
-                  <Dropdown.Toggle 
-                    variant="outline-primary" 
-                    className="user-dropdown-toggle d-flex align-items-center"
-                    id="user-dropdown"
-                  >
-                    <FaUser className="me-2" />
-                    {user.username || user.email}
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu className="user-dropdown-menu">
-                    <Dropdown.Item onClick={() => handleNavClick('profile')}>
-                      <FaCog className="me-2" />
-                      Profile Settings
-                    </Dropdown.Item>
-                    <Dropdown.Item onClick={() => handleNavClick('analytics')}>
-                      <FaChartBar className="me-2" />
-                      My Projects
-                    </Dropdown.Item>
-                    <Dropdown.Divider />
-                    <Dropdown.Item onClick={handleLogout} className="text-danger">
-                      <FaSignOutAlt className="me-2" />
-                      Logout
-                    </Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
-              ) : (
-                <Button
-                  variant="outline-primary"
-                  onClick={() => setShowAuthModal(true)}
-                  className="login-btn"
-                >
-                  <FaSignInAlt className="me-2" />
-                  Login
-                </Button>
-              )}
+            {/* Newsletter Subscription Section */}
+            <div className="newsletter-section ms-3">
+              <Button
+                variant="primary"
+                onClick={() => setShowNewsletterModal(true)}
+                className="newsletter-btn"
+              >
+                <FaBell className="me-2" />
+                Subscribe
+              </Button>
             </div>
             
             {/* Theme Toggle Button */}
@@ -298,28 +271,18 @@ function SideNav(props) {
           {/* Divider */}
           <hr className="nav-divider" />
 
-          {/* Authentication Section */}
-          <div className="auth-section-mobile">
-            {user ? (
-              <button
-                className="auth-btn logout-btn"
-                onClick={handleLogout}
-              >
-                <FaSignOutAlt className="auth-icon" />
-                <span className="auth-label">Logout</span>
-              </button>
-            ) : (
-              <button
-                className="auth-btn login-btn"
-                onClick={() => {
-                  setShowAuthModal(true);
-                  setShowOffcanvas(false);
-                }}
-              >
-                <FaSignInAlt className="auth-icon" />
-                <span className="auth-label">Login / Register</span>
-              </button>
-            )}
+          {/* Newsletter Subscription Section */}
+          <div className="newsletter-section-mobile">
+            <button
+              className="newsletter-btn-mobile"
+              onClick={() => {
+                setShowNewsletterModal(true);
+                setShowOffcanvas(false);
+              }}
+            >
+              <FaBell className="newsletter-icon" />
+              <span className="newsletter-label">Subscribe to Newsletter</span>
+            </button>
           </div>
 
           {/* Divider */}
@@ -389,10 +352,10 @@ function SideNav(props) {
         </Offcanvas.Body>
       </Offcanvas>
 
-      {/* Authentication Modal */}
-      <AuthModal 
-        show={showAuthModal} 
-        onHide={() => setShowAuthModal(false)} 
+      {/* Newsletter Modal */}
+      <NewsletterModal 
+        show={showNewsletterModal} 
+        onHide={() => setShowNewsletterModal(false)} 
       />
     </div>
   );

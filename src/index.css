@@ -141,11 +141,20 @@
 [data-theme="dark"] .contact-info-card p,
 [data-theme="dark"] .social-media-card h5,
 [data-theme="dark"] .about-h2,
+[data-theme="dark"] h1,
 [data-theme="dark"] h2,
 [data-theme="dark"] h3,
 [data-theme="dark"] h4,
 [data-theme="dark"] h5 {
   color: var(--text-primary) !important;
+}
+
+/* Fix h1 gradient text in dark mode - make it visible */
+[data-theme="dark"] h1 {
+  background: linear-gradient(135deg, #a78bfa 0%, #c084fc 50%, #e879f9 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
 }
 
 [data-theme="dark"] .stat-card p,
@@ -230,7 +239,7 @@ p {
 .btn-modern {
   background: var(--primary-gradient);
   border: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: 3rem;
+  border-radius: 50px !important;
   padding: var(--spacing-sm) var(--spacing-lg);
   font-weight: 600;
   font-size: 0.95rem;
@@ -246,12 +255,13 @@ p {
   box-shadow: var(--shadow-lg);
   color: white;
   border-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50px !important;
 }
 
 .btn-secondary-modern {
   background: var(--secondary-gradient);
   border: none;
-  border-radius: var(--radius-lg);
+  border-radius: 50px !important;
   padding: var(--spacing-sm) var(--spacing-lg);
   font-weight: 600;
   font-size: 0.95rem;
@@ -264,12 +274,13 @@ p {
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
   color: white;
+  border-radius: 50px !important;
 }
 
 .btn-outline-modern {
   background: transparent;
   border: 2px solid rgba(255, 255, 255, 0.5);
-  border-radius: 3rem;
+  border-radius: 50px !important;
   padding: var(--spacing-sm) var(--spacing-lg);
   font-weight: 600;
   color: white;
@@ -284,6 +295,7 @@ p {
   color: white;
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
+  border-radius: 50px !important;
 }
 
 main {
@@ -534,7 +546,7 @@ main {
   color: var(--text-secondary) !important;
   font-weight: 500;
   padding: var(--spacing-sm) var(--spacing-md) !important;
-  border-radius: var(--radius-md);
+  border-radius: 2rem;
   transition: all 0.3s ease;
   position: relative;
   margin: 0 var(--spacing-xs);
@@ -543,11 +555,13 @@ main {
 .nav-link-modern:hover {
   color: var(--primary-color) !important;
   background: rgba(102, 126, 234, 0.1);
+  border-radius: 2rem;
 }
 
 .nav-link-modern.active {
   color: white !important;
   background: var(--primary-gradient);
+  border-radius: 2rem;
 }
 
 /* Theme Toggle Button */
@@ -749,7 +763,7 @@ main {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: var(--radius-2xl);
+  border-radius: 50px !important;
   padding: var(--spacing-md) var(--spacing-2xl);
   color: white;
   font-weight: 600;
@@ -783,6 +797,7 @@ main {
   transform: translateY(-3px);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
   color: white;
+  border-radius: 50px !important;
 }
 
 .landing-container {
@@ -1445,7 +1460,7 @@ img {
   width: 8em;
   min-width: 120px; /* Ensure minimum width */
   border: 2px solid white;
-  border-radius: 0.5em;
+  border-radius: 50px !important;
   background-color: rgba(39, 78, 96, 0.03);
   display: flex;
   flex-direction: column;
@@ -1470,6 +1485,7 @@ img {
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   border-color: #7eb8dc;
+  border-radius: 50px !important;
 }
 
 .enhanced-btn {
@@ -1477,6 +1493,7 @@ img {
     rgba(126, 184, 220, 0.2) 0%, 
     rgba(79, 172, 254, 0.2) 100%);
   border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px !important;
   animation: buttonEntrance 5s ease-out;
 }
 
@@ -1489,6 +1506,7 @@ img {
     0 15px 35px rgba(126, 184, 220, 0.4),
     0 0 50px rgba(79, 172, 254, 0.3);
   border-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50px !important;
 }
 
 .btn-glow {
@@ -1501,7 +1519,7 @@ img {
     transparent, 
     rgba(126, 184, 220, 0.3), 
     transparent);
-  border-radius: 0.5em;
+  border-radius: 50px;
   opacity: 0;
   transition: opacity 0.3s ease;
   animation: btnGlowPulse 3s ease-in-out infinite;

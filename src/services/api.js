@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { getApiUrl, isValidToken, secureStorage } from '../config/security';
+import { rateLimitMiddleware } from '../utils/rateLimit';
 
 const API_BASE_URL = getApiUrl();
 
@@ -13,10 +14,20 @@ const api = axios.create({
 
 // Add token to requests
 api.interceptors.request.use((config) => {
+  // Rate limiting check
+  const rateLimit = rateLimitMiddleware.api();
+  if (!rateLimit.allowed) {
+    return Promise.reject(new Error(`Rate limit exceeded. Please try again in ${rateLimit.retryAfter} seconds.`));
+  }
+
   const token = secureStorage.getItem('authToken');
   if (token && isValidToken(token)) {
     config.headers.Authorization = `Bearer ${token}`;
   }
+  
+  // Add rate limit info to headers
+  config.headers['X-RateLimit-Remaining'] = rateLimit.remaining;
+  
   return config;
 });
 
