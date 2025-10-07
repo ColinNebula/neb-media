@@ -10,6 +10,7 @@ import Contact from "./components/Contact";
 import LandingPage from "./components/LandingPage";
 import Dashboard from "./components/Dashboard";
 import MediaPlayerDemo from "./components/VideoPlayerDemo";
+import OurWork from "./components/OurWork";
 import PrivacyPolicy from "./components/Privacy Policy";
 import TermsOfService from "./components/Terms of Service";
 import CookiePolicy from "./components/Cookie Policy";
@@ -50,6 +51,9 @@ function App() {
 
         case "faq":
           return <Faq setCurrentTab={setCurrentTab} />;
+
+        case "our-work":
+          return <OurWork setCurrentTab={setCurrentTab} />;
 
         case "video-player":
           return <MediaPlayerDemo />;

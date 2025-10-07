@@ -48,7 +48,7 @@ function Dashboard({ setCurrentTab, externalShowGetStarted, externalSetShowGetSt
 
   const handleViewOurWork = () => {
     if (setCurrentTab) {
-      setCurrentTab('video-player');
+      setCurrentTab('our-work');
     }
   };
 
