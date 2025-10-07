@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/neb-media/static/css/main.952380ea.css",
-    "main.js": "/neb-media/static/js/main.087c38ee.js",
+    "main.css": "/neb-media/static/css/main.7d4ff0f7.css",
+    "main.js": "/neb-media/static/js/main.f334a9c4.js",
     "static/js/453.691e2018.chunk.js": "/neb-media/static/js/453.691e2018.chunk.js",
     "static/media/bg.mp4": "/neb-media/static/media/bg.ddf51cfc17038a97a0df.mp4",
     "static/media/hero.png": "/neb-media/static/media/hero.2e37b044f726750f36b6.png",
@@ -11,12 +11,12 @@
     "static/media/nebula-dev-logo.svg": "/neb-media/static/media/nebula-dev-logo.05f054c049407f99f815bb2c202f3d38.svg",
     "index.html": "/neb-media/index.html",
     "static/media/nebula-dev-logo-horizontal.svg": "/neb-media/static/media/nebula-dev-logo-horizontal.b4dd1279f3b65a51cabd846f6e1129ea.svg",
-    "main.952380ea.css.map": "/neb-media/static/css/main.952380ea.css.map",
-    "main.087c38ee.js.map": "/neb-media/static/js/main.087c38ee.js.map",
+    "main.7d4ff0f7.css.map": "/neb-media/static/css/main.7d4ff0f7.css.map",
+    "main.f334a9c4.js.map": "/neb-media/static/js/main.f334a9c4.js.map",
     "453.691e2018.chunk.js.map": "/neb-media/static/js/453.691e2018.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.952380ea.css",
-    "static/js/main.087c38ee.js"
+    "static/css/main.7d4ff0f7.css",
+    "static/js/main.f334a9c4.js"
   ]
 }
