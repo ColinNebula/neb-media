@@ -32,7 +32,7 @@ function TermsOfService() {
       content: [
         {
           subtitle: "Agreement to Terms",
-          text: "By accessing or using Nebula Dev's website, services, or applications (collectively, the 'Services'), you agree to be bound by these Terms of Service ('Terms'). If you do not agree to these Terms, you must not access or use our Services."
+          text: "By accessing or using Nebula3D Dev's website, services, or applications (collectively, the 'Services'), you agree to be bound by these Terms of Service ('Terms'). If you do not agree to these Terms, you must not access or use our Services."
         },
         {
           subtitle: "Eligibility",
@@ -56,11 +56,11 @@ function TermsOfService() {
       content: [
         {
           subtitle: "Web Development Services",
-          text: "Nebula Dev provides custom web application development, including but not limited to: front-end development, back-end development, full-stack applications, API development, database design, UI/UX design, mobile application development, and cloud deployment services."
+          text: "Nebula3D Dev provides custom web application development, including but not limited to: front-end development, back-end development, full-stack applications, API development, database design, UI/UX design, mobile application development, and cloud deployment services."
         },
         {
           subtitle: "Service Scope",
-          text: "The specific scope, deliverables, timeline, and pricing for each project will be outlined in a separate Statement of Work (SOW) or project agreement. The SOW will form part of the contract between you and Nebula Dev and will be subject to these Terms."
+          text: "The specific scope, deliverables, timeline, and pricing for each project will be outlined in a separate Statement of Work (SOW) or project agreement. The SOW will form part of the contract between you and Nebula3D Dev and will be subject to these Terms."
         },
         {
           subtitle: "Service Availability",
@@ -128,7 +128,7 @@ function TermsOfService() {
         },
         {
           subtitle: "Refunds",
-          text: "Deposits are non-refundable once work has commenced. Refunds for completed work will be provided only in cases of material breach by Nebula Dev and will be prorated based on work completed."
+          text: "Deposits are non-refundable once work has commenced. Refunds for completed work will be provided only in cases of material breach by Nebula3D Dev and will be prorated based on work completed."
         }
       ]
     },
@@ -143,7 +143,7 @@ function TermsOfService() {
           text: "Upon full payment of all fees, you will own the final deliverables specifically created for your project, including custom code, designs, and documentation as specified in the SOW."
         },
         {
-          subtitle: "Nebula Dev Ownership",
+          subtitle: "Nebula3D Dev Ownership",
           text: "We retain ownership of: (1) all pre-existing intellectual property, (2) reusable components, frameworks, and tools, (3) general knowledge and techniques, (4) any work product created before full payment is received."
         },
         {
@@ -228,7 +228,7 @@ function TermsOfService() {
         },
         {
           subtitle: "Excluded Damages",
-          text: "IN NO EVENT WILL NEBULA DEV BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING LOST PROFITS, LOST DATA, BUSINESS INTERRUPTION, OR LOSS OF GOODWILL, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES."
+          text: "IN NO EVENT WILL Nebula3D Dev BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING LOST PROFITS, LOST DATA, BUSINESS INTERRUPTION, OR LOSS OF GOODWILL, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES."
         },
         {
           subtitle: "Exceptions",
@@ -248,10 +248,10 @@ function TermsOfService() {
       content: [
         {
           subtitle: "Client Indemnification",
-          text: "You agree to indemnify, defend, and hold harmless Nebula Dev and its officers, directors, employees, and contractors from any claims, damages, losses, liabilities, and expenses (including reasonable attorneys' fees) arising from: (1) your use of deliverables, (2) content or materials you provide, (3) your breach of these Terms, (4) your violation of any law or third-party rights."
+          text: "You agree to indemnify, defend, and hold harmless Nebula3D Dev and its officers, directors, employees, and contractors from any claims, damages, losses, liabilities, and expenses (including reasonable attorneys' fees) arising from: (1) your use of deliverables, (2) content or materials you provide, (3) your breach of these Terms, (4) your violation of any law or third-party rights."
         },
         {
-          subtitle: "Nebula Dev Indemnification",
+          subtitle: "Nebula3D Dev Indemnification",
           text: "We agree to indemnify you from claims that deliverables created solely by us infringe any third-party copyright, trademark, or trade secret, provided you: (1) promptly notify us of the claim, (2) give us control of the defense and settlement, (3) provide reasonable assistance at our expense."
         },
         {
@@ -308,7 +308,7 @@ function TermsOfService() {
         },
         {
           subtitle: "Class Action Waiver",
-          text: "YOU AND NEBULA DEV AGREE THAT DISPUTES WILL BE RESOLVED ON AN INDIVIDUAL BASIS. YOU WAIVE ANY RIGHT TO PARTICIPATE IN A CLASS ACTION, COLLECTIVE ACTION, OR REPRESENTATIVE PROCEEDING."
+          text: "YOU AND Nebula3D Dev AGREE THAT DISPUTES WILL BE RESOLVED ON AN INDIVIDUAL BASIS. YOU WAIVE ANY RIGHT TO PARTICIPATE IN A CLASS ACTION, COLLECTIVE ACTION, OR REPRESENTATIVE PROCEEDING."
         }
       ]
     },
@@ -320,7 +320,7 @@ function TermsOfService() {
       content: [
         {
           subtitle: "Entire Agreement",
-          text: "These Terms, together with any SOW or project agreement, constitute the entire agreement between you and Nebula Dev regarding the Services and supersede all prior or contemporaneous communications and proposals."
+          text: "These Terms, together with any SOW or project agreement, constitute the entire agreement between you and Nebula3D Dev regarding the Services and supersede all prior or contemporaneous communications and proposals."
         },
         {
           subtitle: "Amendments",
@@ -336,7 +336,7 @@ function TermsOfService() {
         },
         {
           subtitle: "Independent Contractors",
-          text: "The relationship between you and Nebula Dev is that of independent contractors. Nothing in these Terms creates a partnership, joint venture, employment, or agency relationship."
+          text: "The relationship between you and Nebula3D Dev is that of independent contractors. Nothing in these Terms creates a partnership, joint venture, employment, or agency relationship."
         },
         {
           subtitle: "Severability",
@@ -348,7 +348,7 @@ function TermsOfService() {
         },
         {
           subtitle: "Notices",
-          text: "All notices under these Terms must be in writing and sent to the addresses specified in the SOW or to legal@nebuladev.com. Notices are effective upon receipt when sent by email or three days after mailing when sent by certified mail."
+          text: "All notices under these Terms must be in writing and sent to the addresses specified in the SOW or to legal@nebula3ddev.com. Notices are effective upon receipt when sent by email or three days after mailing when sent by certified mail."
         },
         {
           subtitle: "Governing Law",
@@ -364,11 +364,11 @@ function TermsOfService() {
       content: [
         {
           subtitle: "Legal Inquiries",
-          text: "For questions about these Terms of Service, please contact us at: Email: legal@nebuladev.com | Phone: +1 (555) 123-4567 | Address: Nebula Dev Legal Department, 123 Innovation Street, Tech City, TC 12345"
+          text: "For questions about these Terms of Service, please contact us at: Email: legal@nebula3ddev.com | Phone: +1 (416) 856-5764 | Address: Nebula3D Dev, 46 Wildfire Road, Woodbridge, ON L4L 8Y9"
         },
         {
           subtitle: "Business Inquiries",
-          text: "For new project inquiries or general business questions: Email: hello@nebuladev.com | Phone: +1 (555) 123-4567"
+          text: "For new project inquiries or general business questions: Email: hello@nebula3ddev.com | Phone: +1 (416) 856-5764"
         }
       ]
     }
@@ -386,7 +386,7 @@ function TermsOfService() {
             Terms of Service
           </h1>
           <p className="lead mb-4" style={{ color: 'var(--text-muted)', maxWidth: '800px', margin: '0 auto' }}>
-            Please read these terms carefully before using Nebula Dev's services. 
+            Please read these terms carefully before using Nebula3D Dev's services. 
             These terms govern your use of our web development services and applications.
           </p>
           <Row className="justify-content-center">
@@ -419,7 +419,7 @@ function TermsOfService() {
               <div>
                 <Alert.Heading>Important Legal Agreement</Alert.Heading>
                 <p className="mb-0">
-                  These Terms of Service constitute a legally binding agreement between you and Nebula Dev. 
+                  These Terms of Service constitute a legally binding agreement between you and Nebula3D Dev. 
                   By using our services, you acknowledge that you have read, understood, and agree to be bound by these terms. 
                   If you do not agree, please do not use our services. This agreement includes important provisions regarding 
                   limitation of liability, dispute resolution, and arbitration.
@@ -555,10 +555,10 @@ function TermsOfService() {
               </p>
               <div className="contact-details">
                 <p className="mb-2">
-                  <strong>Legal Inquiries:</strong> legal@nebuladev.com
+                  <strong>Legal Inquiries:</strong> legal@nebula3ddev.com
                 </p>
                 <p className="mb-2">
-                  <strong>Business Inquiries:</strong> hello@nebuladev.com
+                  <strong>Business Inquiries:</strong> hello@nebula3ddev.com
                 </p>
                 <p className="mb-0">
                   <strong>Phone:</strong> +1 (416) 856-5764
@@ -572,7 +572,7 @@ function TermsOfService() {
         <section className="terms-footer text-center pb-5">
           <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', maxWidth: '800px', margin: '0 auto' }}>
             These Terms of Service are effective as of {effectiveDate} and apply to all users of 
-            Nebula Dev's services. By engaging our services, you acknowledge that you have read, 
+            Nebula3D Dev's services. By engaging our services, you acknowledge that you have read, 
             understood, and agree to be bound by these terms. We recommend that you print or save 
             a copy of these terms for your records.
           </p>

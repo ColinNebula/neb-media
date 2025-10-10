@@ -321,7 +321,7 @@ function About() {
                 <span className="text-primary"> Digital Future</span>
               </h1>
               <p className="lead mb-4">
-                Since our inception, Nebula Dev has been delivering cutting-edge web applications 
+                Since our inception, Nebula3D Dev has been delivering cutting-edge web applications 
                 tailored to the unique needs of each client. Our dedicated team combines 
                 technical excellence with innovative solutions to create powerful digital platforms.
               </p>

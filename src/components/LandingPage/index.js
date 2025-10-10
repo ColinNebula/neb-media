@@ -33,7 +33,7 @@ function LandingPage({ setCurrentTab }) {
                 <br/>
                 
                 <span className="lastly"> 
-                    Nebula Dev
+                    Nebula3D Dev
                     <div className="text-glow"></div>
                 </span>
                 </h1>

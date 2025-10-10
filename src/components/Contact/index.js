@@ -123,7 +123,7 @@ function Contact({ setCurrentTab }) {
                 </h1>
                 <p className="lead mb-4">
                   Ready to bring your vision to life? We'd love to hear about your project 
-                  and discuss how Nebula Dev can help you build powerful web applications.
+                  and discuss how Nebula3D Dev can help you build powerful web applications.
                 </p>
                 <div className="contact-stats">
                   <Row>
@@ -147,7 +147,7 @@ function Contact({ setCurrentTab }) {
               <div className="contact-hero-image">
                 <img 
                   src={logo} 
-                  alt="Nebula Dev Logo" 
+                  alt="Nebula3D Dev Logo" 
                   className="hero-logo"
                   width="200"
                   height="85"
@@ -425,6 +425,7 @@ function Contact({ setCurrentTab }) {
                   variant="outline-light" 
                   size="lg"
                   href="mailto:nebulamedia3d@gmail.com"
+                  className="email-cta-btn"
                 >
                   <FaEnvelope className="me-2" />
                   Email Us

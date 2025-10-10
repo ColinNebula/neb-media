@@ -2610,6 +2610,92 @@ img {
   margin-bottom: 0.5rem;
 }
 
+.contact-cta-link {
+  color: rgba(255, 255, 255, 0.95) !important;
+  text-decoration: none !important;
+  transition: color 0.3s ease;
+}
+
+[data-theme="light"] .contact-cta-link {
+  color: rgba(0, 0, 0, 0.85) !important;
+}
+
+.contact-cta-link:hover {
+  color: white !important;
+}
+
+[data-theme="light"] .contact-cta-link:hover {
+  color: rgba(0, 0, 0, 1) !important;
+}
+
+.portfolio-cta-btn {
+  border-color: rgba(255, 255, 255, 0.8) !important;
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+[data-theme="light"] .portfolio-cta-btn {
+  border-color: rgba(0, 0, 0, 0.7) !important;
+  color: rgba(0, 0, 0, 0.85) !important;
+}
+
+.portfolio-cta-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border-color: white !important;
+  color: white !important;
+}
+
+[data-theme="light"] .portfolio-cta-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+  border-color: rgba(0, 0, 0, 0.9) !important;
+  color: rgba(0, 0, 0, 1) !important;
+}
+
+.email-cta-btn {
+  border-color: rgba(255, 255, 255, 0.8) !important;
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+[data-theme="light"] .email-cta-btn {
+  border-color: rgba(0, 0, 0, 0.7) !important;
+  color: rgba(0, 0, 0, 0.85) !important;
+}
+
+.email-cta-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border-color: white !important;
+  color: white !important;
+}
+
+[data-theme="light"] .email-cta-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+  border-color: rgba(0, 0, 0, 0.9) !important;
+  color: rgba(0, 0, 0, 1) !important;
+}
+
+/* Our Work Page */
+.our-work-page {
+  margin-top: 2rem;
+  padding-top: 6rem;
+  padding-top: max(6rem, env(safe-area-inset-top, 0) + 5rem) !important;
+}
+
+.work-hero {
+  padding-top: 1rem;
+  margin-bottom: 3rem;
+}
+
+/* Contact Page */
+.professional-contact {
+  margin-top: 2rem;
+  padding-top: 6rem;
+  padding-top: max(6rem, env(safe-area-inset-top, 0) + 5rem) !important;
+}
+
+.contact-hero {
+  padding-top: 1rem;
+  margin-bottom: 3rem;
+}
+
 .cta-buttons .btn {
   min-width: 180px;
   font-weight: 600;
@@ -2658,6 +2744,16 @@ img {
     padding-top: max(3rem, env(safe-area-inset-top, 0) + 2rem) !important;
     margin-top: 1rem;
     text-align: center;
+  }
+  
+  .our-work-page {
+    padding-top: 4rem;
+    padding-top: max(4rem, env(safe-area-inset-top, 0) + 3rem) !important;
+  }
+  
+  .professional-contact {
+    padding-top: 4rem;
+    padding-top: max(4rem, env(safe-area-inset-top, 0) + 3rem) !important;
   }
   
   .cta-title {

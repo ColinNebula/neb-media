@@ -319,6 +319,7 @@ function Faq({ setCurrentTab }) {
                   variant="outline-light" 
                   size="lg"
                   href="mailto:nebulamedia3d@gmail.com"
+                  className="email-cta-btn"
                 >
                   <FaEnvelope className="me-2" />
                   Send Email

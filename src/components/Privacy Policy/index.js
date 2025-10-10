@@ -127,7 +127,7 @@ function PrivacyPolicy() {
         },
         {
           subtitle: "Data Deletion",
-          text: "When information is no longer needed, we securely delete or anonymize it. You can request deletion of your personal information at any time by contacting us at privacy@nebuladev.com. Some information may be retained in backup systems for up to 90 days after deletion."
+          text: "When information is no longer needed, we securely delete or anonymize it. You can request deletion of your personal information at any time by contacting us at privacy@nebula3ddev.com. Some information may be retained in backup systems for up to 90 days after deletion."
         },
         {
           subtitle: "Project Archives",
@@ -215,7 +215,7 @@ function PrivacyPolicy() {
         },
         {
           subtitle: "Parental Notification",
-          text: "If we become aware that we have collected personal information from a child under 18, we will take steps to delete such information immediately. Parents or guardians who believe we may have information about a child should contact us at privacy@nebuladev.com."
+          text: "If we become aware that we have collected personal information from a child under 18, we will take steps to delete such information immediately. Parents or guardians who believe we may have information about a child should contact us at privacy@nebula3ddev.com."
         }
       ]
     },
@@ -247,11 +247,11 @@ function PrivacyPolicy() {
       content: [
         {
           subtitle: "Privacy Inquiries",
-          text: "If you have questions, concerns, or requests regarding this privacy policy or our data practices, please contact us at: Email: privacy@nebuladev.com | Phone: +1 (555) 123-4567 | Address: Nebula Dev, 123 Innovation Street, Tech City, TC 12345"
+          text: "If you have questions, concerns, or requests regarding this privacy policy or our data practices, please contact us at: Email: privacy@nebula3ddev.com | Phone: +1 (416) 856-5764 | Address: Nebula3D Dev, 46 Wildfire Road, Woodbridge, ON L4L 8Y9"
         },
         {
           subtitle: "Data Protection Officer",
-          text: "For European users, you can contact our Data Protection Officer at: dpo@nebuladev.com. We will respond to all requests within 30 days in accordance with GDPR requirements."
+          text: "For European users, you can contact our Data Protection Officer at: dpo@nebula3ddev.com. We will respond to all requests within 30 days in accordance with GDPR requirements."
         },
         {
           subtitle: "Supervisory Authority",
@@ -273,7 +273,7 @@ function PrivacyPolicy() {
             Privacy Policy
           </h1>
           <p className="lead mb-4" style={{ color: 'var(--text-muted)', maxWidth: '800px', margin: '0 auto' }}>
-            At Nebula Dev, we take your privacy seriously. This policy explains how we collect, 
+            At Nebula3D Dev, we take your privacy seriously. This policy explains how we collect, 
             use, and protect your personal information.
           </p>
           <div className="d-flex align-items-center justify-content-center gap-3">
@@ -410,7 +410,7 @@ function PrivacyPolicy() {
               </p>
               <div className="contact-details">
                 <p className="mb-2">
-                  <strong>Email:</strong> privacy@nebuladev.com
+                  <strong>Email:</strong> privacy@nebula3ddev.com
                 </p>
                 <p className="mb-2">
                   <strong>Phone:</strong> +1 (416) 856-5764
@@ -427,7 +427,7 @@ function PrivacyPolicy() {
         <section className="privacy-footer text-center pb-5">
           <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
             This privacy policy is effective as of {lastUpdated} and applies to all information 
-            collected through our website and services. By using Nebula Dev's services, you consent 
+            collected through our website and services. By using Nebula3D Dev's services, you consent 
             to the practices described in this policy.
           </p>
         </section>

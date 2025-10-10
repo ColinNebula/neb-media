@@ -95,7 +95,7 @@ function SideNav(props) {
       color: '#1DA1F2'
     },
     {
-      url: 'mailto:hello@nebuladev.com',
+      url: 'mailto:hello@nebula3ddev.com',
       icon: FaEnvelope,
       label: 'Email',
       color: '#358ed3'
@@ -126,14 +126,14 @@ function SideNav(props) {
               src={logo} 
               width="120" 
               height="50" 
-              alt="Nebula Dev Logo" 
+              alt="Nebula3D Dev Logo" 
               className="brand-logo me-2"
               onError={(e) => {
                 e.target.style.display = 'none';
                 console.log('Logo failed to load');
               }}
             />
-            <span className="nav-brand">Nebula Dev</span>
+            <span className="nav-brand">Nebula3D Dev</span>
           </Navbar.Brand>
 
           {/* Desktop Navigation Links */}
@@ -198,10 +198,10 @@ function SideNav(props) {
               src={logo} 
               width="100" 
               height="42" 
-              alt="Nebula Dev Logo" 
+              alt="Nebula3D Dev Logo" 
               className="mb-2"
             />
-            <h5 className="brand-title mb-0">Nebula Dev</h5>
+            <h5 className="brand-title mb-0">Nebula3D Dev</h5>
             <p className="brand-subtitle">Web App Development</p>
           </div>
           <button
@@ -333,7 +333,7 @@ function SideNav(props) {
             <div className="contact-info">
               <p className="contact-item">
                 <strong>Email:</strong><br />
-                hello@nebuladev.com
+                hello@nebula3ddev.com
               </p>
               <p className="contact-item">
                 <strong>Phone:</strong><br />
@@ -345,7 +345,7 @@ function SideNav(props) {
           {/* Footer */}
           <div className="offcanvas-footer">
             <p className="footer-text">
-              © 2025 Nebula Dev<br />
+              © 2025 Nebula3D Dev<br />
               <span className="footer-tagline">Building Powerful Web Applications</span>
             </p>
           </div>

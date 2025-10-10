@@ -1,0 +1,8 @@
+# Netlify redirects file
+# This handles client-side routing for single-page applications
+
+# Redirect all routes to index.html for client-side routing
+/*    /index.html   200
+
+# Force HTTPS (optional, Netlify does this by default)
+# http://* https://:splat 301!

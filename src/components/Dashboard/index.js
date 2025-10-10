@@ -98,13 +98,13 @@ function Dashboard({ setCurrentTab, externalShowGetStarted, externalSetShowGetSt
     {
       name: "Sarah Johnson",
       company: "TechStart Inc.",
-      text: "Nebula Dev transformed our business with a powerful web platform. Their technical expertise and agile approach exceeded our expectations.",
+      text: "Nebula3D Dev transformed our business with a powerful web platform. Their technical expertise and agile approach exceeded our expectations.",
       rating: 5
     },
     {
       name: "Michael Chen", 
       company: "Creative Solutions",
-      text: "The team at Nebula Dev delivered a scalable application on time and within budget. Highly recommend their development services.",
+      text: "The team at Nebula3D Dev delivered a scalable application on time and within budget. Highly recommend their development services.",
       rating: 5
     }
   ];
@@ -171,7 +171,7 @@ function Dashboard({ setCurrentTab, externalShowGetStarted, externalSetShowGetSt
             <Col lg={6}>
               <div className="hero-content animate-slide-in-left">
                 <Badge className="mb-3 px-3 py-2" style={{ background: 'var(--accent-gradient)', border: 'none' }}>
-                  Welcome to Nebula Dev
+                  Welcome to Nebula3D Dev
                 </Badge>
                 <h1 className="display-4 fw-bold mb-3">
                   Building Powerful 
@@ -198,7 +198,7 @@ function Dashboard({ setCurrentTab, externalShowGetStarted, externalSetShowGetSt
                 <div className="image-wrapper position-relative">
                   <img 
                     src={hero} 
-                    alt="Nebula Dev Hero" 
+                    alt="Nebula3D Dev Hero" 
                     className="img-fluid rounded-3 shadow-lg animate-float" 
                     style={{ borderRadius: 'var(--radius-xl)' }}
                     onError={(e) => {
@@ -421,7 +421,7 @@ function Dashboard({ setCurrentTab, externalShowGetStarted, externalSetShowGetSt
         </section>
 
         {/* Testimonials */}
-        <section className="testimonials-section mb-5">
+        {/* <section className="testimonials-section mb-5">
           <Row className="mb-4">
             <Col>
               <h2 className="section-title text-center mb-3">Client Success Stories</h2>
@@ -453,14 +453,14 @@ function Dashboard({ setCurrentTab, externalShowGetStarted, externalSetShowGetSt
               </Col>
             ))}
           </Row>
-        </section>
+        </section> */}
 
         {/* Contact CTA */}
         <section className="contact-cta mb-5">
           <Card className="cta-card border-0 shadow-lg bg-gradient-primary text-white">
             <Card.Body className="p-5 text-center">
               <div className="cta-logo mb-3">
-                <img src={logo} width="120" height="50" alt="Nebula Dev Logo" />
+                <img src={logo} width="120" height="50" alt="Nebula3D Dev Logo" />
               </div>
               <h2 className="cta-title mb-3">Ready to Bring Your Vision to Life?</h2>
               <p className="cta-description mb-4">
@@ -472,14 +472,14 @@ function Dashboard({ setCurrentTab, externalShowGetStarted, externalSetShowGetSt
                 <Col md={4} className="mb-3">
                   <div className="contact-item">
                     <FaMapMarkerAlt className="contact-icon mb-2" />
-                    <p className="mb-0">55 Main Street<br />Vaughan, ON L4L-8Y9</p>
+                    <p className="mb-0">Toronto, Canada</p>
                   </div>
                 </Col>
                 <Col md={4} className="mb-3">
                   <div className="contact-item">
                     <FaPhone className="contact-icon mb-2" />
                     <p className="mb-0">
-                      <a href="tel:416.856.5764" className="text-white text-decoration-none">
+                      <a href="tel:416.856.5764" className="contact-cta-link">
                         (416) 856-5764
                       </a>
                     </p>
@@ -489,8 +489,8 @@ function Dashboard({ setCurrentTab, externalShowGetStarted, externalSetShowGetSt
                   <div className="contact-item">
                     <FaEnvelope className="contact-icon mb-2" />
                     <p className="mb-0">
-                      <a href="mailto:nebulamedia3d@gmail.com" className="text-white text-decoration-none">
-                        nebulamedia3d@gmail.com
+                      <a href="mailto:info@nebula3ddev.com" className="contact-cta-link">
+                        info@nebula3ddev.com
                       </a>
                     </p>
                   </div>
@@ -498,11 +498,17 @@ function Dashboard({ setCurrentTab, externalShowGetStarted, externalSetShowGetSt
               </Row>
               
               <div className="cta-buttons">
-                <Button variant="light" size="lg" className="me-3">
+                <Button variant="light" size="lg" className="me-3" onClick={() => {
+                  setCurrentTab('contact');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}>
                   <FaEnvelope className="me-2" />
                   Get In Touch
                 </Button>
-                <Button variant="outline-light" size="lg">
+                <Button variant="outline-light" size="lg" className="portfolio-cta-btn" onClick={() => {
+                  setCurrentTab('our-work');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}>
                   View Portfolio
                 </Button>
               </div>
@@ -533,7 +539,7 @@ function Dashboard({ setCurrentTab, externalShowGetStarted, externalSetShowGetSt
                 width="100%" 
                 height="400" 
                 src="https://www.youtube.com/embed/N2WhwHaicR4?si=DpZil3O_vevDpqEl" 
-                title="E-Commerce Platform - Nebula Dev"
+                title="E-Commerce Platform - Nebula3D Dev"
                 frameBorder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                 allowFullScreen
@@ -557,7 +563,7 @@ function Dashboard({ setCurrentTab, externalShowGetStarted, externalSetShowGetSt
           </Modal.Header>
           <Modal.Body className="p-4">
             <p className="lead mb-4">
-              Nebula Dev created this comprehensive SaaS dashboard with advanced data visualization, 
+              Nebula3D Dev created this comprehensive SaaS dashboard with advanced data visualization, 
               real-time updates, and intuitive user management for enterprise clients.
             </p>
             <div className="video-container">
@@ -565,7 +571,7 @@ function Dashboard({ setCurrentTab, externalShowGetStarted, externalSetShowGetSt
                 width="100%"
                 height="400"
                 src="https://www.youtube.com/embed/1wI6aDte_1Q"
-                title="SaaS Dashboard - Nebula Dev"
+                title="SaaS Dashboard - Nebula3D Dev"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
@@ -590,7 +596,7 @@ function Dashboard({ setCurrentTab, externalShowGetStarted, externalSetShowGetSt
           }}>
             <Modal.Title>
               <FaRocket className="me-2" />
-              Get Started with Nebula Dev
+              Get Started with Nebula3D Dev
             </Modal.Title>
           </Modal.Header>
           <Modal.Body style={{ 

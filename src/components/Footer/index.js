@@ -9,7 +9,7 @@ function Footer({ setCurrentTab, onGetStartedClick }) {
             <div className="footer-container">
                 {/* Company Info Section */}
                 <div className="footer-section">
-                    <h3 className="footer-title">Nebula Dev</h3>
+                    <h3 className="footer-title">Nebula3D Dev</h3>
                     <p className="footer-description">
                         Building powerful web applications and digital solutions that transform 
                         businesses and create exceptional user experiences across all platforms.
@@ -108,10 +108,10 @@ function Footer({ setCurrentTab, onGetStartedClick }) {
                         <p className="contact-item">
                             <strong>Email:</strong><br />
                             <a 
-                                href="mailto:hello@nebuladev.com" 
+                                href="mailto:nebulamedia3d@gmail.com" 
                                 className="footer-link"
                             >
-                                hello@nebuladev.com
+                                info@nebula3ddev.com
                             </a>
                         </p>
                         <p className="contact-item">
@@ -120,13 +120,8 @@ function Footer({ setCurrentTab, onGetStartedClick }) {
                                 href="tel:+14168564567" 
                                 className="footer-link"
                             >
-                                +1 (416) 856-4567
+                                +1 (416) 856-5767
                             </a>
-                        </p>
-                        <p className="contact-item">
-                            <strong>Address:</strong><br />
-                            46 Wildfire Road<br />
-                            Woodbridge, ON 1L4L 8Y9
                         </p>
                     </div>
                 </div>
@@ -136,7 +131,7 @@ function Footer({ setCurrentTab, onGetStartedClick }) {
             <div className="footer-bottom">
                 <div className="footer-bottom-content">
                     <p className="copyright">
-                        © {currentYear} Nebula Dev. All rights reserved.
+                        © {currentYear} Nebula3D Dev. All rights reserved.
                     </p>
                     <div className="footer-legal">
                         <a 

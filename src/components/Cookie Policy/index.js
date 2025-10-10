@@ -172,7 +172,7 @@ const CookiePolicy = () => {
                 },
                 {
                     subtitle: 'How They Work',
-                    text: 'When you visit Nebula Dev, our web server sends a cookie to your browser, which stores it on your device. On subsequent visits, your browser sends the cookie back to our server, allowing us to recognize you and customize your experience.'
+                    text: 'When you visit Nebula3D Dev, our web server sends a cookie to your browser, which stores it on your device. On subsequent visits, your browser sends the cookie back to our server, allowing us to recognize you and customize your experience.'
                 },
                 {
                     subtitle: 'Types of Data Stored',
@@ -212,7 +212,7 @@ const CookiePolicy = () => {
             content: [
                 {
                     subtitle: 'Cookie Consent Banner',
-                    text: 'When you first visit Nebula Dev, you\'ll see a cookie consent banner that allows you to accept or customize your cookie preferences. You can choose which types of cookies to enable or disable (except essential cookies which are required for site functionality).'
+                    text: 'When you first visit Nebula3D Dev, you\'ll see a cookie consent banner that allows you to accept or customize your cookie preferences. You can choose which types of cookies to enable or disable (except essential cookies which are required for site functionality).'
                 },
                 {
                     subtitle: 'Browser Settings',
@@ -394,7 +394,7 @@ const CookiePolicy = () => {
                                 maxWidth: '800px',
                                 margin: '0 auto'
                             }}>
-                                This Cookie Policy explains how Nebula Dev uses cookies and similar tracking technologies 
+                                This Cookie Policy explains how Nebula3D Dev uses cookies and similar tracking technologies 
                                 to recognize you when you visit our website. It explains what these technologies are, why 
                                 we use them, and your rights to control our use of them.
                             </p>
@@ -650,22 +650,22 @@ const CookiePolicy = () => {
                                     <div>
                                         <strong>General Inquiries:</strong>
                                         <br />
-                                        <a href="mailto:info@nebuladev.com" style={{ color: 'white', textDecoration: 'underline' }}>
-                                            info@nebuladev.com
+                                        <a href="mailto:info@nebula3ddev.com" style={{ color: 'white', textDecoration: 'underline' }}>
+                                            info@nebula3ddev.com
                                         </a>
                                     </div>
                                     <div>
                                         <strong>Privacy Officer:</strong>
                                         <br />
-                                        <a href="mailto:privacy@nebuladev.com" style={{ color: 'white', textDecoration: 'underline' }}>
-                                            privacy@nebuladev.com
+                                        <a href="mailto:privacy@nebula3ddev.com" style={{ color: 'white', textDecoration: 'underline' }}>
+                                            privacy@nebula3ddev.com
                                         </a>
                                     </div>
                                     <div>
                                         <strong>Technical Support:</strong>
                                         <br />
-                                        <a href="mailto:support@nebuladev.com" style={{ color: 'white', textDecoration: 'underline' }}>
-                                            support@nebuladev.com
+                                        <a href="mailto:support@nebula3ddev.com" style={{ color: 'white', textDecoration: 'underline' }}>
+                                            support@nebula3ddev.com
                                         </a>
                                     </div>
                                 </div>
