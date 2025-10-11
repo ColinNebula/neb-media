@@ -631,7 +631,12 @@ function OurWork({ setCurrentTab }) {
                 <Button 
                   variant="outline-light" 
                   size="lg"
-                  onClick={() => setCurrentTab && setCurrentTab('video-player')}
+                  onClick={() => {
+                    if (setCurrentTab) {
+                      setCurrentTab('video-player');
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                  }}
                 >
                   <FaPlay className="me-2" />
                   Watch Demo Reel

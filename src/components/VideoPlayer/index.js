@@ -27,6 +27,7 @@ import {
 } from 'react-icons/fa';
 import { useTheme } from '../../contexts/ThemeContext';
 import './VideoPlayer.css';
+import './VideoPlayer.modern.css';
 
 const MediaPlayer = ({ 
   src, 
@@ -799,24 +800,26 @@ const MediaPlayer = ({
 
   return (
     <div 
-      className={`media-player elegant ${isDark ? 'dark' : 'light'} ${mediaType} ${className}`}
+      className={`media-player modern ${isDark ? 'dark' : 'light'} ${mediaType} ${className}`}
       style={{ width, height }}
       onMouseEnter={() => !isEmbedded && setShowControls(true)}
       onMouseLeave={() => !isEmbedded && isPlaying && setShowControls(false)}
     >
       {/* Platform Badge */}
-      {platform && platform !== 'direct' && (
-        <div className="platform-badge">
+      {!isEmbedded && platform && platform !== 'direct' && (
+        <div className={`platform-badge ${isPlaying ? 'hidden' : 'visible'}`}>
           {getPlatformIcon(platform)}
           <span>{getPlatformName(platform)}</span>
         </div>
       )}
 
       {/* Media Type Indicator */}
-      <div className="media-type-indicator">
-        {mediaType === 'audio' ? <FaMusic /> : <FaVideo />}
-        <span>{mediaType.charAt(0).toUpperCase() + mediaType.slice(1)}</span>
-      </div>
+      {!isEmbedded && (
+        <div className={`media-type-indicator ${isPlaying ? 'hidden' : 'visible'}`}>
+          {mediaType === 'audio' ? <FaMusic /> : <FaVideo />}
+          <span>{mediaType.charAt(0).toUpperCase() + mediaType.slice(1)}</span>
+        </div>
+      )}
 
       {/* Media Element or Embedded Player */}
       {isEmbedded ? (
@@ -993,7 +996,7 @@ const MediaPlayer = ({
                   </button>
 
                   {/* Play/Pause */}
-                  <button className="control-btn play-pause-btn" onClick={togglePlay}>
+                  <button className="control-btn play-pause" onClick={togglePlay}>
                     {isPlaying ? <FaPause /> : <FaPlay />}
                   </button>
 

@@ -1,20 +1,22 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Card, Form, Button, Alert } from 'react-bootstrap';
+import { Container, Row, Col, Card, Form, Button, Alert, Accordion } from 'react-bootstrap';
 import { FaVideo, FaMusic, FaUpload, FaPlay, FaFileVideo, FaFileAudio } from 'react-icons/fa';
 import VideoPlayer from '../VideoPlayer';
 import { useTheme } from '../../contexts/ThemeContext';
 import './VideoPlayerDemo.css';
+import BgVideo from '../../assets/videos/bg.mp4';
+import BgVideo1 from '../../assets/videos/bg1.mp4';
 
 const MediaPlayerDemo = () => {
   const { isDark } = useTheme();
   const [selectedMedia, setSelectedMedia] = useState({
     id: 1,
-    title: "Big Buck Bunny - Open Source Movie",
-    src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-    poster: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg",
+    title: "Nebula3D Dev - Background Video",
+    src: BgVideo,
+    poster: null,
     format: "MP4",
     type: "video",
-    color: "#FF0000"
+    color: "#667eea"
   }); // Default to first video
   const [mediaUrl, setMediaUrl] = useState('');
   const [showUrlInput, setShowUrlInput] = useState(false);
@@ -22,37 +24,64 @@ const MediaPlayerDemo = () => {
 
   // Sample media for demonstration
   const sampleMedia = [
-    // Video samples
+    // Video samples - Our videos
     {
       id: 1,
-      title: "Big Buck Bunny - Open Source Movie",
-      src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-      poster: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg",
+      title: "Nebula3D Dev - Background Video",
+      src: BgVideo,
+      poster: null,
       format: "MP4",
+      type: "video",
+      color: "#667eea"
+    },
+    {
+      id: 2,
+      title: "Nebula3D Dev - Background Video 2",
+      src: BgVideo1,
+      poster: null,
+      format: "MP4",
+      type: "video",
+      color: "#764ba2"
+    },
+    {
+      id: 3,
+      title: "E-Commerce Platform - Nebula3D Dev",
+      src: "https://www.youtube.com/watch?v=N2WhwHaicR4",
+      poster: null,
+      format: "YouTube",
       type: "video",
       color: "#FF0000"
     },
     {
-      id: 2,
-      title: "Elephant Dream - Blender Movie",
-      src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
-      poster: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ElephantsDream.jpg",
-      format: "MP4",
+      id: 4,
+      title: "SaaS Dashboard - Nebula3D Dev",
+      src: "https://www.youtube.com/watch?v=1wI6aDte_1Q",
+      poster: null,
+      format: "YouTube",
       type: "video",
-      color: "#1AB7EA"
+      color: "#FF6B6B"
     },
     {
-      id: 3,
-      title: "Sintel - Blender Movie",
+      id: 5,
+      title: "Big Buck Bunny - Demo",
+      src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      poster: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg",
+      format: "MP4",
+      type: "video",
+      color: "#00B3E6"
+    },
+    {
+      id: 6,
+      title: "Sintel - Blender Short Film",
       src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
       poster: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/Sintel.jpg",
       format: "MP4",
       type: "video",
-      color: "#6f42c1"
+      color: "#4facfe"
     },
     // Audio samples
     {
-      id: 4,
+      id: 7,
       title: "Sample Audio Track",
       src: "https://www.soundjay.com/misc/sounds/bell-ringing-05.wav",
       poster: null,
@@ -61,22 +90,13 @@ const MediaPlayerDemo = () => {
       color: "#ff5500"
     },
     {
-      id: 5,
+      id: 8,
       title: "Nature Sounds",
       src: "https://samplelib.com/lib/preview/mp3/sample-6s.mp3",
       poster: null,
       format: "MP3",
       type: "audio",
       color: "#1db954"
-    },
-    {
-      id: 6,
-      title: "MP3 Audio File",
-      src: "https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3",
-      poster: null,
-      format: "MP3",
-      type: "audio",
-      color: "#28a745"
     }
   ];
 
@@ -176,10 +196,6 @@ const MediaPlayerDemo = () => {
       <Row className="mb-5">
         <Col lg={12} className="text-center">
           <div className={`hero-section ${isDark ? 'dark' : 'light'}`}>
-            <div className="hero-icons mb-3">
-              <FaVideo className="hero-icon" />
-              <FaMusic className="hero-icon ml-3" />
-            </div>
             <h1 className="display-4 fw-bold mb-3">
               <span className="gradient-text">Universal Media Player</span>
             </h1>
@@ -190,9 +206,120 @@ const MediaPlayerDemo = () => {
         </Col>
       </Row>
 
-      {/* Media Player Section */}
+      {/* Sidebar Layout - Media Selection & Player */}
       <Row className="mb-5">
-        <Col lg={12} xl={12} className="mx-auto">
+        {/* Sidebar - Media Library */}
+        <Col lg={4} xl={3} className="mb-4 mb-lg-0">
+          <Card className={`media-sidebar ${isDark ? 'dark' : 'light'}`}>
+            <Card.Header className="sidebar-header">
+              <h5 className="mb-3">
+                <FaPlay className="me-2" />
+                Media Library
+              </h5>
+              <div className="media-type-filter-vertical">
+                <Button 
+                  variant={mediaType === 'all' ? 'primary' : 'outline-primary'}
+                  size="sm"
+                  onClick={() => setMediaType('all')}
+                  className="w-100 mb-2"
+                >
+                  All Media
+                </Button>
+                <Button 
+                  variant={mediaType === 'video' ? 'primary' : 'outline-primary'}
+                  size="sm"
+                  onClick={() => setMediaType('video')}
+                  className="w-100 mb-2"
+                >
+                  <FaVideo className="me-2" />
+                  Videos
+                </Button>
+                <Button 
+                  variant={mediaType === 'audio' ? 'primary' : 'outline-primary'}
+                  size="sm"
+                  onClick={() => setMediaType('audio')}
+                  className="w-100"
+                >
+                  <FaMusic className="me-2" />
+                  Audio
+                </Button>
+              </div>
+            </Card.Header>
+            <Card.Body className="sidebar-body">
+              {/* Upload Options */}
+              <div className="sidebar-section mb-3">
+                <h6 className="sidebar-section-title">Add Media</h6>
+                <label htmlFor="media-upload" className="sidebar-upload-btn">
+                  <FaUpload className="me-2" />
+                  Upload File
+                </label>
+                <input
+                  id="media-upload"
+                  type="file"
+                  accept="video/*,audio/*"
+                  onChange={handleFileUpload}
+                  style={{ display: 'none' }}
+                />
+                <Button 
+                  variant="outline-secondary"
+                  size="sm"
+                  onClick={() => setShowUrlInput(!showUrlInput)}
+                  className="w-100 mt-2"
+                >
+                  Enter URL
+                </Button>
+                {showUrlInput && (
+                  <div className="url-input-sidebar mt-2">
+                    <Form.Control
+                      type="url"
+                      placeholder="Media URL..."
+                      value={mediaUrl}
+                      onChange={(e) => setMediaUrl(e.target.value)}
+                      size="sm"
+                      className="mb-2"
+                    />
+                    <Button size="sm" variant="primary" onClick={handleUrlSubmit} className="w-100">
+                      Load
+                    </Button>
+                  </div>
+                )}
+              </div>
+
+              {/* Sample Media List */}
+              <div className="sidebar-section">
+                <h6 className="sidebar-section-title">Sample Media ({filteredMedia.length})</h6>
+                <div className="media-list">
+                  {filteredMedia.map((media) => (
+                    <div 
+                      key={media.id}
+                      className={`media-list-item ${selectedMedia?.id === media.id ? 'active' : ''}`}
+                      onClick={() => selectSampleMedia(media)}
+                    >
+                      <div className="media-icon" style={{ color: media.color }}>
+                        {media.type === 'video' ? <FaVideo /> : <FaMusic />}
+                      </div>
+                      <div className="media-details">
+                        <div className="media-name">{media.title}</div>
+                        <div className="media-meta">
+                          <span className="media-type-badge">{media.type}</span>
+                          <span className="media-format-badge">{media.format}</span>
+                        </div>
+                      </div>
+                      {selectedMedia?.id === media.id && (
+                        <div className="playing-indicator">
+                          <FaPlay />
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Card.Body>
+          </Card>
+        </Col>
+
+        {/* Main Player Area */}
+        <Col lg={8} xl={9}>
           <Card className={`video-demo-card ${isDark ? 'dark' : 'light'}`}>
             <Card.Body>
               {selectedMedia ? (
@@ -205,6 +332,8 @@ const MediaPlayerDemo = () => {
                     height="auto"
                     controls={true}
                     showDownload={true}
+                    theme="modern"
+                    mediaType={selectedMedia.type}
                     onTimeUpdate={(time) => console.log('Time:', time)}
                     onEnded={() => console.log('Media ended')}
                   />
@@ -222,7 +351,7 @@ const MediaPlayerDemo = () => {
                     <FaFileAudio className="placeholder-icon ml-3" />
                   </div>
                   <h4>Select media to play</h4>
-                  <p>Choose from sample videos/audio, upload your own, or enter a media URL</p>
+                  <p>Choose from the media library or upload your own</p>
                 </div>
               )}
             </Card.Body>
@@ -230,114 +359,8 @@ const MediaPlayerDemo = () => {
         </Col>
       </Row>
 
-      {/* Media Selection */}
-      <Row className="mb-5">
-        <Col lg={12} xl={12} className="mx-auto">
-          <Card className={`selection-card ${isDark ? 'dark' : 'light'}`}>
-            <Card.Header>
-              <div className="d-flex justify-content-between align-items-center">
-                <h4 className="mb-0">
-                  <FaPlay className="me-2" />
-                  Media Selection
-                </h4>
-                <div className="media-type-filter">
-                  <Button 
-                    variant={mediaType === 'all' ? 'primary' : 'outline-primary'}
-                    size="sm"
-                    onClick={() => setMediaType('all')}
-                    className="me-2"
-                  >
-                    All
-                  </Button>
-                  <Button 
-                    variant={mediaType === 'video' ? 'primary' : 'outline-primary'}
-                    size="sm"
-                    onClick={() => setMediaType('video')}
-                    className="me-2"
-                  >
-                    <FaVideo className="me-1" />
-                    Video
-                  </Button>
-                  <Button 
-                    variant={mediaType === 'audio' ? 'primary' : 'outline-primary'}
-                    size="sm"
-                    onClick={() => setMediaType('audio')}
-                  >
-                    <FaMusic className="me-1" />
-                    Audio
-                  </Button>
-                </div>
-              </div>
-            </Card.Header>
-            <Card.Body>
-              {/* Upload and URL Options */}
-              <Row className="mb-4">
-                <Col md={6}>
-                  <div className="upload-section">
-                    <label htmlFor="media-upload" className="upload-btn">
-                      <FaUpload className="me-2" />
-                      Upload Media File
-                    </label>
-                    <input
-                      id="media-upload"
-                      type="file"
-                      accept="video/*,audio/*"
-                      onChange={handleFileUpload}
-                      style={{ display: 'none' }}
-                    />
-                    <small className="text-muted d-block mt-2">
-                      Supports all major video and audio formats
-                    </small>
-                  </div>
-                </Col>
-                <Col md={6}>
-                  <Button 
-                    variant="outline-primary"
-                    onClick={() => setShowUrlInput(!showUrlInput)}
-                    className="url-btn"
-                  >
-                    Enter Media URL
-                  </Button>
-                  {showUrlInput && (
-                    <div className="url-input mt-3">
-                      <Form.Control
-                        type="url"
-                        placeholder="https://example.com/media.mp4"
-                        value={mediaUrl}
-                        onChange={(e) => setMediaUrl(e.target.value)}
-                        className="mb-2"
-                      />
-                      <Button variant="primary" onClick={handleUrlSubmit}>
-                        Load Media
-                      </Button>
-                    </div>
-                  )}
-                </Col>
-              </Row>
-
-              {/* Sample Media - Compact View */}
-              <h5 className="mb-3">Sample Media</h5>
-              <div className="sample-media-grid">
-                {filteredMedia.map((media) => (
-                  <div 
-                    key={media.id}
-                    className={`sample-media-chip ${selectedMedia?.id === media.id ? 'selected' : ''}`}
-                    onClick={() => selectSampleMedia(media)}
-                    style={{ borderLeftColor: media.color }}
-                  >
-                    {media.type === 'video' ? <FaVideo /> : <FaMusic />}
-                    <span className="media-title">{media.title}</span>
-                    <span className="media-format">{media.format}</span>
-                  </div>
-                ))}
-              </div>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-
-      {/* Supported Formats */}
-      <Row>
+      {/* Supported Formats - Commented out for now */}
+      {/* <Row>
         <Col lg={11} xl={10} className="mx-auto">
           <Card className={`formats-card ${isDark ? 'dark' : 'light'}`}>
             <Card.Header>
@@ -347,57 +370,95 @@ const MediaPlayerDemo = () => {
               </h4>
             </Card.Header>
             <Card.Body>
-              {/* Video Streaming Platforms */}
-              <div className="format-category mb-4">
-                <h5 className="category-title">🎬 Video Streaming Platforms</h5>
-                <div className="format-badges">
-                  {supportedFormats.filter(f => f.category === 'Video Streaming').map((format, index) => (
-                    <span key={index} className="format-badge streaming" title={format.description}>
-                      <strong>{format.format}</strong>
-                      <code>{format.extension}</code>
-                    </span>
-                  ))}
-                </div>
-              </div>
+              <Accordion defaultActiveKey="0" className="formats-accordion">
+                <Accordion.Item eventKey="0" className="accordion-item-custom">
+                  <Accordion.Header className="accordion-header-custom">
+                    <span className="accordion-icon">🎬</span>
+                    <span className="accordion-title">Video Streaming Platforms</span>
+                    <span className="accordion-count">{supportedFormats.filter(f => f.category === 'Video Streaming').length} platforms</span>
+                  </Accordion.Header>
+                  <Accordion.Body className="accordion-body-custom">
+                    <div className="format-grid">
+                      {supportedFormats.filter(f => f.category === 'Video Streaming').map((format, index) => (
+                        <div key={index} className="format-card streaming">
+                          <div className="format-card-header">
+                            <FaVideo className="format-card-icon" />
+                            <strong>{format.format}</strong>
+                          </div>
+                          <code className="format-extension">{format.extension}</code>
+                          <p className="format-description">{format.description}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </Accordion.Body>
+                </Accordion.Item>
 
-              {/* Audio Streaming Platforms */}
-              <div className="format-category mb-4">
-                <h5 className="category-title">🎵 Audio Streaming Platforms</h5>
-                <div className="format-badges">
-                  {supportedFormats.filter(f => f.category === 'Audio Streaming').map((format, index) => (
-                    <span key={index} className="format-badge audio" title={format.description}>
-                      <strong>{format.format}</strong>
-                      <code>{format.extension}</code>
-                    </span>
-                  ))}
-                </div>
-              </div>
+                <Accordion.Item eventKey="1" className="accordion-item-custom">
+                  <Accordion.Header className="accordion-header-custom">
+                    <span className="accordion-icon">🎵</span>
+                    <span className="accordion-title">Audio Streaming Platforms</span>
+                    <span className="accordion-count">{supportedFormats.filter(f => f.category === 'Audio Streaming').length} platforms</span>
+                  </Accordion.Header>
+                  <Accordion.Body className="accordion-body-custom">
+                    <div className="format-grid">
+                      {supportedFormats.filter(f => f.category === 'Audio Streaming').map((format, index) => (
+                        <div key={index} className="format-card audio-streaming">
+                          <div className="format-card-header">
+                            <FaMusic className="format-card-icon" />
+                            <strong>{format.format}</strong>
+                          </div>
+                          <code className="format-extension">{format.extension}</code>
+                          <p className="format-description">{format.description}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </Accordion.Body>
+                </Accordion.Item>
 
-              {/* Video Files */}
-              <div className="format-category mb-4">
-                <h5 className="category-title">📹 Video File Formats</h5>
-                <div className="format-badges">
-                  {supportedFormats.filter(f => f.category === 'Video Files').map((format, index) => (
-                    <span key={index} className="format-badge video-file" title={format.description}>
-                      <strong>{format.format}</strong>
-                      <code>{format.extension}</code>
-                    </span>
-                  ))}
-                </div>
-              </div>
+                <Accordion.Item eventKey="2" className="accordion-item-custom">
+                  <Accordion.Header className="accordion-header-custom">
+                    <span className="accordion-icon">📹</span>
+                    <span className="accordion-title">Video File Formats</span>
+                    <span className="accordion-count">{supportedFormats.filter(f => f.category === 'Video Files').length} formats</span>
+                  </Accordion.Header>
+                  <Accordion.Body className="accordion-body-custom">
+                    <div className="format-grid">
+                      {supportedFormats.filter(f => f.category === 'Video Files').map((format, index) => (
+                        <div key={index} className="format-card video-file">
+                          <div className="format-card-header">
+                            <FaFileVideo className="format-card-icon" />
+                            <strong>{format.format}</strong>
+                          </div>
+                          <code className="format-extension">{format.extension}</code>
+                          <p className="format-description">{format.description}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </Accordion.Body>
+                </Accordion.Item>
 
-              {/* Audio Files */}
-              <div className="format-category mb-4">
-                <h5 className="category-title">🎧 Audio File Formats</h5>
-                <div className="format-badges">
-                  {supportedFormats.filter(f => f.category === 'Audio Files').map((format, index) => (
-                    <span key={index} className="format-badge audio-file" title={format.description}>
-                      <strong>{format.format}</strong>
-                      <code>{format.extension}</code>
-                    </span>
-                  ))}
-                </div>
-              </div>
+                <Accordion.Item eventKey="3" className="accordion-item-custom">
+                  <Accordion.Header className="accordion-header-custom">
+                    <span className="accordion-icon">🎧</span>
+                    <span className="accordion-title">Audio File Formats</span>
+                    <span className="accordion-count">{supportedFormats.filter(f => f.category === 'Audio Files').length} formats</span>
+                  </Accordion.Header>
+                  <Accordion.Body className="accordion-body-custom">
+                    <div className="format-grid">
+                      {supportedFormats.filter(f => f.category === 'Audio Files').map((format, index) => (
+                        <div key={index} className="format-card audio-file">
+                          <div className="format-card-header">
+                            <FaFileAudio className="format-card-icon" />
+                            <strong>{format.format}</strong>
+                          </div>
+                          <code className="format-extension">{format.extension}</code>
+                          <p className="format-description">{format.description}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </Accordion.Body>
+                </Accordion.Item>
+              </Accordion>
               
               <Alert variant="info" className="mt-4">
                 <strong>🎯 Pro Tip:</strong> Simply paste any YouTube, Vimeo, SoundCloud, Spotify, or other supported platform URL, and our media player will automatically detect and embed it with full functionality!
@@ -405,7 +466,7 @@ const MediaPlayerDemo = () => {
             </Card.Body>
           </Card>
         </Col>
-      </Row>
+      </Row> */}
     </Container>
   );
 };

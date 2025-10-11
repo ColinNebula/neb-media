@@ -1,0 +1,1115 @@
+/* ========================================
+   NEBULA3D DEV - MODERN MEDIA PLAYER
+   Glassmorphism Design System
+   ======================================== */
+
+:root {
+  --player-primary: #667eea;
+  --player-secondary: #764ba2;
+  --player-accent: #4facfe;
+  --player-glass-light: rgba(255, 255, 255, 0.1);
+  --player-glass-dark: rgba(0, 0, 0, 0.3);
+  --player-border-light: rgba(255, 255, 255, 0.18);
+  --player-border-dark: rgba(255, 255, 255, 0.08);
+  --player-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  --player-shadow-hover: 0 16px 48px rgba(31, 38, 135, 0.5);
+  --player-transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --player-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* ========================================
+   MAIN CONTAINER
+   ======================================== */
+
+.media-player.modern {
+  position: relative;
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  border-radius: 24px;
+  overflow: hidden;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--player-shadow);
+  transition: var(--player-transition);
+}
+
+.media-player.modern.dark {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.media-player.modern:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--player-shadow-hover);
+}
+
+/* ========================================
+   MEDIA ELEMENTS
+   ======================================== */
+
+.media-player.modern .media-element {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #000;
+}
+
+.media-player.modern .video-element {
+  width: 100%;
+  min-height: 600px;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+}
+
+.media-player.modern .audio-element {
+  width: 100%;
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ========================================
+   AUDIO PLAYER CONTAINER
+   ======================================== */
+
+.media-player.modern .audio-player-container {
+  position: relative;
+  width: 100%;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, var(--player-primary) 0%, var(--player-secondary) 100%);
+  overflow: hidden;
+}
+
+.media-player.modern .audio-player-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: audioGlow 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes audioGlow {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+  50% { transform: translate(10%, 10%) scale(1.1); opacity: 0.6; }
+}
+
+/* Album Art / Cover */
+.media-player.modern .audio-cover {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.4),
+    0 0 0 12px rgba(255, 255, 255, 0.1),
+    0 0 0 16px rgba(255, 255, 255, 0.05);
+  transition: var(--player-transition);
+  z-index: 2;
+}
+
+.media-player.modern .audio-cover.playing {
+  animation: vinylSpin 20s linear infinite, pulseBeat 1s ease-in-out infinite;
+}
+
+.media-player.modern .audio-cover.paused {
+  animation: none;
+}
+
+.media-player.modern .audio-cover:hover {
+  transform: scale(1.05);
+  box-shadow: 
+    0 25px 70px rgba(0, 0, 0, 0.5),
+    0 0 0 12px rgba(255, 255, 255, 0.15),
+    0 0 0 16px rgba(255, 255, 255, 0.08);
+}
+
+@keyframes vinylSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulseBeat {
+  0%, 100% { box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 0 12px rgba(255, 255, 255, 0.1); }
+  50% { box-shadow: 0 25px 70px rgba(0, 0, 0, 0.5), 0 0 0 16px rgba(255, 255, 255, 0.15); }
+}
+
+.media-player.modern .cover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(1.1) contrast(1.05);
+}
+
+.media-player.modern .cover-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.05) 100%);
+  font-size: 4rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.media-player.modern .cover-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.media-player.modern .audio-cover:hover .cover-overlay {
+  opacity: 1;
+}
+
+.media-player.modern .track-title {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* ========================================
+   AUDIO VISUALIZATION
+   ======================================== */
+
+.media-player.modern .audio-visualizer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 3px;
+  padding: 0 2rem;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.media-player.modern .frequency-bars {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 4px;
+  height: 100%;
+  width: 100%;
+  max-width: 600px;
+}
+
+.media-player.modern .frequency-bar {
+  flex: 1;
+  background: linear-gradient(180deg, 
+    rgba(255, 255, 255, 0.9) 0%, 
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0.2) 100%);
+  border-radius: 4px 4px 0 0;
+  min-height: 4px;
+  animation: barPulse 0.8s ease-in-out infinite;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  transform-origin: bottom;
+  transition: all 0.1s ease;
+}
+
+@keyframes barPulse {
+  0%, 100% { transform: scaleY(0.3); }
+  50% { transform: scaleY(1); }
+}
+
+.media-player.modern .frequency-bar:nth-child(odd) {
+  animation-delay: 0.1s;
+}
+
+.media-player.modern .frequency-bar:nth-child(even) {
+  animation-delay: 0.2s;
+}
+
+/* ========================================
+   CONTROLS CONTAINER
+   ======================================== */
+
+.media-player.modern .media-controls {
+  position: relative;
+  background: rgba(0, 0, 0, 0.95);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 1rem 1.5rem;
+  transition: var(--player-transition);
+  z-index: 10;
+}
+
+.media-player.modern .media-controls.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.media-player.modern .media-controls.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(100%);
+  pointer-events: none;
+}
+
+.media-player.modern.dark .media-controls {
+  background: rgba(0, 0, 0, 0.98);
+}
+
+.media-player.modern .media-controls:hover {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+/* Progress Bar */
+.media-player.modern .progress-container {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.media-player.modern .progress-bar {
+  position: relative;
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: var(--player-transition);
+  z-index: 2;
+}
+
+.media-player.modern .progress-bar:hover {
+  height: 8px;
+}
+
+.media-player.modern .progress-filled {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(90deg, var(--player-primary) 0%, var(--player-secondary) 100%);
+  border-radius: 10px;
+  transition: width 0.1s linear, background 0.3s ease;
+  box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
+  pointer-events: none;
+}
+
+.media-player.modern .progress-bar:hover .progress-filled {
+  background: linear-gradient(90deg, var(--player-accent) 0%, var(--player-primary) 100%);
+}
+
+.media-player.modern .progress-handle {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.media-player.modern .progress-bar:hover .progress-handle {
+  opacity: 1;
+}
+
+.media-player.modern .buffered-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Time Display */
+.media-player.modern .time-display {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 0.5rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* ========================================
+   CONTROL BUTTONS
+   ======================================== */
+
+.media-player.modern .controls-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.media-player.modern .controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.media-player.modern .controls-left,
+.media-player.modern .controls-center,
+.media-player.modern .controls-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  position: relative;
+  z-index: 2;
+}
+
+.media-player.modern .controls-center {
+  flex: 1;
+  justify-content: center;
+}
+
+.media-player.modern .control-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--player-transition);
+  font-size: 1rem;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.media-player.modern .control-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease;
+  pointer-events: none;
+}
+
+.media-player.modern .control-btn:hover::before {
+  width: 100%;
+  height: 100%;
+}
+
+.media-player.modern .control-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.media-player.modern .control-btn:active {
+  transform: scale(0.95);
+}
+
+.media-player.modern .control-btn.active {
+  background: linear-gradient(135deg, var(--player-primary) 0%, var(--player-secondary) 100%);
+  border-color: transparent;
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.4);
+}
+
+/* Play/Pause Button - Larger */
+.media-player.modern .control-btn.play-pause {
+  width: 56px;
+  height: 56px;
+  font-size: 1.5rem;
+  background: linear-gradient(135deg, var(--player-primary) 0%, var(--player-secondary) 100%);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 8px 24px rgba(102, 126, 234, 0.4),
+    0 0 0 4px rgba(255, 255, 255, 0.1);
+}
+
+.media-player.modern .control-btn.play-pause:hover {
+  transform: scale(1.15);
+  box-shadow: 
+    0 12px 32px rgba(102, 126, 234, 0.6),
+    0 0 0 6px rgba(255, 255, 255, 0.15);
+}
+
+/* ========================================
+   VOLUME CONTROL
+   ======================================== */
+
+.media-player.modern .volume-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: var(--player-transition);
+  position: relative;
+  z-index: 2;
+}
+
+.media-player.modern .volume-container:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.media-player.modern .volume-slider {
+  width: 80px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  transition: var(--player-transition);
+}
+
+.media-player.modern .volume-slider:hover {
+  height: 6px;
+}
+
+.media-player.modern .volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: var(--player-transition);
+}
+
+.media-player.modern .volume-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  background: var(--player-accent);
+}
+
+.media-player.modern .volume-slider::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: var(--player-transition);
+}
+
+.media-player.modern .volume-slider::-moz-range-thumb:hover {
+  transform: scale(1.2);
+  background: var(--player-accent);
+}
+
+/* ========================================
+   MEDIA TITLE & INFO
+   ======================================== */
+
+.media-player.modern .media-title {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 1rem 1.5rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: var(--player-transition);
+  pointer-events: none;
+}
+
+.media-player:hover .media-title {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.media-player.modern .media-title h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  line-height: 1.3;
+}
+
+.media-player.modern .platform-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* ========================================
+   PLATFORM BADGES
+   ======================================== */
+
+.media-player.modern .platform-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: none;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.media-player.modern .platform-badge.visible {
+  opacity: 1;
+  visibility: visible;
+  animation: badgeSlideIn 0.5s var(--player-bounce);
+}
+
+.media-player.modern .platform-badge.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@keyframes badgeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.media-player.modern .media-type-indicator {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: none;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.media-player.modern .media-type-indicator.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.media-player.modern .media-type-indicator.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* ========================================
+   SETTINGS MENU
+   ======================================== */
+
+.media-player.modern .settings-container {
+  position: relative;
+}
+
+.media-player.modern .settings-menu {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  margin-bottom: 1rem;
+  min-width: 200px;
+  background: rgba(0, 0, 0, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  animation: menuSlideUp 0.3s var(--player-bounce);
+  z-index: 100;
+}
+
+@keyframes menuSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.media-player.modern .settings-section h4 {
+  margin: 0 0 0.75rem 0;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.media-player.modern .settings-option {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--player-transition);
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.media-player.modern .settings-option:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateX(4px);
+}
+
+.media-player.modern .settings-option.active {
+  background: linear-gradient(135deg, var(--player-primary) 0%, var(--player-secondary) 100%);
+  border-color: transparent;
+  font-weight: 600;
+}
+
+/* ========================================
+   LOADING STATE
+   ======================================== */
+
+.media-player.modern .loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: none;
+  z-index: 50;
+}
+
+.media-player.modern .loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  border-top-color: var(--player-primary);
+  border-radius: 50%;
+  animation: modernSpin 1s linear infinite;
+}
+
+@keyframes modernSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* ========================================
+   ERROR STATE
+   ======================================== */
+
+.media-player.modern .error-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: none;
+  z-index: 50;
+  padding: 2rem;
+  text-align: center;
+}
+
+.media-player.modern .error-icon {
+  font-size: 3rem;
+  color: #ff6b6b;
+  margin-bottom: 1rem;
+}
+
+.media-player.modern .error-message {
+  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.media-player.modern .error-details {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+}
+
+/* ========================================
+   PLAY OVERLAY (Video)
+   ======================================== */
+
+.media-player.modern .play-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.media-player.modern .play-overlay.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.media-player.modern .play-overlay.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.media-player.modern .play-button-large {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--player-primary);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  transition: var(--player-transition);
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.media-player.modern .play-button-large:hover {
+  transform: scale(1.1);
+  background: #fff;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
+}
+
+/* ========================================
+   EMBEDDED PLAYER
+   ======================================== */
+
+.media-player.modern .embedded-player {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 600px;
+  background: #000;
+}
+
+.media-player.modern .embedded-iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 600px;
+  border: none;
+  border-radius: 12px;
+  pointer-events: auto;
+  background: #000;
+}
+
+.media-player.modern .embedded-controls {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 100;
+  pointer-events: auto;
+}
+
+.media-player.modern .external-link-btn {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: none;
+  color: white;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  pointer-events: auto;
+  z-index: 100;
+}
+
+.media-player.modern .external-link-btn:hover {
+  background: rgba(0, 0, 0, 0.95);
+  transform: scale(1.1);
+}
+
+/* ========================================
+   LOADING & ERROR STATES
+   ======================================== */
+
+.media-player.modern .media-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+}
+
+.media-player.modern .media-error {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  text-align: center;
+  color: #ff6b6b;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: none;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 107, 107, 0.3);
+}
+
+/* ========================================
+   STATUS INDICATORS
+   ======================================== */
+
+.media-player.modern .repeat-indicator {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 16px;
+  height: 16px;
+  background: var(--player-accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.media-player.modern .playlist-count {
+  margin-left: 0.25rem;
+  padding: 0.15rem 0.4rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+  .media-player.modern {
+    border-radius: 16px;
+  }
+
+  .audio-cover {
+    width: 160px;
+    height: 160px;
+  }
+
+  .media-controls {
+    padding: 0.75rem 1rem;
+  }
+
+  .controls {
+    gap: 0.5rem;
+  }
+
+  .controls-left,
+  .controls-center,
+  .controls-right {
+    gap: 0.5rem;
+  }
+
+  .control-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+
+  .control-btn.play-pause {
+    width: 48px;
+    height: 48px;
+    font-size: 1.25rem;
+  }
+
+  .volume-container {
+    padding: 0.4rem 0.8rem;
+  }
+
+  .volume-slider {
+    width: 60px;
+  }
+
+  .media-title {
+    top: 1rem;
+    left: 1rem;
+    right: 1rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .media-title h3 {
+    font-size: 1rem;
+  }
+
+  .time-display {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .audio-cover {
+    width: 140px;
+    height: 140px;
+  }
+
+  .audio-player-container {
+    min-height: 280px;
+    padding: 2rem 1rem;
+  }
+
+  .control-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 0.85rem;
+  }
+
+  .control-btn.play-pause {
+    width: 44px;
+    height: 44px;
+    font-size: 1.1rem;
+  }
+
+  .volume-container {
+    display: none;
+  }
+
+  .frequency-bars {
+    gap: 2px;
+  }
+}
+
+/* ========================================
+   ANIMATIONS & EFFECTS
+   ======================================== */
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  box-sizing: border-box;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* Accessibility */
+.media-player.modern .control-btn:focus-visible,
+.media-player.modern .settings-option:focus-visible,
+.media-player.modern .progress-bar:focus-visible {
+  outline: 2px solid var(--player-accent);
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .media-player {
+    display: none;
+  }
+}
