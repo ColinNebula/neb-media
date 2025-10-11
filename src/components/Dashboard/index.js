@@ -53,10 +53,10 @@ function Dashboard({ setCurrentTab, externalShowGetStarted, externalSetShowGetSt
   };
 
   const stats = [
-    { icon: FaVideo, label: "Apps Developed", value: "150+", color: "var(--primary-color)", gradient: "var(--primary-gradient)" },
-    { icon: FaUsers, label: "Happy Clients", value: "75+", color: "var(--secondary-color)", gradient: "var(--secondary-gradient)" },
-    { icon: FaEye, label: "Code Reviews", value: "2K+", color: "var(--accent-color)", gradient: "var(--accent-gradient)" },
-    { icon: FaTrophy, label: "Awards Won", value: "12", color: "var(--primary-color)", gradient: "var(--dark-gradient)" }
+    { icon: FaVideo, label: "Apps Developed", value: "80+", color: "var(--primary-color)", gradient: "var(--primary-gradient)" },
+    { icon: FaUsers, label: "Happy Clients", value: "5+", color: "var(--secondary-color)", gradient: "var(--secondary-gradient)" },
+    // { icon: FaEye, label: "Code Reviews", value: "2K+", color: "var(--accent-color)", gradient: "var(--accent-gradient)" },
+    // { icon: FaTrophy, label: "Awards Won", value: "12", color: "var(--primary-color)", gradient: "var(--dark-gradient)" }
   ];
 
   const services = [
@@ -524,27 +524,102 @@ function Dashboard({ setCurrentTab, externalShowGetStarted, externalSetShowGetSt
           aria-labelledby="rider-modal-title"
           centered
         >
-          <Modal.Header closeButton className="border-0">
-            <Modal.Title id="rider-modal-title">
-              E-Commerce Platform Development
+          <Modal.Header closeButton style={{
+            background: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+            color: 'white',
+            border: 'none',
+            padding: '1.5rem 2rem'
+          }}>
+            <Modal.Title id="rider-modal-title" style={{ 
+              fontSize: '1.75rem',
+              fontWeight: '700',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '1rem'
+            }}>
+              <FaGamepad size={32} />
+              3D Animation Showcase
             </Modal.Title>
           </Modal.Header>
-          <Modal.Body className="p-4">
-            <p className="lead mb-4">
-              A comprehensive e-commerce platform built with React and Node.js, 
-              featuring real-time inventory management, secure payments, and advanced analytics.
-            </p>
-            <div className="video-container">
+          <Modal.Body style={{ 
+            padding: 0,
+            background: 'var(--bg-surface)'
+          }}>
+            <div className="video-container" style={{ 
+              position: 'relative',
+              width: '100%',
+              paddingBottom: '56.25%',
+              background: '#000'
+            }}>
               <iframe 
-                width="100%" 
-                height="400" 
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: '100%'
+                }}
                 src="https://www.youtube.com/embed/N2WhwHaicR4?si=DpZil3O_vevDpqEl" 
-                title="E-Commerce Platform - Nebula3D Dev"
+                title="Free Rider 3D Animation - Nebula3D Dev"
                 frameBorder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                 allowFullScreen
-                className="rounded"
               />
+            </div>
+            <div style={{ padding: '2rem' }}>
+              <div style={{
+                background: 'linear-gradient(135deg, rgba(240, 147, 251, 0.1) 0%, rgba(245, 87, 108, 0.1) 100%)',
+                borderLeft: '4px solid #f093fb',
+                padding: '1.5rem',
+                borderRadius: '0.5rem',
+                marginBottom: '1.5rem'
+              }}>
+                <p className="lead mb-0" style={{ 
+                  fontSize: '1.1rem',
+                  lineHeight: '1.8',
+                  color: 'var(--text-primary)',
+                  fontWeight: '500'
+                }}>
+                  A captivating <strong>3D animated film</strong> featuring stunning low-poly aesthetics, 
+                  professional character rigging, and dynamic motion graphics. Entirely crafted in 
+                  <strong> Blender</strong> with meticulous attention to detail and creative storytelling.
+                </p>
+              </div>
+              <Row className="g-3">
+                <Col md={4}>
+                  <div style={{
+                    textAlign: 'center',
+                    padding: '1rem',
+                    background: 'var(--bg-surface-alt)',
+                    borderRadius: '0.5rem'
+                  }}>
+                    <FaCamera size={28} style={{ color: '#f093fb', marginBottom: '0.5rem' }} />
+                    <div style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>3D Modeling</div>
+                  </div>
+                </Col>
+                <Col md={4}>
+                  <div style={{
+                    textAlign: 'center',
+                    padding: '1rem',
+                    background: 'var(--bg-surface-alt)',
+                    borderRadius: '0.5rem'
+                  }}>
+                    <FaGamepad size={28} style={{ color: '#f5576c', marginBottom: '0.5rem' }} />
+                    <div style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>Character Rigging</div>
+                  </div>
+                </Col>
+                <Col md={4}>
+                  <div style={{
+                    textAlign: 'center',
+                    padding: '1rem',
+                    background: 'var(--bg-surface-alt)',
+                    borderRadius: '0.5rem'
+                  }}>
+                    <FaVideo size={28} style={{ color: '#f093fb', marginBottom: '0.5rem' }} />
+                    <div style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>Motion Graphics</div>
+                  </div>
+                </Col>
+              </Row>
             </div>
           </Modal.Body>
         </Modal>
@@ -556,27 +631,103 @@ function Dashboard({ setCurrentTab, externalShowGetStarted, externalSetShowGetSt
           aria-labelledby="byte-modal-title"
           centered
         >
-          <Modal.Header closeButton className="border-0">
-            <Modal.Title id="byte-modal-title">
-              SaaS Dashboard Application
+          <Modal.Header closeButton style={{
+            background: 'linear-gradient(135deg, #11998e 0%, #38ef7d 100%)',
+            color: 'white',
+            border: 'none',
+            padding: '1.5rem 2rem'
+          }}>
+            <Modal.Title id="byte-modal-title" style={{ 
+              fontSize: '1.75rem',
+              fontWeight: '700',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '1rem'
+            }}>
+              <FaTrophy size={32} />
+              Educational Sports Series
             </Modal.Title>
           </Modal.Header>
-          <Modal.Body className="p-4">
-            <p className="lead mb-4">
-              Nebula3D Dev created this comprehensive SaaS dashboard with advanced data visualization, 
-              real-time updates, and intuitive user management for enterprise clients.
-            </p>
-            <div className="video-container">
+          <Modal.Body style={{ 
+            padding: 0,
+            background: 'var(--bg-surface)'
+          }}>
+            <div className="video-container" style={{ 
+              position: 'relative',
+              width: '100%',
+              paddingBottom: '56.25%',
+              background: '#000'
+            }}>
               <iframe
-                width="100%"
-                height="400"
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: '100%'
+                }}
                 src="https://www.youtube.com/embed/1wI6aDte_1Q"
-                title="SaaS Dashboard - Nebula3D Dev"
+                title="Byte Size Soccer - Educational Series - Nebula3D Dev"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
-                className="rounded"
               />
+            </div>
+            <div style={{ padding: '2rem' }}>
+              <div style={{
+                background: 'linear-gradient(135deg, rgba(17, 153, 142, 0.1) 0%, rgba(56, 239, 125, 0.1) 100%)',
+                borderLeft: '4px solid #11998e',
+                padding: '1.5rem',
+                borderRadius: '0.5rem',
+                marginBottom: '1.5rem'
+              }}>
+                <p className="lead mb-0" style={{ 
+                  fontSize: '1.1rem',
+                  lineHeight: '1.8',
+                  color: 'var(--text-primary)',
+                  fontWeight: '500'
+                }}>
+                  <strong>Byte Size Soccer</strong> is an educational video series featuring legendary British 
+                  goalkeeper <strong>Tony Waiters</strong>, teaching young players the fundamentals of soccer. 
+                  Professional production combining <strong>After Effects</strong> motion graphics with expert 
+                  sports instruction for an engaging learning experience.
+                </p>
+              </div>
+              <Row className="g-3">
+                <Col md={4}>
+                  <div style={{
+                    textAlign: 'center',
+                    padding: '1rem',
+                    background: 'var(--bg-surface-alt)',
+                    borderRadius: '0.5rem'
+                  }}>
+                    <FaVideo size={28} style={{ color: '#11998e', marginBottom: '0.5rem' }} />
+                    <div style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>Video Production</div>
+                  </div>
+                </Col>
+                <Col md={4}>
+                  <div style={{
+                    textAlign: 'center',
+                    padding: '1rem',
+                    background: 'var(--bg-surface-alt)',
+                    borderRadius: '0.5rem'
+                  }}>
+                    <FaLightbulb size={28} style={{ color: '#38ef7d', marginBottom: '0.5rem' }} />
+                    <div style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>Motion Graphics</div>
+                  </div>
+                </Col>
+                <Col md={4}>
+                  <div style={{
+                    textAlign: 'center',
+                    padding: '1rem',
+                    background: 'var(--bg-surface-alt)',
+                    borderRadius: '0.5rem'
+                  }}>
+                    <FaTrophy size={28} style={{ color: '#11998e', marginBottom: '0.5rem' }} />
+                    <div style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>Sports Education</div>
+                  </div>
+                </Col>
+              </Row>
             </div>
           </Modal.Body>
         </Modal>

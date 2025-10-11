@@ -44,7 +44,7 @@ function App() {
         );
 
       case "about-us":
-        return <About Us />;
+        return <About setCurrentTab={setCurrentTab} />;
 
       case "contact":
         return <Contact setCurrentTab={setCurrentTab} />;

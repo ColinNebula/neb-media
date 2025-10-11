@@ -2525,10 +2525,37 @@ img {
 }
 
 .play-button {
-  border-radius: 50px;
-  padding: 1rem 2rem;
+  border-radius: 12px;
+  padding: 0.875rem 1.75rem;
   font-weight: 600;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  font-size: 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  border: 2px solid rgba(255, 255, 255, 0.3) !important;
+  color: white !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 160px;
+  max-width: 200px;
+}
+
+.play-button:hover {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%) !important;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 35px rgba(102, 126, 234, 0.7);
+  border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.play-button:active {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
 }
 
 .project-title {

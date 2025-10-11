@@ -48,10 +48,25 @@ import {
 } from 'react-icons/fa';
 import logo from '../../assets/images/nebula-dev-logo.svg';
 
-function About() {
+function About({ setCurrentTab }) {
   const [showModal, setShowModal] = useState(false);
   const [selectedService, setSelectedService] = useState(null);
   const [showTechModal, setShowTechModal] = useState(false);
+
+  const handleGetQuote = () => {
+    if (setCurrentTab) {
+      setCurrentTab('contact');
+      // Wait for the page to load, then scroll to the form
+      setTimeout(() => {
+        const formElement = document.getElementById('contact-form');
+        if (formElement) {
+          formElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  };
   const [showGetStarted, setShowGetStarted] = useState(false);
 
   const services = [
@@ -136,7 +151,7 @@ function About() {
       }
     },
     {
-      name: 'Mike Rodriguez',
+      name: 'Clyde Drexler',
       role: 'Backend Engineer',
       bio: 'Expert in building robust APIs and scalable backend systems with focus on security and performance optimization.',
       image: logo,
@@ -192,9 +207,9 @@ function About() {
   ];
 
   const stats = [
-    { number: '150+', label: 'Projects Completed', icon: FaTrophy },
-    { number: '75+', label: 'Happy Clients', icon: FaUsers },
-    { number: '8+', label: 'Years Experience', icon: FaCalendarAlt },
+    { number: '80+', label: 'Projects Completed', icon: FaTrophy },
+    { number: '5+', label: 'Happy Clients', icon: FaUsers },
+    { number: '10+', label: 'Years Experience', icon: FaCalendarAlt },
     { number: '98%', label: 'Client Satisfaction', icon: FaHeart }
   ];
 
@@ -507,10 +522,24 @@ function About() {
                 development services. Get in touch for a free consultation.
               </p>
               <div className="cta-buttons">
-                <Button variant="primary" size="lg" className="me-3">
+                <Button 
+                  variant="primary" 
+                  size="lg" 
+                  className="me-3"
+                  onClick={handleGetQuote}
+                >
                   Get Free Quote
                 </Button>
-                <Button variant="outline-primary" size="lg">
+                <Button 
+                  variant="outline-primary" 
+                  size="lg"
+                  onClick={() => {
+                    if (setCurrentTab) {
+                      setCurrentTab('our-work');
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                  }}
+                >
                   View Our Work
                 </Button>
               </div>
@@ -553,7 +582,7 @@ function About() {
                 <Button variant="outline-secondary" onClick={() => setShowModal(false)}>
                   Close
                 </Button>
-                <Button variant="primary">
+                <Button variant="primary" onClick={handleGetQuote}>
                   Get Quote for This Service
                 </Button>
               </Modal.Footer>

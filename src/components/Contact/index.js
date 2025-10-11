@@ -76,7 +76,7 @@ function Contact({ setCurrentTab }) {
     {
       icon: FaMapMarkerAlt,
       title: 'Our Location',
-      details: ['46 Wildfire Road', 'Vaughan, ON L4L-8Y9', 'Canada'],
+      details: ['Toronto', 'Canada'],
       color: '#358ed3'
     },
     {
@@ -89,9 +89,9 @@ function Contact({ setCurrentTab }) {
     {
       icon: FaEnvelope,
       title: 'Email',
-      details: ['nebulamedia3d@gmail.com', 'We respond within 24 hours'],
+      details: ['info@nebula3ddev.com', 'We respond within 24 hours'],
       color: '#358ed3',
-      link: 'mailto:nebulamedia3d@gmail.com'
+      link: 'mailto:info@nebula3ddev.com'
     },
     {
       icon: FaClock,
@@ -169,7 +169,7 @@ function Contact({ setCurrentTab }) {
         <Row className="mb-5">
           {/* Contact Form */}
           <Col lg={8} className="mb-4">
-            <Card className="contact-form-card border-0 shadow-lg">
+            <Card className="contact-form-card border-0 shadow-lg" id="contact-form">
               <Card.Body className="p-5">
                 <div className="form-header mb-4">
                   <h2 className="form-title mb-2">Send Us a Message</h2>
@@ -424,7 +424,7 @@ function Contact({ setCurrentTab }) {
                 <Button 
                   variant="outline-light" 
                   size="lg"
-                  href="mailto:nebulamedia3d@gmail.com"
+                  href="mailto:info@nebula3ddev.com"
                   className="email-cta-btn"
                 >
                   <FaEnvelope className="me-2" />
